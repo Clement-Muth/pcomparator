@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:check": "rome check .",
+    "format:check": "rome format .",
+    "typescript:check": "tsc --noEmit"
   },
   "dependencies": {
     "@types/node": "20.4.1",
@@ -20,5 +23,8 @@
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.1",
+  "devDependencies": {
+    "rome": "^12.1.3"
+  }
 }
