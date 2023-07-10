@@ -23,7 +23,6 @@ jobs:
       cancel-in-progress: true
     needs:
       - qa-typescript
-      - qa-check-translations
     steps:
       - run: echo "::group::Quality checks"
 
