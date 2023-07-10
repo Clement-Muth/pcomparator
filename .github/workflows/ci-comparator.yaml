@@ -34,10 +34,7 @@ jobs:
       group: ${{ github.workflow }}-qa-ts-${{ github.ref }}
       cancel-in-progress: true
     steps:
-      - uses: priceComparatorCR/setup-repo-node-app@v1.3
-        with:
-          node-version: 16
-          working-directory: landing
+      - uses: actions/checkout@v2
       - name: Check coding standards
         run: yarn run format:check
       - name: Make static analysis (rome)
