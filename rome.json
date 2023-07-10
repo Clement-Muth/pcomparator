@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.rome.tools/schemas/12.1.0/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "recommended": true
+      },
+      "correctness": {
+        "noUnusedVariables": "off",
+        "recommended": true
+      },
+      "style": {
+        "recommended": true
+      }
+    },
+    "ignore": ["build/*", "node_modules", ".next", "public"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentSize": 2,
+    "lineWidth": 110,
+    "ignore": ["*.js", "node_modules", ".next", ".vscode"],
+    "formatWithErrors": true
+  },
+  "javascript": {
+    "formatter": {
+      "trailingComma": "none",
+      "semicolons": "always"
+    }
+  }
+}
