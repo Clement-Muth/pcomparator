@@ -1,0 +1,24 @@
+area/dashboard:
+  - dashboard/**/*
+
+area/landing:
+  - landing/**/*
+
+kind/documentation:
+  - documentation/**/*
+
+kind/storybook:
+  - '**/*/*.stories.*'
+  - '**/*/.storybook/**/*'
+
+kind/tests:
+  - '**/*/*.spec.*'
+
+area/workflow:
+  - .github/workflows/**/*
+
+kind/dependencies:
+  - '**/*/composer.lock'
+  - '**/*/.yarn/**/*'
+  - '**/*/.yarnrc.yml'
+  - '**/*/yarn.lock'
