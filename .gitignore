@@ -16,3 +16,4 @@ storybook-static/
 tsconfig.tsbuildinfo
 service-worker.js
 workbox*
+.env
