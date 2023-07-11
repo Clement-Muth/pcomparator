@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  compress: true
+  compress: true,
+  images: {
+    domains: ["lh3.googleusercontent.com", "vercel.com"]
+  }
 }
 
 const withPWA = require("@imbios/next-pwa")({

@@ -6,8 +6,13 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "nursery": {
+        "useGroupedTypeImport": "error",
+        "noConsoleLog": "warn",
+        "recommended": true
+      },
       "suspicious": {
+        "noImportAssign": "error",
         "recommended": true
       },
       "correctness": {
