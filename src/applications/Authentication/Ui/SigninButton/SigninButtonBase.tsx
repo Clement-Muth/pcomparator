@@ -1,6 +1,6 @@
 "use client";
 
-import { useSignInModal } from "~/applications/Authentication/Ui/useSigninModal";
+import useSignInModal from "~/applications/Authentication/Ui/useSigninModal";
 
 const SigninButtonBase = () => {
   const { SignInModal, setShowSignInModal } = useSignInModal();
