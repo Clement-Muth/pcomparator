@@ -1,21 +1,10 @@
-import { getServerSession } from "next-auth";
-import { Balancer } from "react-wrap-balancer";
-import { authOptions } from "~/app/api/auth/[...nextauth]/route";
+import getUser from "~/applications/Authentication/Api/getUser";
+import UnsignedHome from "~/views/Home/UnsignedHome";
 
 const HomePage = async () => {
-  return (
-    <>
-      <Balancer
-        as="h1"
-        className="bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
-      >
-        PComparator Compare prices of many products
-      </Balancer>
-      <Balancer as="p" className="mt-6 text-center text-gray-500 md:text-xl">
-        PriceComparator is the price comparator for foods, cosmetic and more
-      </Balancer>
-    </>
-  );
+  const user = await getUser();
+
+  return user.exist ? <h1>Hello {user.user?.name}</h1> : <UnsignedHome />;
 };
 
 export default HomePage;
