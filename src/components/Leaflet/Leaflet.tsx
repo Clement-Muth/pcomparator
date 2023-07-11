@@ -1,4 +1,6 @@
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+"use client";
+
+import { AnimatePresence, PanInfo, motion, useAnimation } from "framer-motion";
 import { Dispatch, ReactNode, SetStateAction, useEffect, useRef } from "react";
 
 interface LeafletProps {
@@ -10,14 +12,15 @@ const Leaflet = ({ setShow, children }: LeafletProps) => {
   const leafletRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const transitionProps = { type: "spring", stiffness: 500, damping: 30 };
+
   useEffect(() => {
     controls.start({
       y: 20,
       transition: transitionProps
     });
-  }, []);
+  }, [controls]);
 
-  async function handleDragEnd(_: any, info: any) {
+  async function handleDragEnd(_: unknown, info: PanInfo) {
     const offset = info.offset.y;
     const velocity = info.velocity.y;
     const height = leafletRef.current?.getBoundingClientRect().height || 0;

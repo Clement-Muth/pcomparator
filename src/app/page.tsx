@@ -1,6 +1,8 @@
+import { getServerSession } from "next-auth";
 import { Balancer } from "react-wrap-balancer";
+import { authOptions } from "~/app/api/auth/[...nextauth]/route";
 
-const HomePage = () => {
+const HomePage = async () => {
   return (
     <>
       <Balancer

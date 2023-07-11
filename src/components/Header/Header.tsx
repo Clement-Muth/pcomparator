@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header = ({ children }: HeaderProps) => {
   return (
-    <header className="fixed top-0 w-full flex justify-between px-4 py-3">
+    <header className="fixed top-0 w-full flex justify-between px-4 py-3 z-[33]">
       <div className="flex items-center gap-x-2">
         <Image
           src="/static/logo.png"
