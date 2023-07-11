@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ReactNode } from "react";
+import { pcomparatorHomepageRoute } from "~/core/routes";
 
 interface HeaderProps {
   children?: ReactNode;
@@ -8,7 +10,7 @@ interface HeaderProps {
 const Header = ({ children }: HeaderProps) => {
   return (
     <header className="fixed top-0 w-full flex justify-between px-4 py-3 z-[33]">
-      <div className="flex items-center gap-x-2">
+      <Link href={pcomparatorHomepageRoute()} className="flex items-center gap-x-2">
         <Image
           src="/static/logo.png"
           alt="price comparator logo"
@@ -17,7 +19,7 @@ const Header = ({ children }: HeaderProps) => {
           style={{ width: "100%", height: "100%" }}
         />
         <p className="text-2xl tracking-tighter font-medium">PComparator</p>
-      </div>
+      </Link>
       {children}
     </header>
   );

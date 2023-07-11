@@ -2,17 +2,20 @@ import { Balancer } from "react-wrap-balancer";
 
 const UnsignedHome = () => {
   return (
-    <>
-      <Balancer
-        as="h1"
-        className="bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+    <div className="flex flex-col items-center max-w-2xl">
+      <h1
+        className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
+        style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
       >
-        PComparator Compare prices of many products
-      </Balancer>
-      <Balancer as="p" className="mt-6 text-center text-gray-500 md:text-xl">
-        PriceComparator is the price comparator for foods, cosmetic and more
-      </Balancer>
-    </>
+        <Balancer>PComparator Compare prices of many products</Balancer>
+      </h1>
+      <p
+        className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
+        style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
+      >
+        <Balancer>PriceComparator is the price comparator for foods, cosmetic and more</Balancer>
+      </p>
+    </div>
   );
 };
 
