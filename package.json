@@ -39,6 +39,7 @@
   },
   "packageManager": "yarn@3.6.1",
   "devDependencies": {
+    "clsx": "^1.2.1",
     "focus-trap-react": "^10.2.1",
     "prop-types": "^15.8.1",
     "rome": "^12.1.3",
