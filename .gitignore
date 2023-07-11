@@ -17,3 +17,4 @@ tsconfig.tsbuildinfo
 service-worker.js
 workbox*
 .env
+.vercel
