@@ -1,3 +1,4 @@
+import { SessionProvider } from "next-auth/react";
 import { ReactNode, Suspense } from "react";
 import SigninButton from "~/applications/Authentication/Ui/SigninButton";
 import Header from "~/components/Header/Header";

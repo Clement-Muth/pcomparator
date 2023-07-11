@@ -1,8 +1,7 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Suspense } from "react";
-import Header from "~/components/Header/Header";
+import AuthenticationFirewall from "~/applications/Authentication/Ui/AuthenticationFirewall";
 import ApplicationKernel from "~/core/ApplicationKernel";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,7 +16,8 @@ export const metadata: Metadata = {
     creator: "@Clement-Muth"
   },
   metadataBase: new URL("https://price-comparator.vercel.app"),
-  themeColor: "#FFF"
+  themeColor: "#FFF",
+  manifest: "/manifest.json"
 };
 
 export default function RootLayout({
@@ -28,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ApplicationKernel>{children}</ApplicationKernel>
+        <AuthenticationFirewall>
+          <ApplicationKernel>{children}</ApplicationKernel>
+        </AuthenticationFirewall>
       </body>
     </html>
   );
