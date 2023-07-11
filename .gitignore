@@ -16,3 +16,5 @@ storybook-static/
 tsconfig.tsbuildinfo
 service-worker.js
 workbox*
+.env
+.yarn/unplugged
