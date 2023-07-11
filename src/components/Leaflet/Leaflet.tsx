@@ -4,11 +4,11 @@ import { AnimatePresence, PanInfo, motion, useAnimation } from "framer-motion";
 import { Dispatch, ReactNode, SetStateAction, useEffect, useRef } from "react";
 
 interface LeafletProps {
-  setShow: Dispatch<SetStateAction<boolean>>;
+  onOpenChange: (open: boolean) => void;
   children: ReactNode;
 }
 
-const Leaflet = ({ setShow, children }: LeafletProps) => {
+const Leaflet = ({ onOpenChange, children }: LeafletProps) => {
   const leafletRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const transitionProps = { type: "spring", stiffness: 500, damping: 30 };
@@ -26,7 +26,7 @@ const Leaflet = ({ setShow, children }: LeafletProps) => {
     const height = leafletRef.current?.getBoundingClientRect().height || 0;
     if (offset > height / 2 || velocity > 800) {
       await controls.start({ y: "100%", transition: transitionProps });
-      setShow(false);
+      onOpenChange(false);
     } else {
       controls.start({ y: 0, transition: transitionProps });
     }
@@ -64,7 +64,7 @@ const Leaflet = ({ setShow, children }: LeafletProps) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        onClick={() => setShow(false)}
+        onClick={() => onOpenChange(false)}
       />
     </AnimatePresence>
   );

@@ -4498,6 +4498,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^0.259.0":
+  version: 0.259.0
+  resolution: "lucide-react@npm:0.259.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0
+  checksum: d760b2af40e36393e2f72beca3162eb8ab264e09fba8660649b7f955ecee38d2d7242ea513f7249c3d97a937b02257c3ee20af5d82d4f77509e3f143da7d009d
+  languageName: node
+  linkType: hard
+
 "magic-string@npm:^0.25.0, magic-string@npm:^0.25.7":
   version: 0.25.9
   resolution: "magic-string@npm:0.25.9"
@@ -4736,8 +4745,10 @@ __metadata:
     autoprefixer: 10.4.14
     focus-trap-react: ^10.2.1
     framer-motion: ^10.12.18
+    lucide-react: ^0.259.0
     next: 13.4.9
     next-auth: ^4.22.1
+    next-themes: ^0.2.1
     postcss: 8.4.25
     prop-types: ^15.8.1
     react: 18.2.0
@@ -4808,6 +4819,17 @@ __metadata:
     nodemailer:
       optional: true
   checksum: 42bae16b62bac4b3d215d991c7c964dfc071a84df32900a28d4cbc20d4b6a65689b3ba9f10633780a22ff0cbc420248d012614a5b0d82918f9bbb56f7f92f7c5
+  languageName: node
+  linkType: hard
+
+"next-themes@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "next-themes@npm:0.2.1"
+  peerDependencies:
+    next: "*"
+    react: "*"
+    react-dom: "*"
+  checksum: ebc248b956138e73436c4ed0a0f0a877a0a48a33156db577029b8b8469e48b5c777d61abf2baeb75953378febea74e067a4869ff90b4a3e94fce123289b862ba
   languageName: node
   linkType: hard
 

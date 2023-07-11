@@ -1,13 +1,6 @@
 name: CI / Price comparator
 
-on:
-  push:
-    branches:
-      - gh-readonly-queue/master/**
-  pull_request:
-    paths:
-      - '.github/workflows/ci-comparator.yaml'
-      - './**'
+on: push
 
 jobs:
   quality:

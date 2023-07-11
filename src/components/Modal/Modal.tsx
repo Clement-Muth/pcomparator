@@ -35,7 +35,7 @@ const Modal = ({ children, showModal, setShowModal = () => null }: ModalProps) =
     <AnimatePresence>
       {showModal && (
         <>
-          {isMobile && <Leaflet setShow={setShowModal}>{children}</Leaflet>}
+          {isMobile && <Leaflet onOpenChange={setShowModal}>{children}</Leaflet>}
           {isDesktop && (
             <>
               <FocusTrap focusTrapOptions={{ initialFocus: false }}>
