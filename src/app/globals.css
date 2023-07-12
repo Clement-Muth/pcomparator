@@ -31,3 +31,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+::selection {
+  color: #79ffe1;
+}

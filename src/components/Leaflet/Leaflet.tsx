@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, PanInfo, motion, useAnimation } from "framer-motion";
-import { Dispatch, ReactNode, SetStateAction, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
 interface LeafletProps {
   onOpenChange: (open: boolean) => void;
