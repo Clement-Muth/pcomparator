@@ -60,6 +60,7 @@ const Modal = ({ children, showModal, setShowModal = () => null }: ModalProps) =
                 className="fixed inset-0 z-30 bg-gray-100 bg-opacity-10 backdrop-blur"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
+                transition={{ duration: 0.05 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setShowModal(false)}
               />
