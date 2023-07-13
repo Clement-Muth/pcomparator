@@ -14,7 +14,7 @@ const ApplicationKernel = (props: ApplicationKernelProps) => {
     <ApplicationProvider applicationEnvironment="development">
       <ManagedUIContext>
         <ReactWrapBalancerProvider>
-          <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100 dark:from-black dark:via-indigo-950 dark:to-fuchsia-950" />
+          <div className="fixed h-screen w-full bg-gradient-to-br dark:from-[#1f121b] dark:via-[#0c1820] dark:via-[#0c1820] dark:via-80% dark:to-[#081917] from-indigo-50 via-white to-cyan-100" />
           <Suspense fallback="...">
             <Header>
               <SigninButton />

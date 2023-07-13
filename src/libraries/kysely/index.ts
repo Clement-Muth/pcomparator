@@ -18,8 +18,16 @@ interface UserTable {
   createdAt: ColumnType<Date, string | undefined, never>;
 }
 
+interface ProductTable {
+  id: Generated<number>;
+  name: string;
+  price: number;
+  createdAt: ColumnType<Date, string | undefined, never>;
+}
+
 interface Database {
   users: UserTable;
+  products: ProductTable;
 }
 
 export const db = createKysely<Database>();

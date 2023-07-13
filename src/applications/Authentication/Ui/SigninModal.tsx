@@ -12,8 +12,8 @@ const SignInModal = () => {
   const [signInClicked, setSignInClicked] = useState(false);
 
   return (
-    <div className="w-full overflow-hidden shadow-xl md:max-w-md md:rounded-2xl md:border md:border-gray-200">
-      <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center md:px-16">
+    <div className="w-full overflow-hidden shadow-xl md:max-w-md md:rounded-2xl md:border dark:border-gray-600 md:border-gray-200">
+      <div className="flex flex-col items-center justify-center space-y-3 border-b dark:border-gray-600 dark:bg-black bg-white px-4 py-6 pt-8 text-center md:px-16">
         <Link href={pcomparatorHomepageRoute()}>
           <Image
             src="/static/logo.png"
@@ -27,7 +27,7 @@ const SignInModal = () => {
         <p className="text-sm text-gray-500">Sign in to enjoy all features of PComparator</p>
       </div>
 
-      <div className="flex flex-col space-y-4 bg-gray-50 px-4 py-8 md:px-16">
+      <div className="flex flex-col space-y-4 dark:bg-gray-950 bg-gray-50 px-4 py-8 md:px-16">
         <button
           type="button"
           disabled={signInClicked}
