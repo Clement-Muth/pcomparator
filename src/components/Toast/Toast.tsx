@@ -1,9 +1,8 @@
 import * as ToastRadix from "@radix-ui/react-toast";
-import { OnClose } from "~/types/extends";
 
 interface ToastProps {
   open: boolean;
-  onClose: OnClose;
+  onClose: (open: boolean) => void;
 }
 
 const Toast = ({ open, onClose }: ToastProps) => {
