@@ -3,32 +3,32 @@
 import { ReactNode } from "react";
 import { useForm } from "react-hook-form";
 import usePutProduct from "~/applications/Product/Api/usePutProduct";
+import { Product } from "~/applications/Product/Domain/Product";
 import InputImage from "~/applications/Product/Ui/AddProductModal/InputImage";
 import Input from "~/components/Input/Input";
 import Label from "~/components/Input/Label";
 import Select from "~/components/Select/Select";
 import { useCoreUI } from "~/core/contexte";
 
-type FormValues = {
-  productName: string;
-  productPrice: number;
-};
+type FormValues = Product;
 
 interface AddProductFormProps {
   children: ReactNode;
   header: ReactNode;
   onValidate: () => void;
+  onLoading: () => void;
 }
 
-const AddProductForm = ({ header, onValidate, children }: AddProductFormProps) => {
+const AddProductForm = ({ header, onValidate, onLoading, children }: AddProductFormProps) => {
   const { register, handleSubmit, formState } = useForm<FormValues>();
   const putProduct = usePutProduct();
   const { toast } = useCoreUI();
 
   const onSubmit = async (data: FormValues) => {
-    onValidate();
-    await putProduct({ productId: data.productName, product: data });
+    onLoading();
+    await putProduct({ productId: data.name, product: data });
     toast.onOpenChange(true);
+    onValidate();
   };
 
   return (
@@ -41,21 +41,17 @@ const AddProductForm = ({ header, onValidate, children }: AddProductFormProps) =
         <Input
           placeholder="Chocolate Cookies"
           label="Product name"
-          error={formState.errors.productName?.message as string}
-          {...register("productName", { required: "Please specify a product name" })}
+          error={formState.errors.name?.message as string}
+          {...register("name", { required: "Please specify a product name" })}
         />
         <div className="flex flex-col items-start w-full">
-          <Label
-            label="Product price"
-            error={formState.errors.productPrice?.message as string}
-            name="productPrice"
-          />
+          <Label label="Product price" error={formState.errors.price?.message as string} name="price" />
           <div className="flex items-center w-full space-x-2">
             <Select />
             <Input
-              errorWithoutMessage={!!formState.errors.productPrice?.message}
+              errorWithoutMessage={!!formState.errors.price?.message}
               placeholder="19.99"
-              {...register("productPrice", { required: "Please specify a product price" })}
+              {...register("price", { required: "Please specify a product price" })}
             />
           </div>
         </div>
