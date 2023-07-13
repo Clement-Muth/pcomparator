@@ -1,20 +1,26 @@
 "use client";
 
-import useSignInModal from "~/applications/Authentication/Ui/useSigninModal";
+import { useLayoutEffect } from "react";
+import SignInModal from "~/applications/Authentication/Ui/SigninModal";
+import { useCoreUI } from "~/core/contexte";
 
 const SigninButtonBase = () => {
-  const { SignInModal, setShowSignInModal } = useSignInModal();
+  const { modal } = useCoreUI();
+
+  // rome-ignore lint/nursery/useExhaustiveDependencies: no dependency needed
+  useLayoutEffect(() => {
+    modal.setModalChildren(<SignInModal />);
+  }, []);
 
   return (
     <>
       <button
         type="button"
-        onClick={() => setShowSignInModal(true)}
+        onClick={() => modal.onOpenChange(true)}
         className="rounded-full text-white bg-black px-5 py-2"
       >
         Sign in
       </button>
-      <SignInModal />
     </>
   );
 };
