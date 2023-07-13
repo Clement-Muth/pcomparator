@@ -7,7 +7,7 @@ import InputImage from "~/applications/Product/Ui/AddProductModal/InputImage";
 import Input from "~/components/Input/Input";
 import Label from "~/components/Input/Label";
 import Select from "~/components/Select/Select";
-import { useUI } from "~/core/contexte";
+import { useCoreUI } from "~/core/contexte";
 
 type FormValues = {
   productName: string;
@@ -23,12 +23,12 @@ interface AddProductFormProps {
 const AddProductForm = ({ header, onValidate, children }: AddProductFormProps) => {
   const { register, handleSubmit, formState } = useForm<FormValues>();
   const putProduct = usePutProduct();
-  const { onOpenChange } = useUI();
+  const { toast } = useCoreUI();
 
   const onSubmit = async (data: FormValues) => {
     onValidate();
     await putProduct({ productId: data.productName, product: data });
-    onOpenChange(true);
+    toast.onOpenChange(true);
   };
 
   return (

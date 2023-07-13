@@ -2,7 +2,6 @@ import "./globals.css";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import AuthenticationFirewall from "~/applications/Authentication/Ui/AuthenticationFirewall";
-import Toast from "~/components/Toast/Toast";
 import ApplicationKernel from "~/core/ApplicationKernel";
 
 const inter = Inter({ subsets: ["latin"] });

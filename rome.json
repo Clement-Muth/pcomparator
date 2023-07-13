@@ -23,14 +23,14 @@
         "recommended": true
       }
     },
-    "ignore": ["build/*", "node_modules", ".next", "*.pnp*", "public"]
+    "ignore": ["build/*", "node_modules", ".vercel", ".next", "*.pnp*", "public"]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "indentSize": 2,
     "lineWidth": 110,
-    "ignore": ["*.js", "node_modules", ".next", "*.pnp*", ".vscode"],
+    "ignore": ["public", "tailwind.*", "postcss.*", "*next*", "node_modules", ".vercel", "*.pnp*", ".vscode"],
     "formatWithErrors": true
   },
   "javascript": {
