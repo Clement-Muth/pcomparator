@@ -8,16 +8,20 @@ interface InputProps extends UseFormRegisterReturn {
   label?: string;
   error?: string;
   errorWithoutMessage?: boolean;
+  inputMode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search" | undefined;
+  breakError?: boolean;
 }
 
 const Input = forwardRef(
   (
-    { placeholder, label, error, errorWithoutMessage, ...register }: InputProps,
+    { placeholder, label, error, inputMode, errorWithoutMessage, breakError, ...register }: InputProps,
     ref: LegacyRef<HTMLInputElement>
   ) => {
     return (
       <div className="flex flex-col w-full items-start">
-        {label || error ? <Label error={error} label={label} name={register.name} /> : null}
+        {label || error ? (
+          <Label error={error} label={label} name={register.name} breakError={breakError} />
+        ) : null}
         <div
           className={clsx(
             "rounded-md border text-sm shadow-sm bg-white text-black hover:bg-gray-50 w-full",
@@ -29,6 +33,7 @@ const Input = forwardRef(
             aria-invalid
             className="rounded-md h-[36px] px-4 w-full"
             placeholder={placeholder}
+            inputMode={inputMode}
             {...register}
             ref={ref}
           />

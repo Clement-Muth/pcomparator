@@ -22,6 +22,11 @@
   }
 }
 
+[data-input-type="searchbar"]:focus {
+  box-shadow: none;
+  border-color: none;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
