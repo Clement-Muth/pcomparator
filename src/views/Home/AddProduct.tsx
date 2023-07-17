@@ -15,7 +15,12 @@ const AddProduct = () => {
         <Button
           className="flex gap-x-2"
           onClick={() => {
-            modal.setModalChildren(<AddProductModal onValidate={() => modal.onOpenChange(false)} />);
+            modal.setModalChildren(
+              <AddProductModal
+                onValidate={() => modal.onOpenChange(false)}
+                onClose={() => modal.onOpenChange(false)}
+              />
+            );
             modal.onOpenChange(true);
           }}
         >
