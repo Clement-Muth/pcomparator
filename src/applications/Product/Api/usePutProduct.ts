@@ -14,7 +14,7 @@ const putProduct = async ({
   product: Product;
 }): Promise<Result> => {
   try {
-    await pcomparatorApiClient.put(`${process.env.PCOMPARATOR_API_ENDPOINT}/api/product/${productId}`, {
+    await pcomparatorApiClient.put(`${process.env.PCOMPARATOR_API_ENDPOINT}/api/product`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"

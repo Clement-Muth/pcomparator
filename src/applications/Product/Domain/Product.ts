@@ -10,7 +10,8 @@ export class Product {
     public readonly unity: "g" | "ml" | "unity" | "unities-g" | "unities-ml",
     public readonly category: string,
     public readonly quantity: number,
-    public readonly image: string
+    public readonly image: string,
+    public readonly weight: number
   ) {
     Object.freeze(this);
   }

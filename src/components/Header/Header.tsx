@@ -1,16 +1,27 @@
+"use client";
+
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { pcomparatorHomepageRoute } from "~/core/routes";
+import { pcomparatorHomePageRoute } from "~/core/routes";
+import useScroll from "~/hooks/useScroll";
 
 interface HeaderProps {
   children?: ReactNode;
 }
 
 const Header = ({ children }: HeaderProps) => {
+  const scrolled = useScroll(50);
+
   return (
-    <header className="fixed top-0 w-full flex justify-between px-4 py-3 z-[33]">
-      <Link href={pcomparatorHomepageRoute()} className="flex items-center gap-x-2">
+    <header
+      className={clsx(
+        "fixed top-0 w-full flex justify-between px-4 py-3 z-[33]",
+        scrolled ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl" : "bg-white/0"
+      )}
+    >
+      <Link href={pcomparatorHomePageRoute()} className="flex items-center gap-x-2">
         <Image
           src="/static/logo.png"
           alt="price comparator logo"

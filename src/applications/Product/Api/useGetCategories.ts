@@ -1,7 +1,7 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { HTTPError } from "ky";
 import { z } from "zod";
-import { Categories } from "~/applications/Product/Domain/Categories";
+import { Category } from "~/applications/Product/Domain/Categories";
 import { InvalidPayload } from "~/applications/Product/Domain/InvalidPayload";
 import { pcomparatorApiClient } from "~/clients/PcomparatorApiClient";
 
@@ -22,7 +22,7 @@ export const fetchCategoriesKey = (query: FetchCategoriesQuery): ["categories", 
   query
 ];
 
-const fetchCategories = async (query: FetchCategoriesQuery): Promise<Categories> => {
+const fetchCategories = async (query: FetchCategoriesQuery): Promise<Category[]> => {
   let response: Response | undefined;
 
   try {
@@ -51,7 +51,7 @@ const fetchCategories = async (query: FetchCategoriesQuery): Promise<Categories>
   const categoriesPayload = CategoriesSchema.parse(await response.json());
 
   return categoriesPayload.map((categoryPayload) => ({
-    categoryId: categoryPayload.id,
+    id: categoryPayload.id,
     image: categoryPayload.image,
     name: categoryPayload.name
   }));
@@ -61,7 +61,7 @@ const useGetCategories = (
   query: FetchCategoriesQuery | false
 ): {
   isLoading: boolean;
-  categories: Categories;
+  categories: Category[];
 } => {
   const {
     isLoading,
@@ -77,7 +77,7 @@ const useGetCategories = (
 
   return {
     isLoading: isFetching && isLoading,
-    categories: categories as Categories
+    categories: categories as Category[]
   };
 };
 

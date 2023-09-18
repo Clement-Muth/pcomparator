@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Google from "~/components/Icons/Google/Google";
 import LoadingDots from "~/components/Loader/LoadingDot";
-import { pcomparatorHomepageRoute } from "~/core/routes";
+import { pcomparatorHomePageRoute } from "~/core/routes";
 
 const SignInModal = () => {
   const [signInClicked, setSignInClicked] = useState(false);
@@ -14,7 +14,7 @@ const SignInModal = () => {
   return (
     <div className="w-full overflow-hidden shadow-xl md:max-w-md md:rounded-2xl md:border dark:border-gray-600 md:border-gray-200">
       <div className="flex flex-col items-center justify-center space-y-3 border-b dark:border-gray-600 dark:bg-black bg-white px-4 py-6 pt-8 text-center md:px-16">
-        <Link href={pcomparatorHomepageRoute()}>
+        <Link href={pcomparatorHomePageRoute()}>
           <Image
             src="/static/logo.png"
             alt="Logo"

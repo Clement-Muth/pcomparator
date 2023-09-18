@@ -1,7 +1,6 @@
 "use client";
 
 import { Plus } from "lucide-react";
-import { useLayoutEffect } from "react";
 import AddProductModal from "~/applications/Product/Ui/AddProductModal";
 import Button from "~/components/Button/Button";
 import { useCoreUI } from "~/core/contexte";
@@ -13,7 +12,8 @@ const AddProduct = () => {
     <div>
       <div className="mt-6">
         <Button
-          className="flex gap-x-2"
+          className="flex gap-x-2 px-4 md:shadow-md"
+          kind="secondary"
           onClick={() => {
             modal.setModalChildren(
               <AddProductModal

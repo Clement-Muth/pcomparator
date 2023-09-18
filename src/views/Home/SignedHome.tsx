@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { Balancer } from "react-wrap-balancer";
 import getUser from "~/applications/Authentication/Api/getUser";
 import AddProduct from "~/views/Home/AddProduct";
@@ -14,7 +15,7 @@ const SignedHome = async () => {
       >
         <Balancer>Hello {user?.name} have a good research</Balancer>
       </h1>
-      <div className="flex space-x-6">
+      <div className={clsx("flex flex-col", "sm:flex-row sm:space-x-6")}>
         <AddProduct />
         <SearchProduct />
       </div>
