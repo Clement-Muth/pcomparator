@@ -7,7 +7,6 @@ import { useCoreUI } from "~/core/contexte";
 const SigninButtonBase = () => {
   const { modal } = useCoreUI();
 
-  // rome-ignore lint/nursery/useExhaustiveDependencies: no dependency needed
   useLayoutEffect(() => {
     modal.setModalChildren(<SignInModal />);
   }, []);

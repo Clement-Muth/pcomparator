@@ -2,6 +2,7 @@ import { IconButton } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import clsx from "clsx";
 import { Grip, Heart } from "lucide-react";
+import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Image from "next/image";
 import imageTemplateProduct from "public/static/images/templates/products/milk-template.webp";
 import { Product } from "~/applications/Product/Domain/Product";
@@ -11,7 +12,7 @@ import Badge from "~/components/Badge/Badge";
 const addZeroes = (number: number) =>
   number.toLocaleString("en", { useGrouping: false, minimumFractionDigits: 2 });
 
-const ProductPage = async ({ params }) => {
+const ProductPage = async ({ params }: { params: Params }) => {
   const product = await pcomparatorApiClient
     .get(`${process.env.PCOMPARATOR_API_ENDPOINT}/api/product/${params.productId}`, {
       cache: "no-cache"

@@ -1,13 +1,11 @@
-import { ReactNode } from "react"
+import { ReactNode } from "react";
 
 export interface CategoryPageProps {
   children: ReactNode;
 }
 
-const CategoryPage = ({}: CategoryPageProps) => {
-  return (
-    
-  );
+const CategoryPage = () => {
+  return <></>;
 };
 
 export default CategoryPage;

@@ -1,7 +1,7 @@
+import { client, productsIndex } from ".";
 import { omit } from "lodash";
 import { Category } from "~/applications/Product/Domain/Categories";
 import { Product } from "~/applications/Product/Domain/Product";
-import { client, productsIndex } from ".";
 
 export interface SearchResult<T> {
   type: string;

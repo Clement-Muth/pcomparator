@@ -11,6 +11,8 @@ type UseResponse<T> = [result: T | null, loading: boolean];
  * @returns A function that returns a tuple of the result and a boolean indicating
  * if the promise is loading.
  */
+
+// rome-ignore lint/suspicious/noExplicitAny: <explanation>
 export default function use<T>(promise: (...v: any) => Promise<T>, ...v: any): UseResponse<T> {
   const [loading, setLoading] = useState<boolean>(true);
   const [result, setResult] = useState<T | null>(null);

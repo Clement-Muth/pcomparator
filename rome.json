@@ -8,6 +8,7 @@
     "rules": {
       "nursery": {
         "useGroupedTypeImport": "error",
+        "useExhaustiveDependencies": "off",
         "recommended": true
       },
       "suspicious": {
