@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
-import { Product } from "~/app/api/types/product";
 import firestore from "~/libraries/firebase/firestore";
 
-export async function GET(request: Request) {
+export async function GET(_request: Request) {
   try {
     const docs = await firestore.collection("categories").get();
 
