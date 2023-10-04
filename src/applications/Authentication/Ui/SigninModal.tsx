@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Google from "~/components/Icons/Google/Google";
 import LoadingDots from "~/components/Loader/LoadingDot";
-import { pcomparatorHomepageRoute } from "~/core/routes";
+import { pcomparatorHomePageRoute } from "~/core/routes";
 
 const SignInModal = () => {
   const [signInClicked, setSignInClicked] = useState(false);
@@ -14,7 +14,7 @@ const SignInModal = () => {
   return (
     <div className="w-full overflow-hidden shadow-xl md:max-w-md md:rounded-2xl md:border dark:border-gray-600 md:border-gray-200">
       <div className="flex flex-col items-center justify-center space-y-3 border-b dark:border-gray-600 dark:bg-black bg-white px-4 py-6 pt-8 text-center md:px-16">
-        <Link href={pcomparatorHomepageRoute()}>
+        <Link href={pcomparatorHomePageRoute()}>
           <Image
             src="/static/logo.png"
             alt="Logo"
@@ -33,8 +33,8 @@ const SignInModal = () => {
           disabled={signInClicked}
           className={`${
             signInClicked
-              ? "cursor-not-allowed border-gray-200 bg-gray-100"
-              : "border border-gray-200 bg-white text-black hover:bg-gray-50"
+              ? "cursor-not-allowed border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-900"
+              : "border border-gray-200 bg-white text-black hover:bg-gray-50 dark:border-gray-800 dark:bg-black dark:text-white"
           } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
           onClick={() => {
             setSignInClicked(true);

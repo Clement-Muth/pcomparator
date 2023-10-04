@@ -14,7 +14,7 @@ const SelectItem = forwardRef(({ children, className, value }: SelectItemProps, 
   return (
     <SelectRadix.Item
       className={clsx(
-        "text-[13px] hover:bg-gray-100 cursor-pointer leading-none rounded-[3px] flex items-center h-[25px] pr-[35px] pl-[25px] relative select-none ",
+        "text-[13px] hover:bg-gray-100 dark:hover:bg-gray-900 cursor-pointer leading-none rounded-[3px] flex items-center h-[25px] pr-[35px] pl-[25px] relative select-none ",
         className
       )}
       value={value}
@@ -46,7 +46,7 @@ const Select = forwardRef(
       >
         <SelectRadix.Trigger
           className={clsx(
-            errorWithoutMessage ? "border-red9" : "border-gray-200",
+            errorWithoutMessage ? "border-red9" : "border-gray-200 dark:border-gray-800",
             "flex rounded-md border h-[36px] text-sm shadow-sm items-center px-[15px]",
             "[&>span:nth-of-type(1)]:w-full [&>span:nth-of-type(1)]:flex",
             className
@@ -58,9 +58,9 @@ const Select = forwardRef(
             <ChevronDownIcon />
           </SelectRadix.Icon>
         </SelectRadix.Trigger>
-        <SelectRadix.Portal className={clsx("z-40 border")}>
-          <SelectRadix.Content className="overflow-hidden bg-white rounded-md shadow-md">
-            <SelectRadix.ScrollUpButton className="flex items-center justify-center h-[25px] bg-white cursor-default">
+        <SelectRadix.Portal className={clsx("z-40 border dark:border-gray-800")}>
+          <SelectRadix.Content className="overflow-hidden bg-white dark:bg-black rounded-md shadow-md">
+            <SelectRadix.ScrollUpButton className="flex items-center justify-center h-[25px] bg-white dark:bg-black cursor-default">
               <ChevronUpIcon />
             </SelectRadix.ScrollUpButton>
             <SelectRadix.Viewport className="p-[5px]">
@@ -77,7 +77,7 @@ const Select = forwardRef(
                 ))}
               </SelectRadix.Group>
             </SelectRadix.Viewport>
-            <SelectRadix.ScrollDownButton className="flex items-center justify-center h-[25px] bg-white cursor-default">
+            <SelectRadix.ScrollDownButton className="flex items-center justify-center h-[25px] bg-white dark:bg-black cursor-default">
               <ChevronDownIcon />
             </SelectRadix.ScrollDownButton>
           </SelectRadix.Content>

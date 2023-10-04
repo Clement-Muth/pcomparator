@@ -32,7 +32,7 @@ export const UIContext = createContext<State>({
 export const UIProvider: FC<{ children: ReactNode }> = (props) => {
   const [open, setOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [modalChildren, setModalChildren] = useState<ReactNode>(<></>);
+  const [modalChildren, setModalChildren] = useState<ReactNode>();
 
   const TaostCallback = useCallback(() => {
     return <Toast open={open} onClose={setOpen} />;

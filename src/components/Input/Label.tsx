@@ -28,7 +28,10 @@ const Label = ({ label, error, name, breakError }: LabelProps) => {
       {label ? (
         <label
           htmlFor={name}
-          className={clsx("text-sm text-left whitespace-nowrap", error ? "text-red9" : "text-black")}
+          className={clsx(
+            "text-sm text-left whitespace-nowrap",
+            error ? "text-red9" : "text-black dark:text-white"
+          )}
         >
           {label}
         </label>

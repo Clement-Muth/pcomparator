@@ -27,7 +27,6 @@ const useForm = ({ onErrorChange, onLoading, onValidate }: UseForm) => {
     onValidate();
   });
 
-  // rome-ignore lint/nursery/useExhaustiveDependencies: No more dep needed
   useEffect(() => {
     if (Object.keys(formState.errors).length) onErrorChange(true);
     else onErrorChange(false);

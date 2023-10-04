@@ -1,11 +1,13 @@
 import admin, { FirebaseError } from "firebase-admin";
 
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
-
 if (!admin.apps.length) {
   try {
     admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount)
+      credential: admin.credential.cert({
+        clientEmail: process.env.CLIENT_EMAIL,
+        privateKey: process.env.PRIVATE_KEY,
+        projectId: process.env.PROJECT_ID
+      })
     });
   } catch (error) {
     console.error("Firebase admin initialization error", (error as FirebaseError).stack);

@@ -1,4 +1,5 @@
 import "./globals.css";
+import "@radix-ui/themes/styles.css";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import AuthenticationFirewall from "~/applications/Authentication/Ui/AuthenticationFirewall";

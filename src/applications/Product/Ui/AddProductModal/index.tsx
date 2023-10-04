@@ -21,8 +21,8 @@ const AddProductModal = ({ onValidate, onClose }: AddProductModalProps) => {
   const [disabled, setDisabled] = useState(false);
 
   return (
-    <div className="w-full overflow-hidden shadow-xl md:max-w-xl md:rounded-2xl md:border md:border-gray-200">
-      <div className="flex flex-col items-center justify-center border-b border-gray-200 bg-white pt-8 text-center ">
+    <div className="w-full overflow-hidden shadow-xl md:max-w-xl md:rounded-2xl md:border md:border-gray-200 md:dark:border-gray-800">
+      <div className="flex flex-col items-center justify-center border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-black pt-8 text-center ">
         <ErrorBoundary renderOnInvalidPayload={() => <OnInvalidPayload onClose={onClose} />}>
           <AddProductForm
             onLoading={() => setAddProduct(true)}
@@ -31,13 +31,13 @@ const AddProductModal = ({ onValidate, onClose }: AddProductModalProps) => {
             header={
               <div className="px-4 py-6 md:px-16 space-y-3">
                 <h3 className="font-display text-2xl font-bold">Ajouter un produit</h3>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   Ajouter un produit à la liste pour le comparer aux autres.
                 </p>
               </div>
             }
           >
-            <div className="flex flex-col space-y-4 bg-gray-50 px-4 py-8 md:px-16 border-t">
+            <div className="flex flex-col space-y-4 bg-gray-50 dark:bg-gray-950 px-4 py-8 md:px-16 border-t dark:border-t-gray-800">
               <Button disabled={addProduct || disabled} kind="primary" type="submit">
                 {addProduct ? (
                   <LoadingDots color="#808080" />

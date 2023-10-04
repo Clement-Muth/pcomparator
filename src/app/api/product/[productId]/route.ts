@@ -1,28 +1,19 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
-import { Product } from "~/app/api/types/product";
+// import { z } from "zod";
 import firestore from "~/libraries/firebase/firestore";
 
-const schema = z.object({
-  product_id: z.string(),
-  name: z.string(),
-  currency: z.enum(["eur", "dol"]),
-  brand: z.string(),
-  market: z.string(),
-  price: z.number(),
-  location: z.string(),
-  unity: z.enum(["g", "ml", "unity", "unities-g", "unities-ml"]),
-  category: z.string(),
-  quantity: z.number(),
-  image: z.string().nullable().optional()
-});
+// const schemaGet = z.object({
+//   product_id: z.string()
+// });
 
-export async function PUT(request: Request) {
+export async function GET(request: Request) {
   try {
-    const data = schema.parse(await request.json());
-    const doc = await firestore.collection("products").doc(data.product_id).set(data);
+    const doc = await firestore
+      .collection("products")
+      .doc(request.url.substring(request.url.lastIndexOf("/") + 1))
+      .get();
 
-    return NextResponse.json(doc, { status: 200 });
+    return NextResponse.json(doc.data(), { status: 200 });
   } catch (e) {
     console.error(e);
     return NextResponse.json({ error: "Bad payload" }, { status: 400 });

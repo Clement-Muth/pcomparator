@@ -8,7 +8,7 @@
     "rules": {
       "nursery": {
         "useGroupedTypeImport": "error",
-        "noConsoleLog": "warn",
+        "useExhaustiveDependencies": "off",
         "recommended": true
       },
       "suspicious": {

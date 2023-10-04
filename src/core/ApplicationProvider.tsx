@@ -1,5 +1,6 @@
 "use client";
 
+import { Theme } from "@radix-ui/themes";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React, { ReactNode } from "react";
@@ -17,7 +18,7 @@ const ApplicationProvider = ({ children, applicationEnvironment }: ApplicationPr
 
   return (
     <QueryClientProvider client={queryClient}>
-      {children}
+      <Theme>{children}</Theme>
       {applicationEnvironment === "development" && showReactQueryDevTool ? (
         <ReactQueryDevtools initialIsOpen={false} />
       ) : null}
