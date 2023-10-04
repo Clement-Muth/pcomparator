@@ -30,7 +30,7 @@ const Popover = ({ children, content, align = "center", open, onOpenChange }: Po
           <PopoverPrimitive.Content
             sideOffset={4}
             align={align}
-            className="z-20 animate-slide-up-fade items-center rounded-md border border-gray-200 bg-white drop-shadow-lg"
+            className="z-20 animate-slide-up-fade items-center rounded-md border border-gray-200 dark:border-gray-800 bg-white dark:bg-black drop-shadow-lg"
           >
             {content}
           </PopoverPrimitive.Content>

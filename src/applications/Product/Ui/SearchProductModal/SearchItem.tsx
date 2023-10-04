@@ -8,7 +8,7 @@ interface SearchItemProps {
 
 const SearchItem = ({ image, name }: SearchItemProps) => {
   return (
-    <li className="flex items-center w-full p-3 space-x-4 cursor-pointer rounded-md hover:bg-cyan-100">
+    <li className="flex items-center w-full p-3 space-x-4 cursor-pointer rounded-md hover:bg-cyan-100 dark:hover:bg-cyan-900">
       <Image
         src={image?.length ? image : logo}
         alt="logo"

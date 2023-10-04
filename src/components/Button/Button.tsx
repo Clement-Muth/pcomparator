@@ -25,7 +25,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       className={twMerge(
-        "flex h-10 w-full items-center justify-center space-x-3 rounded-md text-sm shadow-sm transition-all duration-75 border whitespace-nowrap",
+        "flex h-10 w-full items-center justify-center font-semibold space-x-3 rounded-md text-sm shadow-sm transition-all duration-75 border whitespace-nowrap",
         "md:rounded-full",
         "focus:outline-none",
         kind === "primary"
@@ -34,7 +34,7 @@ const Button = ({
                 ? "cursor-not-allowed border-gray-200 bg-gray-100"
                 : "border-gray-200 bg-white text-black hover:bg-gray-50"
             }`
-          : "text-white bg-black px-5 py-2",
+          : "text-white bg-black border-gray-800 px-5 py-2",
         className
       )}
     >

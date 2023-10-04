@@ -24,14 +24,14 @@ const Input = forwardRef(
         ) : null}
         <div
           className={clsx(
-            "rounded-md border text-sm shadow-sm bg-white text-black hover:bg-gray-50 w-full",
-            error || errorWithoutMessage ? "border-red9" : "border-gray-200"
+            "rounded-md border text-sm shadow-sm bg-white dark:bg-black text-black dark:text-white hover:bg-gray-50 w-full",
+            error || errorWithoutMessage ? "border-red9" : "border-gray-200 dark:border-gray-800"
           )}
         >
           <input
             id={register.name}
             aria-invalid
-            className="rounded-md h-[36px] px-4 w-full"
+            className="rounded-md h-[36px] px-4 w-full dark:bg-black dark:placeholder:text-gray-400"
             placeholder={placeholder}
             inputMode={inputMode}
             {...register}

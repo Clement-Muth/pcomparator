@@ -16,7 +16,7 @@ const SigninButtonBase = () => {
       <button
         type="button"
         onClick={() => modal.onOpenChange(true)}
-        className="rounded-full text-white bg-black px-5 py-2"
+        className="rounded-full text-white bg-black dark:border-gray-600 md:border-gray-200 px-5 py-2"
       >
         Sign in
       </button>
