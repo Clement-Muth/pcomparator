@@ -1,11 +1,13 @@
+const SignedHome = dynamic(() => import("~/views/Home/SignedHome"));
+// const UnsignedHome = dynamic(() => import("~/views/Home/UnsignedHome"));
+import dynamic from "next/dynamic";
 import getUser from "~/applications/Authentication/Api/getUser";
-import SignedHome from "~/views/Home/SignedHome";
-import UnsignedHome from "~/views/Home/UnsignedHome";
 
 const HomePage = async () => {
-  const user = await getUser();
+	const user = await getUser();
 
-  return user.exist ? <SignedHome /> : <UnsignedHome />;
+	return <SignedHome />;
+	// return !user.exist ? <UnsignedHome /> : <SignedHome />;
 };
 
 export default HomePage;
