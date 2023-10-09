@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.rome.tools/schemas/12.1.0/schema.json",
   "organizeImports": {
-    "enabled": true
+    "enabled": false
   },
   "linter": {
     "enabled": true,
