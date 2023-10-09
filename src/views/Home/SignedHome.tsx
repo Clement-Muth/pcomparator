@@ -10,7 +10,7 @@ const SignedHome = async () => {
   return (
     <div className="flex flex-col items-center space-y-8 max-w-2xl">
       <h1
-        className="animate-fade-up bg-gradient-to-br from-black dark:text-white to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
+        className="animate-fade-up bg-gradient-to-br from-black dark:text-white to-stone-500 bg-clip-text text-center font-display text-5xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
         style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
       >
         <Balancer>Hello {user?.name} have a good research</Balancer>

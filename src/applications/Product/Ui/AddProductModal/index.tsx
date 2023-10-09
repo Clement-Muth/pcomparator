@@ -31,7 +31,7 @@ const AddProductModal = ({ onValidate, onClose }: AddProductModalProps) => {
             header={
               <div className="px-4 py-6 md:px-16 space-y-3">
                 <h3 className="font-display text-2xl font-bold">Ajouter un produit</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-gray-500 dark:text-gray-300">
                   Ajouter un produit à la liste pour le comparer aux autres.
                 </p>
               </div>

@@ -24,7 +24,7 @@ const SignInModal = () => {
           />
         </Link>
         <h3 className="font-display text-2xl font-bold">Sign In</h3>
-        <p className="text-sm text-gray-500">Sign in to enjoy all features of PComparator</p>
+        <p className="text-sm text-gray-500 dark:text-gray-300">Sign in to enjoy all features of PComparator</p>
       </div>
 
       <div className="flex flex-col space-y-4 dark:bg-gray-950 bg-gray-50 px-4 py-8 md:px-16">

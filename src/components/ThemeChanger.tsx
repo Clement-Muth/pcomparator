@@ -11,7 +11,6 @@ export interface ThemeProps {
 export const ThemeChanger = () => {
   const { setTheme, theme } = useTheme();
 
-  console.log("theme", theme);
   return (
     <div>
       {theme === "dark" ? (
