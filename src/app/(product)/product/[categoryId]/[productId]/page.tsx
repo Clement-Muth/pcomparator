@@ -13,7 +13,7 @@ const addZeroes = (number: number) =>
 const ProductPage = async ({ params }: { params: Params }) => {
   const product = await pcomparatorApiClient
     .get(`${process.env.PCOMPARATOR_API_ENDPOINT}/api/product/${params.productId}`, {
-      cache: "no-cache"
+      cache: "no-store"
     })
     // TODO - Change with the right type
     // rome-ignore lint/suspicious/noExplicitAny:
