@@ -44,10 +44,11 @@ const SearchCategoryPage = ({ params }: SearchCategoryPageProps) => {
               />
             ))
           : categories?.data
-              .filter((product) => product.category === params.categoryId)
-              ?.map((product) => (
-                <ProductCard {...product} categoryId={params.categoryId} key={product.productId} />
-              ))}
+              .filter((product) => product.category !== params.categoryId)
+              ?.map((product) => {
+                console.log(product);
+                return <ProductCard {...product} categoryId={params.categoryId} key={product.productId} />;
+              })}
       </div>
     </div>
   );

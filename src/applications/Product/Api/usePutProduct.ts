@@ -21,7 +21,9 @@ const putProduct = async ({
       },
       body: JSON.stringify({
         ...product,
-        product_id: `${product.name}-${product.brand}-${product.market}`.replaceAll(" ", "-").toLowerCase(),
+        product_id: `${product.name}-${product.brand}-${product.market}`
+          .replaceAll(/['" ]/g, "-")
+          .toLowerCase(),
         price: Number(product.price),
         quantity: Number(product.quantity)
       })
