@@ -31,7 +31,7 @@ const nextConfig = () => {
   return {
     env: {
       PCOMPARATOR_ENV,
-      PCOMPARATOR_API_ENDPOINT: "http://localhost:3000",
+      PCOMPARATOR_API_ENDPOINT: readEnvironmentVariable("PCOMPARATOR_API_ENDPOINT"),
       ALGOLIA_APP_ID: readEnvironmentVariable("ALGOLIA_APP_ID"),
       ALGOLIA_API_KEY: readEnvironmentVariable("ALGOLIA_API_KEY"),
     },
