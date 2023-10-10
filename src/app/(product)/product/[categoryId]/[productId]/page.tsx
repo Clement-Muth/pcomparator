@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { Grip, Heart } from "lucide-react";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Image from "next/image";
-import imageTemplateProduct from "public/static/images/templates/products/milk-template.webp";
 import { Product } from "~/applications/Product/Domain/Product";
 import { pcomparatorApiClient } from "~/clients/PcomparatorApiClient";
 import Badge from "~/components/Badge/Badge";
@@ -35,7 +34,7 @@ const ProductPage = async ({ params }: { params: Params }) => {
         )}
       >
         <Image
-          src={imageTemplateProduct /* product.image */}
+          src={product.image}
           alt="A house in a forest"
           width={300}
           height={200}

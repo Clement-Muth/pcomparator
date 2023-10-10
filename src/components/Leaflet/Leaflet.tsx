@@ -17,7 +17,7 @@ const Leaflet = ({ onOpenChange, className, children }: LeafletProps) => {
 
   useEffect(() => {
     controls.start({
-      y: 20,
+      y: 0,
       transition: transitionProps
     });
   }, [controls]);
@@ -41,7 +41,7 @@ const Leaflet = ({ onOpenChange, className, children }: LeafletProps) => {
         key="leaflet"
         className={clsx(
           "flex flex-col",
-          "group fixed inset-x-0 bottom-0 z-40 w-screen cursor-grab bg-white active:cursor-grabbing sm:hidden max-h-full",
+          "group fixed inset-x-0 bottom-0 z-40 w-screen cursor-grab bg-white dark:bg-black active:cursor-grabbing sm:hidden max-h-full",
           className
         )}
         initial={{ y: "100%" }}
@@ -56,7 +56,7 @@ const Leaflet = ({ onOpenChange, className, children }: LeafletProps) => {
       >
         <div
           className={clsx(
-            "rounded-t-4xl flex h-[17px] w-full items-center justify-center border-t border-gray-200"
+            "rounded-t-4xl flex h-[17px] w-full items-center justify-center border-t border-gray-200 dark:border-gray-800"
           )}
           style={{ flex: "0 0 auto" }}
         >
