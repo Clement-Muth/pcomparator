@@ -43,11 +43,9 @@ const SearchCategoryPage = ({ params }: SearchCategoryPageProps) => {
                 )}
               />
             ))
-          : categories?.data
-              .filter((product) => product.category === params.categoryId)
-              ?.map((product) => (
-                <ProductCard {...product} categoryId={params.categoryId} key={product.productId} />
-              ))}
+          : categories?.data?.map((product) => (
+              <ProductCard {...product} categoryId={params.categoryId} key={product.productId} />
+            ))}
       </div>
     </div>
   );

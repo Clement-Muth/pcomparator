@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { Grip, Heart } from "lucide-react";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Image from "next/image";
-import { Product } from "~/applications/Product/Domain/Product";
 import { pcomparatorApiClient } from "~/clients/PcomparatorApiClient";
 import Badge from "~/components/Badge/Badge";
 
@@ -16,7 +15,9 @@ const ProductPage = async ({ params }: { params: Params }) => {
     .get(`${process.env.PCOMPARATOR_API_ENDPOINT}/api/product/${params.productId}`, {
       cache: "no-cache"
     })
-    .json<Product>();
+    // TODO - Change with the right type
+    // rome-ignore lint/suspicious/noExplicitAny:
+    .json<any>();
 
   return product ? (
     <div

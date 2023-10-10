@@ -1,11 +1,8 @@
 "use client";
 
-import { IconButton } from "@radix-ui/themes";
 import clsx from "clsx";
-import { Grip, Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams, usePathname, useSearchParams } from "next/navigation";
 import imageTemplateProduct from "public/static/images/templates/products/milk-template.webp";
 import Badge from "~/components/Badge/Badge";
 import addZeroes from "~/core/addZeroes";
@@ -31,8 +28,6 @@ const ProductCard = ({
   weight,
   image
 }: ProductCardProps) => {
-  const pathname = usePathname();
-
   return (
     <Link href={`/product/${categoryId}/${productId}/`}>
       <div
@@ -50,7 +45,7 @@ const ProductCard = ({
           )}
         >
           <Image
-            src={image.length ? image : imageTemplateProduct}
+            src={image?.length ? image : imageTemplateProduct}
             alt="A house in a forest"
             layout="fill"
             className="w-full !h-[200px]"

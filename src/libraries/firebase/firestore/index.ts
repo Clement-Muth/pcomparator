@@ -14,3 +14,5 @@ if (!admin.apps.length) {
   }
 }
 export default admin.firestore();
+
+export const storage = admin.storage();
