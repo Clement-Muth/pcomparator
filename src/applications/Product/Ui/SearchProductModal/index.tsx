@@ -58,11 +58,11 @@ const SearchProductModal = ({ onValidate }: SearchProductModalProps) => {
             />
             {searchResult?.categories.length ? (
               <ul className="w-full">
-                {searchResult.categories.map((res) => (
+                {searchResult.categories.map((res, i) => (
                   <Link
                     href={searchPageRoute(res.id, searchResult.search)}
                     onClick={() => onValidate?.()}
-                    key={res.id}
+                    key={`${res.id}-${i}`}
                   >
                     <SearchItem name={res.name} image={res.image} />
                   </Link>

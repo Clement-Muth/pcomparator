@@ -15,6 +15,8 @@ const useSearch = () => {
       }
       const categories = await searchProductsWithCategory(searchString);
 
+      // TODO - Fix error
+      // @ts-ignore
       setSearch({ ...categories, search: searchString });
       return search;
     },

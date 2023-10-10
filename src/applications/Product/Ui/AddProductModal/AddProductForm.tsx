@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import CategorySelect from "~/applications/Product/Ui/AddProductModal/CategorySelect";
 import InputImage from "~/applications/Product/Ui/AddProductModal/InputImage";
 import useForm from "~/applications/Product/Ui/AddProductModal/useForm";
@@ -17,12 +17,12 @@ interface AddProductFormProps {
 }
 
 const AddProductForm = ({ header, onValidate, onLoading, onErrorChange, children }: AddProductFormProps) => {
-  const { onSubmit, register, errors } = useForm({ onErrorChange, onLoading, onValidate });
+  const { onSubmit, register, picture, errors } = useForm({ onErrorChange, onLoading, onValidate });
 
   return (
     <form className="w-full" onSubmit={onSubmit}>
       <div className="flex justify-center">
-        <InputImage />
+        <InputImage src={picture ? URL.createObjectURL(picture) : undefined} {...register("image")} />
       </div>
       {header}
       <div className="flex flex-col items-center justify-center space-y-4 px-4 pb-6 md:px-10">
