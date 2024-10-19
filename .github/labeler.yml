@@ -1,8 +1,5 @@
-area/dashboard:
-  - dashboard/**/*
-
-area/landing:
-  - landing/**/*
+kind/pcomparator:
+  - src/**/*
 
 kind/documentation:
   - documentation/**/*

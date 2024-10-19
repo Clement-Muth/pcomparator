@@ -1,28 +1,30 @@
 "use client";
 
-import { Theme } from "@radix-ui/themes";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import React, { ReactNode } from "react";
-import { queryClient } from "~/clients/ReactQuery";
-import useQueryDevTool from "~/core/useQueryDevTool";
-import { ApplicationEnvironment } from "~/types/extends";
+import { NextUIProvider } from "@nextui-org/react";
+import { I18nProvider } from "@react-aria/i18n";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import type { ReactNode } from "react";
+import { Provider as ReactWrapBalancerProvider } from "react-wrap-balancer";
+import TranslationProvider from "~/core/TranslationProvider";
+import type { AVAILABLE_LOCALES } from "~/core/locale";
 
 interface ApplicationProviderProps {
   children: ReactNode;
-  applicationEnvironment: ApplicationEnvironment;
+  locale: AVAILABLE_LOCALES;
+  messages: any;
 }
 
-const ApplicationProvider = ({ children, applicationEnvironment }: ApplicationProviderProps) => {
-  const showReactQueryDevTool = useQueryDevTool(applicationEnvironment);
-
+const ApplicationProvider = ({ children, locale, messages }: ApplicationProviderProps) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Theme>{children}</Theme>
-      {applicationEnvironment === "development" && showReactQueryDevTool ? (
-        <ReactQueryDevtools initialIsOpen={false} />
-      ) : null}
-    </QueryClientProvider>
+    <NextUIProvider locale={locale}>
+      <I18nProvider locale={locale}>
+        <NextThemesProvider attribute="class" enableSystem>
+          <TranslationProvider locale={locale} messages={messages}>
+            <ReactWrapBalancerProvider>{children}</ReactWrapBalancerProvider>
+          </TranslationProvider>
+        </NextThemesProvider>
+      </I18nProvider>
+    </NextUIProvider>
   );
 };
 

@@ -1,39 +1,85 @@
-"use client";
+import {
+  Avatar,
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+  Image,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem
+} from "@nextui-org/react";
+import { useState } from "react";
+import Link from "~/components/Link/Link";
+import { ThemeSwitcher } from "~/components/ThemeSwitcher/ThemeSwitcher";
+import Logo from "/public/static/logo.png";
 
-import clsx from "clsx";
-import Image from "next/image";
-import Link from "next/link";
-import { ReactNode } from "react";
-import { pcomparatorHomePageRoute } from "~/core/routes";
-import useScroll from "~/hooks/useScroll";
-
-interface HeaderProps {
-  children?: ReactNode;
-}
-
-const Header = ({ children }: HeaderProps) => {
-  const scrolled = useScroll(50);
+export const Header = () => {
+  const [isLogged, setIsLogged] = useState(true);
 
   return (
-    <header
-      className={clsx(
-        "fixed top-0 w-full flex justify-between px-4 py-3 z-[33]",
-        scrolled ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl" : "bg-white/0"
-      )}
-    >
-      <Link href={pcomparatorHomePageRoute()} className="flex items-center gap-x-2">
-        <Image
-          src="/static/logo.png"
-          alt="price comparator logo"
-          width={30}
-          height={30}
-          style={{ width: "100%", height: "100%" }}
-        />
-        <p className="text-2xl tracking-tighter font-medium">PComparator</p>
-      </Link>
-      {children}
-    </header>
+    <Navbar position="static" classNames={{ base: "bg-transparent" }}>
+      <NavbarBrand>
+        <Image src={Logo.src} fallbackSrc={Logo.blurDataURL} width={35} height={35} />
+        <p className="text-xl text-inherit ml-2">PComparator</p>
+      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Features
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive>
+          <Link href="#" aria-current="page">
+            Customers
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Integrations
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <ThemeSwitcher />
+        </NavbarItem>
+        {isLogged ? (
+          <Dropdown placement="bottom-end">
+            <DropdownTrigger>
+              <Avatar
+                isBordered
+                as="button"
+                className="transition-transform"
+                color="primary"
+                name="Jason Hughes"
+                size="sm"
+                src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+              />
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Profile Actions" variant="flat">
+              <DropdownItem key="settings">Settings</DropdownItem>
+              <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
+              <DropdownItem key="logout" color="danger">
+                Log Out
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        ) : (
+          <>
+            <NavbarItem className="hidden lg:flex">
+              <Link href="#">Login</Link>
+            </NavbarItem>
+            <NavbarItem>
+              <Button as={Link} color="primary" href="#" variant="flat">
+                Sign Up
+              </Button>
+            </NavbarItem>
+          </>
+        )}
+      </NavbarContent>
+    </Navbar>
   );
 };
-
-export default Header;

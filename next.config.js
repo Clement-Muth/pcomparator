@@ -41,6 +41,22 @@ const nextConfig = () => {
     images: {
       domains: ["lh3.googleusercontent.com", "firebasestorage.googleapis.com", "vercel.com"]
     },
+    experimental: {
+      swcPlugins: [["@lingui/swc-plugin", {}]],
+      serverActions: {
+        bodySizeLimit: "3mb"
+      }
+    },
+    webpack: (config) => {
+      config.module.rules.push({
+        test: /\.po$/,
+        use: {
+          loader: "@lingui/loader"
+        }
+      });
+
+      return config;
+    }
   };
 };
 
