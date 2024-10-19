@@ -1,7 +1,5 @@
-import { client, productsIndex } from ".";
 import { omit } from "lodash";
-import { Category } from "~/applications/Product/Domain/Categories";
-import { Product } from "~/applications/Product/Domain/Product";
+import { client, productsIndex } from ".";
 
 export interface SearchResult<T> {
   type: string;
@@ -36,13 +34,13 @@ export default async function searchOnAlgolia<T>(queries: SearchOnAlgoliaInput[]
 
 export const searchProductsWithCategory = async (
   search: string
-): Promise<{ categories: Category[]; data: Product[] }> => {
+): Promise<{ categories: any[]; data: any[] }> => {
   const res = (await productsIndex.search(search, { hitsPerPage: 2000 })).hits.map(
     (r) =>
       ({
         ...omit(r, "_highlightResult", "objectID", "path"),
         productId: r.objectID
-      }) as Product
+      }) as any
   );
 
   // @ts-ignore
@@ -58,7 +56,7 @@ export const searchProductsWithCategory = async (
   return {
     categories: result.results
       .flatMap((r) => r.hits)
-      .map((r) => omit(r, "_highlightResult", "objectID", "path") as Category),
+      .map((r) => omit(r, "_highlightResult", "objectID", "path") as any),
     data: res
   };
 };
