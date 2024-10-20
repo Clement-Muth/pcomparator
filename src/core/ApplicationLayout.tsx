@@ -1,5 +1,3 @@
-"use client";
-
 import type { ReactNode } from "react";
 import { Header } from "~/components/Header/Header";
 
@@ -10,7 +8,7 @@ export interface ApplicationLayoutProps {
 const ApplicationLayout = ({ children }: ApplicationLayoutProps) => {
   return (
     <>
-      <Header>{/* <ThemeSwitcher /> */}</Header>
+      <Header />
       {children}
     </>
   );
