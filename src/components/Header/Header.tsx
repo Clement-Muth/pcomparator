@@ -7,8 +7,10 @@ export const Header = () => {
   return (
     <Navbar position="static" classNames={{ base: "bg-transparent" }}>
       <NavbarBrand>
-        <Image src={Logo.src} fallbackSrc={Logo.blurDataURL} width={35} height={35} />
-        <p className="text-xl text-inherit ml-2">PComparator</p>
+        <Link href="/">
+          <Image src={Logo.src} fallbackSrc={Logo.blurDataURL} width={35} height={35} />
+          <p className="text-xl text-inherit ml-2">PComparator</p>
+        </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
