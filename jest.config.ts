@@ -21,7 +21,7 @@ const customJestConfig = {
     "^~/(.*)$": "<rootDir>/src/$1"
   },
   collectCoverage: false,
-  testEnvironment: "node",
+  testEnvironment: "jsdom",
   transformIgnorePatterns: ["node_modules/(?!(ky|@react-hook/throttle|@react-hook/latest)/)"],
   transform: {
     "^.+\\.po$": "<rootDir>/__mocks__/gettextFileTransformer.js",
@@ -34,10 +34,11 @@ const customJestConfig = {
               runtime: "automatic"
             }
           }
-        }
+        },
       }
     ]
-  }
+  },
+  extensionsToTreatAsEsm: ['.tsx']
 };
 
 // createJestConfig is exported in this way to ensure that next/jest can load the Next.js configuration, which is async
