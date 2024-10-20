@@ -33,4 +33,6 @@ const RootLayout = ({
   );
 };
 
+export const dynamic = "force-dynamic";
+
 export default withLinguiLayout(RootLayout);
