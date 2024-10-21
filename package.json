@@ -78,6 +78,7 @@
     "lint-staged": "^15.2.10",
     "semantic-release": "^24.1.0",
     "sharp": "^0.33.5",
+    "turbo": "^2.2.2",
     "webpack": "^5.95.0",
     "zod": "^3.23.8"
   },
