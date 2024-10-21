@@ -18,3 +18,5 @@ service-worker.js
 workbox*
 .env
 .vercel
+
+.turbo
