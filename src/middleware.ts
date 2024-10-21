@@ -1,11 +1,14 @@
 import { cookies } from "next/headers";
 import { type NextRequest, NextResponse, userAgent } from "next/server";
 import { AVAILABLE_LOCALES } from "~/core/locale";
+import { auth as middleware } from "~/libraries/nextauth/authConfig";
 
 const locales = ["en", "fr"];
 
-export async function middleware(request: NextRequest) {
+export default middleware((request) => {
   if (skip(request)) return NextResponse.next();
+
+  const isAuthenticated = !!request.auth;
 
   const locale = cookies().get("local")?.value ?? AVAILABLE_LOCALES.fr;
   const { device } = userAgent(request);
@@ -21,6 +24,19 @@ export async function middleware(request: NextRequest) {
     "x-device": viewport
   };
 
+  if (!isAuthenticated && pathname !== `/${locale}`)
+    return NextResponse.redirect(
+      new URL(
+        `/${locale}?redirect_url=${encodeURIComponent(
+          process.env.PCOMPARATOR_PUBLIC_URL + request.nextUrl.pathname
+        )}${request.nextUrl.search}`,
+        request.url
+      ),
+      {
+        headers: headers
+      }
+    );
+
   if (pathnameIsMissingLocale) {
     return NextResponse.redirect(new URL(`/${locale}/${pathname}${request.nextUrl.search}`, request.url), {
       headers: headers
@@ -30,7 +46,7 @@ export async function middleware(request: NextRequest) {
   return NextResponse.next({
     headers: headers
   });
-}
+});
 
 const skip = (request: NextRequest) => {
   switch (true) {

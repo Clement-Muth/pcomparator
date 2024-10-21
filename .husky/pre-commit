@@ -1,4 +1,1 @@
-# .husky/pre-commit
-npm run lint:check
-npm run format:check
-npm run typescript:check
+yarn lint-staged

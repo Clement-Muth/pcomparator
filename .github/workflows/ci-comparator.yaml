@@ -1,6 +1,6 @@
 name: CI / Price comparator
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   quality:
@@ -34,6 +34,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
+
+      - name: Cache turbo build setup
+        uses: actions/cache@v4
+        with: 
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+      
       - name: Check coding standards
         run: yarn run format:check
       - name: Make static analysis (rome)

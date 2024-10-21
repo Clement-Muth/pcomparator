@@ -24,6 +24,6 @@
       "~/*": ["./src/*"]
     },
   },
-  "include": ["src/next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", ".next"]
+  "include": ["src/next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".lintstagedrc"],
+  "exclude": ["node_modules", ".next", "__mocks__"]
 }
