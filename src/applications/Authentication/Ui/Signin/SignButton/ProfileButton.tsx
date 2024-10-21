@@ -24,7 +24,6 @@ export const ProfileButton = () => {
         <DropdownItem key="settings" href="/settings">
           Settings
         </DropdownItem>
-        <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
         <DropdownItem key="logout" color="danger" onPress={() => signOut()}>
           <Trans>Signout</Trans>
         </DropdownItem>

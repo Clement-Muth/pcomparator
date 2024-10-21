@@ -25,6 +25,10 @@ msgstr "Account Settings"
 msgid "Avatar"
 msgstr "Avatar"
 
+#: src/applications/Profile/Ui/Settings/Avatar.tsx
+msgid "Click on the avatar to upload a custom one from your files."
+msgstr "Click on the avatar to upload a custom one from your files."
+
 #: src/components/ThemeSwitcher/ThemeSwitcher.tsx
 msgid "Dark"
 msgstr "Dark"
@@ -48,6 +52,10 @@ msgstr "Hello {0}"
 #: src/components/ThemeSwitcher/ThemeSwitcher.tsx
 msgid "Light"
 msgstr "Light"
+
+#: src/components/Form/FormActions.tsx
+msgid "Next"
+msgstr "Next"
 
 #: src/app/[locale]/page.tsx
 msgid "PComparator Compare prices of many products"
@@ -88,3 +96,7 @@ msgstr "Signout"
 #: src/components/ThemeSwitcher/ThemeSwitcher.tsx
 msgid "System"
 msgstr "System"
+
+#: src/applications/Profile/Ui/Settings/Avatar.tsx
+msgid "This is your avatar."
+msgstr "This is your avatar."

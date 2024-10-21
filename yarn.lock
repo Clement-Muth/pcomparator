@@ -14114,7 +14114,7 @@ __metadata:
     postcss: 8.4.25
     react: ^18.3.1
     react-dom: ^18.3.1
-    react-hook-form: ^7.53.0
+    react-hook-form: ^7.53.1
     react-wrap-balancer: ^1.0.0
     semantic-release: ^24.1.0
     sharp: ^0.33.5
@@ -14607,7 +14607,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.53.0":
+"react-hook-form@npm:^7.53.1":
   version: 7.53.1
   resolution: "react-hook-form@npm:7.53.1"
   peerDependencies:

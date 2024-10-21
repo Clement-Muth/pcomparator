@@ -23,7 +23,7 @@ export const SettingsDisplayName = () => {
         </form>
       </CardBody>
       <CardFooter className="justify-end border-t border-t-default">
-        <Button type="submit">
+        <Button type="submit" color="primary">
           <Trans>Save</Trans>
         </Button>
       </CardFooter>
