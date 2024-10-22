@@ -23,11 +23,9 @@ const RootLayout = ({
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <div className="min-h-screen w-full bg-gradient-to-br dark:from-[#1f121b] dark:via-[#0c1820] dark:via-80% dark:to-[#081917] from-indigo-50 via-white to-primary-200">
-          <ApplicationKernel locale={locale}>
-            <ApplicationLayout>{children}</ApplicationLayout>
-          </ApplicationKernel>
-        </div>
+        <ApplicationKernel locale={locale}>
+          <ApplicationLayout>{children}</ApplicationLayout>
+        </ApplicationKernel>
       </body>
     </html>
   );
