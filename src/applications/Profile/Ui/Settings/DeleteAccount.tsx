@@ -6,12 +6,12 @@ import { Button, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/reac
 export const SettingsDeleteAccount = () => {
   return (
     <Card classNames={{ base: "border border-danger" }}>
-      <CardHeader>
+      <CardHeader className="p-4">
         <h4 className="text-xl">
           <Trans>Delete Account</Trans>
         </h4>
       </CardHeader>
-      <CardBody>
+      <CardBody className="p-4">
         <Trans>
           <p>
             Permanently remove your Personal Account and all of its contents from the PComparator platform.

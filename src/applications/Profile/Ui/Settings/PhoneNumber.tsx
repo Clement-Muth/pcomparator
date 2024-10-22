@@ -10,12 +10,12 @@ export const SettingsPhoneNumber = () => {
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="p-4">
         <h4 className="text-xl">
           <Trans>Phone Number</Trans>
         </h4>
       </CardHeader>
-      <CardBody>
+      <CardBody className="p-4">
         <form>
           <Input
             labelPlacement="outside"

@@ -79,11 +79,14 @@ msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vou
 msgid "Please use 32 characters at maximum."
 msgstr "Veuillez utiliser 32 caractères maximum."
 
-#: src/applications/Profile/Ui/Settings/Avatar.tsx
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Save"
 msgstr "Sauvegarder"
+
+#: src/applications/Authentication/Ui/Signin/SignButton/ProfileButton.tsx
+msgid "Settings"
+msgstr "Paramètres"
 
 #: src/applications/Authentication/Ui/Signin/SignButton/SigninButton.tsx
 msgid "Signin"

@@ -9,12 +9,12 @@ export const SettingsDisplayName = () => {
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="p-4">
         <h4 className="text-xl">
           <Trans>Display Name</Trans>
         </h4>
       </CardHeader>
-      <CardBody>
+      <CardBody className="p-4">
         <form>
           <Input
             labelPlacement="outside"
