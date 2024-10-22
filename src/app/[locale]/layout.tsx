@@ -13,7 +13,7 @@ export const metadata: Metadata = pcomparatorMetadata;
 
 export const generateStaticParams = () => locales.map((locale) => ({ lang: locale }));
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
   params: { locale }
 }: {
