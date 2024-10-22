@@ -14,7 +14,7 @@ up:
 .PHONY: up
 
 start:
-	@yarn dev
+	@yarn turbo dev
 .PHONY: start
 
 down:
@@ -22,16 +22,16 @@ down:
 .PHONY: up
 
 lint: | up
-	@yarn run lint:check
+	@yarn turbo lint:check
 .PHONY: lint
 
 analyze: | up
-	@yarn run typescript:check
+	@yarn turbo typescript:check
 .PHONY: analyze
 
 test: PATHS?=.
 test: | up
-	@yarn run test ${PATHS}
+	@yarn turbo test ${PATHS}
 .PHONY: test
 
 ifeq ($(CI),)
