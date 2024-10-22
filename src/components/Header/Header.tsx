@@ -1,7 +1,6 @@
-import { Image, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
+import { Image, Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { SignButton } from "~/applications/Authentication/Ui/Signin/SignButton/SignButton";
 import Link from "~/components/Link/Link";
-import { ThemeSwitcher } from "~/components/ThemeSwitcher/ThemeSwitcher";
 import Logo from "/public/static/logo.png";
 
 export const Header = () => {
@@ -15,9 +14,9 @@ export const Header = () => {
       </NavbarBrand>
 
       <NavbarContent justify="end">
-        <NavbarItem>
+        {/* <NavbarItem>
           <ThemeSwitcher />
-        </NavbarItem>
+        </NavbarItem> */}
         <SignButton />
       </NavbarContent>
     </Navbar>
