@@ -3,9 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ApplicationKernel from "~/core/ApplicationKernel";
 import ApplicationLayout from "~/core/ApplicationLayout";
-import { type AVAILABLE_LOCALES, locales } from "~/core/locale";
+import { locales } from "~/core/locale";
 import { pcomparatorMetadata } from "~/core/metadata";
-import { withLinguiLayout } from "~/core/withLinguiLayout";
+import { type NextPageProps, withLinguiLayout } from "~/core/withLinguiLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,15 +13,9 @@ export const metadata: Metadata = pcomparatorMetadata;
 
 export const generateStaticParams = () => locales.map((locale) => ({ lang: locale }));
 
-const RootLayout = ({
-  children,
-  params: { locale }
-}: {
-  children: React.ReactNode;
-  params: { locale: AVAILABLE_LOCALES };
-}) => {
+const RootLayout = ({ children, locale }: NextPageProps) => {
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <ApplicationKernel locale={locale}>
           <ApplicationLayout>{children}</ApplicationLayout>

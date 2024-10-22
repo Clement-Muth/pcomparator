@@ -1,9 +1,15 @@
-import { Image, Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
-import { SignButton } from "~/applications/Authentication/Ui/Signin/SignButton/SignButton";
-import Link from "~/components/Link/Link";
-import Logo from "/public/static/logo.png";
+"use client";
 
-export const Header = () => {
+import { Image, Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
+import type { ReactNode } from "react";
+import Link from "~/components/Link/Link";
+import Logo from "../../../public/static/logo.png";
+
+interface HeaderProps {
+  rightArea: ReactNode;
+}
+
+export const Header = ({ rightArea }: HeaderProps) => {
   return (
     <Navbar position="static" classNames={{ base: "bg-transparent" }}>
       <NavbarBrand>
@@ -17,7 +23,7 @@ export const Header = () => {
         {/* <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem> */}
-        <SignButton />
+        {rightArea}
       </NavbarContent>
     </Navbar>
   );

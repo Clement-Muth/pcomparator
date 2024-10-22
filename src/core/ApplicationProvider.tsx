@@ -20,10 +20,10 @@ interface ApplicationProviderProps {
 
 const ApplicationProvider = ({ children, locale, messages, device }: ApplicationProviderProps) => {
   return (
-    <SessionProvider>
+    <SessionProvider >
       <NextUIProvider locale={locale}>
         <I18nProvider locale={locale}>
-          <NextThemesProvider attribute="class" enableSystem>
+          <NextThemesProvider attribute="class" enableSystem >
             <TranslationProvider locale={locale} messages={messages}>
               <DeviceProvider device={device}>
                 <ReactWrapBalancerProvider>{children}</ReactWrapBalancerProvider>

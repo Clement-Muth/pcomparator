@@ -5,12 +5,12 @@ import { auth as middleware } from "~/libraries/nextauth/authConfig";
 
 const locales = ["en", "fr"];
 
-export default middleware((request) => {
+export default middleware(async (request) => {
   if (skip(request)) return NextResponse.next();
 
   const isAuthenticated = !!request.auth;
 
-  const locale = cookies().get("local")?.value ?? AVAILABLE_LOCALES.fr;
+  const locale = (await cookies()).get("local")?.value ?? AVAILABLE_LOCALES.fr;
   const { device } = userAgent(request);
   const viewport = device.type === "mobile" ? "mobile" : "desktop";
 
