@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import type { Device } from "~/types/device";
 
-export const getDevice = () => {
-  return headers().get("x-device") as Device;
+export const getDevice = async () => {
+  return (await headers()).get("x-device") as Device;
 };

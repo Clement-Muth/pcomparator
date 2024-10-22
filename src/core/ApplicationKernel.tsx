@@ -9,8 +9,8 @@ interface ApplicationKernelProps {
   locale: AVAILABLE_LOCALES;
 }
 
-const ApplicationKernel = ({ children, locale }: ApplicationKernelProps) => {
-  const device = getDevice();
+const ApplicationKernel = async ({ children, locale }: ApplicationKernelProps) => {
+  const device = await getDevice();
 
   return (
     <ApplicationProvider locale={locale} messages={allMessages[locale]} device={device}>

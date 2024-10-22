@@ -1,3 +1,5 @@
+"use client";
+
 import { Trans } from "@lingui/macro";
 import { Button, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 
