@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { SignButton } from "~/applications/Authentication/Ui/Signin/SignButton/SignButton";
 import { Header } from "~/components/Header/Header";
 
 export interface ApplicationLayoutProps {
@@ -8,7 +9,7 @@ export interface ApplicationLayoutProps {
 const ApplicationLayout = ({ children }: ApplicationLayoutProps) => {
   return (
     <>
-      <Header />
+      <Header rightArea={<SignButton />} />
       {children}
     </>
   );
