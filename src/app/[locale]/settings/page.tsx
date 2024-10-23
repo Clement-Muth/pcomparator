@@ -2,12 +2,12 @@ import { Trans } from "@lingui/macro";
 import { SettingsAvatar } from "~/applications/Profile/Ui/Settings/Avatar";
 import { SettingsDeleteAccount } from "~/applications/Profile/Ui/Settings/DeleteAccount";
 import { SettingsDisplayName } from "~/applications/Profile/Ui/Settings/DisplayName";
-// import { SettingsPhoneNumber } from "~/applications/Profile/Ui/Settings/PhoneNumber";
+import { SettingsPhoneNumber } from "~/applications/Profile/Ui/Settings/PhoneNumber";
 import { withLinguiPage } from "~/core/withLinguiLayout";
-// import { auth } from "~/libraries/nextauth/authConfig";
+import { auth } from "~/libraries/nextauth/authConfig";
 
 const SettingsPage = async () => {
-  // const session = await auth();
+  const session = await auth();
 
   return (
     <main className="flex w-full justify-center p-4 mt-8">
@@ -15,10 +15,10 @@ const SettingsPage = async () => {
         <h1 className="text-4xl">
           <Trans>Account Settings</Trans>
         </h1>
-        <SettingsAvatar />
-        <SettingsDisplayName />
-        {/* ts-expect-error add phone to user interface */}
-        {/* <SettingsPhoneNumber defaultValue={session?.user?.phone!} /> */}
+        <SettingsAvatar defaultValue={session?.user?.image!} />
+        <SettingsDisplayName defaultValue={session?.user!.name!} />
+        {/* @ts-expect-error add phone to user interface */}
+        <SettingsPhoneNumber defaultValue={session?.user?.phone!} />
         <SettingsDeleteAccount />
       </div>
     </main>

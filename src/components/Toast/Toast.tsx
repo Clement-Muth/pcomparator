@@ -10,6 +10,7 @@ export const Toast = () => {
     <ToastContainer
       position="bottom-right"
       autoClose={5000}
+      closeButton={false}
       hideProgressBar={false}
       newestOnTop
       closeOnClick
@@ -19,6 +20,7 @@ export const Toast = () => {
       pauseOnHover
       theme={activeTheme}
       transition={Bounce}
+      className="rounded-lg"
       stacked
     />
   );

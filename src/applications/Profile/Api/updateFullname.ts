@@ -5,32 +5,28 @@ import { pcomparatorApiClient } from "~/clients/PcomparatorApiClient";
 import { auth } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({
-  phone: z.string().optional()
+  fullname: z.string()
 });
 
 const PayloadSchema = z.object({
-  id: z.string(),
-  phone: z.string(),
-  name: z.string(),
-  email: z.string(),
-  image: z.string()
+  name: z.string()
 });
 
 /**
- * `updatePhoneNumber` updates the phone number of a user profile
+ * `updateFullname` updates the fullname of a user profile
  *
- * Args: `phone`: string
+ * Args: `fullname`: string
  *
  * Returns: Updated user
  */
-export const updatePhoneNumber = async (params: z.infer<typeof ParamsSchema>): Promise<any> => {
+export const updateFullname = async (params: z.infer<typeof ParamsSchema>): Promise<any> => {
   const paramsPayload = ParamsSchema.parse(params);
   const session = await auth();
 
   const updatedUser = await pcomparatorApiClient
     .patch(`user/${session?.user?.id}/profile`, {
       json: {
-        phone: paramsPayload.phone
+        name: paramsPayload.fullname
       }
     })
     .json();
@@ -38,6 +34,6 @@ export const updatePhoneNumber = async (params: z.infer<typeof ParamsSchema>): P
   const updatedUserPayload = PayloadSchema.parse(updatedUser);
 
   return {
-    phone: updatedUserPayload.phone
+    fullname: updatedUserPayload.name
   };
 };

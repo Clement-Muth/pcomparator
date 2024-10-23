@@ -1799,6 +1799,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fastify/busboy@npm:^2.0.0":
+  version: 2.1.1
+  resolution: "@fastify/busboy@npm:2.1.1"
+  checksum: 42c32ef75e906c9a4809c1e1930a5ca6d4ddc8d138e1a8c8ba5ea07f997db32210617d23b2e4a85fe376316a41a1a0439fc6ff2dedf5126d96f45a9d80754fb2
+  languageName: node
+  linkType: hard
+
 "@formatjs/ecma402-abstract@npm:2.2.0":
   version: 2.2.0
   resolution: "@formatjs/ecma402-abstract@npm:2.2.0"
@@ -7292,6 +7299,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/blob@npm:^0.25.1":
+  version: 0.25.1
+  resolution: "@vercel/blob@npm:0.25.1"
+  dependencies:
+    async-retry: ^1.3.3
+    bytes: ^3.1.2
+    is-buffer: ^2.0.5
+    undici: ^5.28.4
+  checksum: fd328761bf974c4768279c18c1b2e9207435d53cb14daa5922baaa0f4fbd8363a9e5365f2acd98ebcdf5f91b07be67682014f5aff279abe8abe62d08c5b6220f
+  languageName: node
+  linkType: hard
+
 "@vercel/postgres-kysely@npm:^0.10.0":
   version: 0.10.0
   resolution: "@vercel/postgres-kysely@npm:0.10.0"
@@ -7865,6 +7884,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"async-retry@npm:^1.3.3":
+  version: 1.3.3
+  resolution: "async-retry@npm:1.3.3"
+  dependencies:
+    retry: 0.13.1
+  checksum: 38a7152ff7265a9321ea214b9c69e8224ab1febbdec98efbbde6e562f17ff68405569b796b1c5271f354aef8783665d29953f051f68c1fc45306e61aec82fdc4
+  languageName: node
+  linkType: hard
+
 "async@npm:^3.2.3":
   version: 3.2.6
   resolution: "async@npm:3.2.6"
@@ -8263,6 +8291,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bytes@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "bytes@npm:3.1.2"
+  checksum: e4bcd3948d289c5127591fbedf10c0b639ccbf00243504e4e127374a15c3bc8eed0d28d4aaab08ff6f1cf2abc0cce6ba3085ed32f4f90e82a5683ce0014e1b6e
+  languageName: node
+  linkType: hard
+
 "cacache@npm:^18.0.0":
   version: 18.0.4
   resolution: "cacache@npm:18.0.4"
@@ -8509,6 +8544,13 @@ __metadata:
   version: 1.4.1
   resolution: "cjs-module-lexer@npm:1.4.1"
   checksum: 2556807a99aec1f9daac60741af96cd613a707f343174ae7967da46402c91dced411bf830d209f2e93be4cecea46fc75cecf1f17c799d7d8a9e1dd6204bfcd22
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "classnames@npm:2.5.1"
+  checksum: da424a8a6f3a96a2e87d01a432ba19315503294ac7e025f9fece656db6b6a0f7b5003bb1fbb51cbb0d9624d964f1b9bb35a51c73af9b2434c7b292c42231c1e5
   languageName: node
   linkType: hard
 
@@ -9025,6 +9067,13 @@ __metadata:
     typescript:
       optional: true
   checksum: a30c424b53d442ea0bdd24cb1b3d0d8687c8dda4a17ab6afcdc439f8964438801619cdb66e8e79f63b9caa3e6586b60d8bab9ce203e72df6c5e80179b971fe8f
+  languageName: node
+  linkType: hard
+
+"country-flag-icons@npm:^1.5.11":
+  version: 1.5.13
+  resolution: "country-flag-icons@npm:1.5.13"
+  checksum: 8c0c41567f330ae935bcb4ac1e9a2d72a889e9ab57a9b977d1a1e785c545972f6ece4fa0a243f06e4b8a147647eccf31068bc44305c15a565ca85905ba5fd384
   languageName: node
   linkType: hard
 
@@ -11076,6 +11125,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"input-format@npm:^0.3.10":
+  version: 0.3.10
+  resolution: "input-format@npm:0.3.10"
+  dependencies:
+    prop-types: ^15.8.1
+  checksum: 00a09e61032c7fe14ba6780c91bab77dd40934893c8d96c4ee8ab12c92ef798127873107acff78f0da5d282b60777a1af83d653b95baa5dd205b852691f0ef3f
+  languageName: node
+  linkType: hard
+
 "inquirer-promise@npm:0.0.3":
   version: 0.0.3
   resolution: "inquirer-promise@npm:0.0.3"
@@ -11243,6 +11301,13 @@ __metadata:
     call-bind: ^1.0.2
     has-tostringtag: ^1.0.0
   checksum: c03b23dbaacadc18940defb12c1c0e3aaece7553ef58b162a0f6bba0c2a7e1551b59f365b91e00d2dbac0522392d576ef322628cb1d036a0fe51eb466db67222
+  languageName: node
+  linkType: hard
+
+"is-buffer@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "is-buffer@npm:2.0.5"
+  checksum: 764c9ad8b523a9f5a32af29bdf772b08eb48c04d2ad0a7240916ac2688c983bf5f8504bf25b35e66240edeb9d9085461f9b5dae1f3d2861c6b06a65fe983de42
   languageName: node
   linkType: hard
 
@@ -12667,6 +12732,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"libphonenumber-js@npm:^1.11.12":
+  version: 1.11.12
+  resolution: "libphonenumber-js@npm:1.11.12"
+  checksum: 4ac799d8b6ed5530be3c0a55aeb5eb7b15540ec22d010852f77a81c87a560a95d9ee3957c22170e88e213cf7d0aabc0d7a38953b26b2893fad346bbb25c044bd
+  languageName: node
+  linkType: hard
+
 "lilconfig@npm:^2.1.0":
   version: 2.1.0
   resolution: "lilconfig@npm:2.1.0"
@@ -12916,7 +12988,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0":
+"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -13853,7 +13925,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-assign@npm:^4.0.1, object-assign@npm:^4.1.0":
+"object-assign@npm:^4.0.1, object-assign@npm:^4.1.0, object-assign@npm:^4.1.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
   checksum: fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
@@ -14372,6 +14444,7 @@ __metadata:
     "@types/react": ^18.3.11
     "@types/react-dom": ^18.3.1
     "@types/testing-library__jest-dom": ^5.14.6
+    "@vercel/blob": ^0.25.1
     "@vercel/postgres": ^0.10.0
     "@vercel/postgres-kysely": ^0.10.0
     algoliasearch: ^4.18.0
@@ -14399,6 +14472,7 @@ __metadata:
     react: ^18.3.1
     react-dom: ^18.3.1
     react-hook-form: ^7.53.1
+    react-phone-number-input: ^3.4.9
     react-toastify: ^10.0.6
     react-wrap-balancer: ^1.0.0
     semantic-release: ^24.1.0
@@ -14866,6 +14940,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prop-types@npm:^15.8.1":
+  version: 15.8.1
+  resolution: "prop-types@npm:15.8.1"
+  dependencies:
+    loose-envify: ^1.4.0
+    object-assign: ^4.1.1
+    react-is: ^16.13.1
+  checksum: c056d3f1c057cb7ff8344c645450e14f088a915d078dcda795041765047fa080d38e5d626560ccaac94a4e16e3aa15f3557c1a9a8d1174530955e992c675e459
+  languageName: node
+  linkType: hard
+
 "proto-list@npm:~1.2.1":
   version: 1.2.4
   resolution: "proto-list@npm:1.2.4"
@@ -14997,6 +15082,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-is@npm:^16.13.1":
+  version: 16.13.1
+  resolution: "react-is@npm:16.13.1"
+  checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^17.0.1":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
@@ -15008,6 +15100,22 @@ __metadata:
   version: 18.3.1
   resolution: "react-is@npm:18.3.1"
   checksum: e20fe84c86ff172fc8d898251b7cc2c43645d108bf96d0b8edf39b98f9a2cae97b40520ee7ed8ee0085ccc94736c4886294456033304151c3f94978cec03df21
+  languageName: node
+  linkType: hard
+
+"react-phone-number-input@npm:^3.4.9":
+  version: 3.4.9
+  resolution: "react-phone-number-input@npm:3.4.9"
+  dependencies:
+    classnames: ^2.5.1
+    country-flag-icons: ^1.5.11
+    input-format: ^0.3.10
+    libphonenumber-js: ^1.11.12
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 62f4c32f4953fda0f6fb5ae5c133f3d3deff201feafc393fceb05fac9c827fb283fe62cdbbc6039f5b383b1951f813d9ae18dfe1f46dd2456602411ba296f114
   languageName: node
   linkType: hard
 
@@ -15474,6 +15582,13 @@ __metadata:
     onetime: ^7.0.0
     signal-exit: ^4.1.0
   checksum: 838dd54e458d89cfbc1a923b343c1b0f170a04100b4ce1733e97531842d7b440463967e521216e8ab6c6f8e89df877acc7b7f4c18ec76e99fb9bf5a60d358d2c
+  languageName: node
+  linkType: hard
+
+"retry@npm:0.13.1":
+  version: 0.13.1
+  resolution: "retry@npm:0.13.1"
+  checksum: 47c4d5be674f7c13eee4cfe927345023972197dbbdfba5d3af7e461d13b44de1bfd663bfc80d2f601f8ef3fc8164c16dd99655a221921954a65d044a2fc1233b
   languageName: node
   linkType: hard
 
@@ -17196,6 +17311,15 @@ __metadata:
   version: 6.19.8
   resolution: "undici-types@npm:6.19.8"
   checksum: de51f1b447d22571cf155dfe14ff6d12c5bdaec237c765085b439c38ca8518fc360e88c70f99469162bf2e14188a7b0bcb06e1ed2dc031042b984b0bb9544017
+  languageName: node
+  linkType: hard
+
+"undici@npm:^5.28.4":
+  version: 5.28.4
+  resolution: "undici@npm:5.28.4"
+  dependencies:
+    "@fastify/busboy": ^2.0.0
+  checksum: a8193132d84540e4dc1895ecc8dbaa176e8a49d26084d6fbe48a292e28397cd19ec5d13bc13e604484e76f94f6e334b2bdc740d5f06a6e50c44072818d0c19f9
   languageName: node
   linkType: hard
 
