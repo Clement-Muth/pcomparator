@@ -6,6 +6,7 @@ import ApplicationLayout from "~/core/ApplicationLayout";
 import { locales } from "~/core/locale";
 import { pcomparatorMetadata } from "~/core/metadata";
 import { type NextPageProps, withLinguiLayout } from "~/core/withLinguiLayout";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
