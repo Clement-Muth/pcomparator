@@ -219,6 +219,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@auth/prisma-adapter@npm:^2.7.2":
+  version: 2.7.2
+  resolution: "@auth/prisma-adapter@npm:2.7.2"
+  dependencies:
+    "@auth/core": 0.37.2
+  peerDependencies:
+    "@prisma/client": ">=2.26.0 || >=3 || >=4 || >=5"
+  checksum: 7866ca9ea58f12aeefd4eafa204790f2fd00ccec3ed54f9fd3ca5a316ddbded0ed00e89f527ed3884fb7bd042a69f92dc4058ba908002b2e160f927a8abfdaab
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.10.4, @babel/code-frame@npm:^7.12.13, @babel/code-frame@npm:^7.22.13, @babel/code-frame@npm:^7.25.9":
   version: 7.25.9
   resolution: "@babel/code-frame@npm:7.25.9"
@@ -2564,6 +2575,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@neondatabase/serverless@npm:^0.10.1":
+  version: 0.10.1
+  resolution: "@neondatabase/serverless@npm:0.10.1"
+  dependencies:
+    "@types/pg": 8.11.6
+  checksum: eec7a0bdfdbad79d80fa745c6b66ad97f919381d0d58809f0daad8e6974380fd1be0d7a2a90f9822e0391f09e9d8d5035a6437ae593b58b8463a7db1bd312344
+  languageName: node
+  linkType: hard
+
 "@neondatabase/serverless@npm:^0.9.3":
   version: 0.9.5
   resolution: "@neondatabase/serverless@npm:0.9.5"
@@ -4377,6 +4397,85 @@ __metadata:
     "@pnpm/network.ca-file": ^1.0.1
     config-chain: ^1.1.11
   checksum: 9e1e1ce5faa64719e866b02d10e28d727d809365eb3692ccfdc420ab6d2073b93abe403994691868f265e34a5601a8eee18ffff6562b27124d971418ba6bb815
+  languageName: node
+  linkType: hard
+
+"@prisma/adapter-neon@npm:^5.21.1":
+  version: 5.21.1
+  resolution: "@prisma/adapter-neon@npm:5.21.1"
+  dependencies:
+    "@prisma/driver-adapter-utils": 5.21.1
+    postgres-array: 3.0.2
+  peerDependencies:
+    "@neondatabase/serverless": ^0.6.0 || ^0.7.0 || ^0.8.0 || ^0.9.0
+  checksum: 4376c6a2b0b9a4627f1f28b3c657989820342dd34831a2b2070e88ec88f5044c9a2ea0477f9794e8f04398afeb8546fda6b4d075bba777673dcc8c77558d0f20
+  languageName: node
+  linkType: hard
+
+"@prisma/client@npm:^5.21.1":
+  version: 5.21.1
+  resolution: "@prisma/client@npm:5.21.1"
+  peerDependencies:
+    prisma: "*"
+  peerDependenciesMeta:
+    prisma:
+      optional: true
+  checksum: 4514e8805073c31ac91196870b732f191a911e64983857a7bd41638d30d6a75ac1dd79173a6d2ddf2cdf62546e4229936d27ba803a8bc82aad3c2c51f54288ec
+  languageName: node
+  linkType: hard
+
+"@prisma/debug@npm:5.21.1":
+  version: 5.21.1
+  resolution: "@prisma/debug@npm:5.21.1"
+  checksum: f329c4fa6f317d6f1c42f07402a51c20435d206d152f66a0021b3aaa014e2c0199fcbdb25f9131bbb9c2e266ea2f81c0c318d2db9e42ae134184141011084bb7
+  languageName: node
+  linkType: hard
+
+"@prisma/driver-adapter-utils@npm:5.21.1":
+  version: 5.21.1
+  resolution: "@prisma/driver-adapter-utils@npm:5.21.1"
+  dependencies:
+    "@prisma/debug": 5.21.1
+  checksum: b02384b2080d138ebdd79a44e0ac619a3c7ba61663a5aab1e9d4bd7633b0192c1acb9b8f93c85c07b1252ceaf1815e13997a5298b088ee4a5870bfa2fa31f478
+  languageName: node
+  linkType: hard
+
+"@prisma/engines-version@npm:5.21.1-1.bf0e5e8a04cada8225617067eaa03d041e2bba36":
+  version: 5.21.1-1.bf0e5e8a04cada8225617067eaa03d041e2bba36
+  resolution: "@prisma/engines-version@npm:5.21.1-1.bf0e5e8a04cada8225617067eaa03d041e2bba36"
+  checksum: 8ec736023d458a44657b05c1502993f143cdb604fd8a49bc3fb5d03ddf265ebeeab217f2a45bbf2400c4c4f58c5a3c7e726523079523e37c541defcf4be188f2
+  languageName: node
+  linkType: hard
+
+"@prisma/engines@npm:5.21.1":
+  version: 5.21.1
+  resolution: "@prisma/engines@npm:5.21.1"
+  dependencies:
+    "@prisma/debug": 5.21.1
+    "@prisma/engines-version": 5.21.1-1.bf0e5e8a04cada8225617067eaa03d041e2bba36
+    "@prisma/fetch-engine": 5.21.1
+    "@prisma/get-platform": 5.21.1
+  checksum: 4b184f88aa4324819a1aa4ff0f4f4e1c8d89b5290070c778585cbd90d8d71a4a41d7322d773a4f09a324bb7fc59e2182f9c35374c420571088bf91891f9642a8
+  languageName: node
+  linkType: hard
+
+"@prisma/fetch-engine@npm:5.21.1":
+  version: 5.21.1
+  resolution: "@prisma/fetch-engine@npm:5.21.1"
+  dependencies:
+    "@prisma/debug": 5.21.1
+    "@prisma/engines-version": 5.21.1-1.bf0e5e8a04cada8225617067eaa03d041e2bba36
+    "@prisma/get-platform": 5.21.1
+  checksum: b3d816545a261ee486d5b0b43d22474e49110a70bb7f4cdf1dd8177e7ccfc6ba9c9e9172ded4a806e545e8bdded049fd37da92878e3b5087017c98b30516a56e
+  languageName: node
+  linkType: hard
+
+"@prisma/get-platform@npm:5.21.1":
+  version: 5.21.1
+  resolution: "@prisma/get-platform@npm:5.21.1"
+  dependencies:
+    "@prisma/debug": 5.21.1
+  checksum: d53edfd9cac8a55fa1b8fbf55c3f0d87c52f695904b936985cf14e25853a2e74b79c35a370e3f36135185ffb589cc7aa98cefc22193e6783bb995b1a91e26d00
   languageName: node
   linkType: hard
 
@@ -10252,7 +10351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@npm:^2.3.2, fsevents@npm:~2.3.1, fsevents@npm:~2.3.2":
+"fsevents@npm:2.3.3, fsevents@npm:^2.3.2, fsevents@npm:~2.3.1, fsevents@npm:~2.3.2":
   version: 2.3.3
   resolution: "fsevents@npm:2.3.3"
   dependencies:
@@ -10262,7 +10361,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.1#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
+"fsevents@patch:fsevents@2.3.3#~builtin<compat/fsevents>, fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.1#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.3
   resolution: "fsevents@patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"
   dependencies:
@@ -12365,6 +12464,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ky@npm:^1.7.2":
+  version: 1.7.2
+  resolution: "ky@npm:1.7.2"
+  checksum: 70bd8f09d8e3d4796602f03dd29b1991ba9f3f92187dad9384356c1f37938eb3ad5417063365ef1cb5a2b2d83b95ccd70d4fb84edae337c24d0a4ad560f47b08
+  languageName: node
+  linkType: hard
+
 "kysely-codegen@npm:^0.17.0":
   version: 0.17.0
   resolution: "kysely-codegen@npm:0.17.0"
@@ -14233,6 +14339,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pcomparator@workspace:."
   dependencies:
+    "@auth/prisma-adapter": ^2.7.2
     "@babel/core": ^7.24.4
     "@babel/preset-react": ^7.24.1
     "@babel/preset-typescript": ^7.24.1
@@ -14243,7 +14350,10 @@ __metadata:
     "@lingui/macro": ^4.11.0
     "@lingui/react": ^4.11.0
     "@lingui/swc-plugin": 4.0.10
+    "@neondatabase/serverless": ^0.10.1
     "@nextui-org/react": ^2.4.8
+    "@prisma/adapter-neon": ^5.21.1
+    "@prisma/client": ^5.21.1
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^13.0.0
     "@semantic-release/exec": ^6.0.3
@@ -14275,6 +14385,7 @@ __metadata:
     jest: ^29.5.0
     jest-canvas-mock: ^2.5.2
     jest-environment-jsdom: ^29.5.0
+    ky: ^1.7.2
     kysely: ^0.27.4
     kysely-codegen: ^0.17.0
     lint-staged: ^15.2.10
@@ -14284,6 +14395,7 @@ __metadata:
     next-auth: beta
     next-themes: ^0.3.0
     postcss: 8.4.25
+    prisma: ^5.21.1
     react: ^18.3.1
     react-dom: ^18.3.1
     react-hook-form: ^7.53.1
@@ -14561,7 +14673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postgres-array@npm:~3.0.1":
+"postgres-array@npm:3.0.2, postgres-array@npm:~3.0.1":
   version: 3.0.2
   resolution: "postgres-array@npm:3.0.2"
   checksum: 5955f9dffeb6fa960c1a0b04fd4b2ba16813ddb636934ad26f902e4d76a91c0b743dcc6edc4cffc52deba7d547505e0020adea027c1d50a774f989cf955420d1
@@ -14658,6 +14770,21 @@ __metadata:
   dependencies:
     parse-ms: ^4.0.0
   checksum: 0f66507467f2005040cccdcb36f35b82674d7809f41c4432009235ed6c920787afa17f621c25b7ccb8ccd80b0840c7b71f7f4a3addb8f0eeef3a033ff1e5cf71
+  languageName: node
+  linkType: hard
+
+"prisma@npm:^5.21.1":
+  version: 5.21.1
+  resolution: "prisma@npm:5.21.1"
+  dependencies:
+    "@prisma/engines": 5.21.1
+    fsevents: 2.3.3
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    prisma: build/index.js
+  checksum: 805f1d386d1b4f08d4319995351a0db70063e1b88a3d459c44bdad05eadf681878947a7528fc37641d0d0e314bc007d359cb8eed609d67cdce0bdae48a400053
   languageName: node
   linkType: hard
 
