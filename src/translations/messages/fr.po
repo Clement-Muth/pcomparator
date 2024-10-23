@@ -13,9 +13,37 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+msgid "<0>Permanently remove your Personal Account and all of its contents from the PComparator platform. This action is not reversible, so please continue with caution.</0>"
+msgstr "<0>Supprimer définitivement votre compte personnel ainsi que tout son contenu de la plateforme PComparator. Cette action est irréversible, veuillez donc procéder avec prudence.</0>"
+
+#: src/app/[locale]/settings/page.tsx
+msgid "Account Settings"
+msgstr "Paramètres de compte"
+
+#: src/applications/Profile/Ui/Settings/Avatar.tsx
+msgid "Avatar"
+msgstr "Avatar"
+
+#: src/applications/Profile/Ui/Settings/Avatar.tsx
+msgid "Click on the avatar to upload a custom one from your files."
+msgstr "Cliquer sur avatar pour ajouter un depuis vos fichier."
+
 #: src/components/ThemeSwitcher/ThemeSwitcher.tsx
 msgid "Dark"
 msgstr "Sombre"
+
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+msgid "Delete Account"
+msgstr "Supprimer mon compte"
+
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+msgid "Delete Personal Account"
+msgstr "Supprimer mon compte personnel"
+
+#: src/applications/Profile/Ui/Settings/DisplayName.tsx
+msgid "Display Name"
+msgstr "Nom d'affichage"
 
 #: src/app/[locale]/page.tsx
 msgid "Hello {0}"
@@ -25,6 +53,10 @@ msgstr "Bonjour {0}"
 msgid "Light"
 msgstr "Clair"
 
+#: src/components/Form/FormActions.tsx
+msgid "Next"
+msgstr "Suivant"
+
 #: src/app/[locale]/page.tsx
 msgid "PComparator Compare prices of many products"
 msgstr "PComparator compare les prix de nombreux produits"
@@ -32,6 +64,34 @@ msgstr "PComparator compare les prix de nombreux produits"
 #: src/app/[locale]/page.tsx
 msgid "PComparator is the price comparator for foods, cosmetic and more"
 msgstr "PComparator est le comparateur de prix pour les aliments, les cosmétiques et plus encore"
+
+#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
+msgid "Phone number updated"
+msgstr ""
+
+#: src/applications/Profile/Ui/Settings/DisplayName.tsx
+#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
+msgid "Please enter your full name, or a display name you are comfortable with."
+msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vous êtes à l'aise"
+
+#: src/applications/Profile/Ui/Settings/DisplayName.tsx
+#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
+msgid "Please use 32 characters at maximum."
+msgstr "Veuillez utiliser 32 caractères maximum."
+
+#: src/applications/Profile/Ui/Settings/Avatar.tsx
+#: src/applications/Profile/Ui/Settings/DisplayName.tsx
+#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: src/applications/Authentication/Ui/Signin/SignButton/ProfileButton.tsx
+msgid "Settings"
+msgstr "Paramètres"
 
 #: src/applications/Authentication/Ui/Signin/SignButton/SigninButton.tsx
 msgid "Signin"
@@ -44,3 +104,7 @@ msgstr "Se déconnecter"
 #: src/components/ThemeSwitcher/ThemeSwitcher.tsx
 msgid "System"
 msgstr "Système"
+
+#: src/applications/Profile/Ui/Settings/Avatar.tsx
+msgid "This is your avatar."
+msgstr "Ceci est votre avatar."
