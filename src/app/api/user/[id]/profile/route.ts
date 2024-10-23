@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "~/libraries/prisma";
+// import { prisma } from "~/libraries/prisma";
 
 const RequestSchema = z.object({
   phone: z.string()
@@ -15,7 +15,7 @@ export const PATCH = async (request: Request, { params }: { params: Promise<{ id
   const { id } = await params;
   const payload = RequestSchema.parse(await request.json());
 
-  const updatedUser = await prisma.user.update({ data: { phone: payload.phone }, where: { id: id } });
+  // const updatedUser = await prisma.user.update({ data: { phone: payload.phone }, where: { id: id } });
 
-  return NextResponse.json(updatedUser);
+  // return NextResponse.json(updatedUser);
 };

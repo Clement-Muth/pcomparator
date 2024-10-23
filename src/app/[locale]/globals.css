@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 div[data-overlay-container="true"] {
-  @apply flex flex-col h-full;
+  @apply flex flex-col flex-1;
+  @apply min-h-screen w-full bg-gradient-to-br dark:from-[#1f121b] dark:via-[#0c1820] dark:via-80% dark:to-[#081917] from-indigo-50 via-white to-primary-200;
 }

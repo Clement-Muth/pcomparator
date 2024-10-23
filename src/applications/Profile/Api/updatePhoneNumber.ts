@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { pcomparatorApiClient } from "~/clients/PcomparatorApiClient";
+// import { pcomparatorApiClient } from "~/clients/PcomparatorApiClient";
 import { auth } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({
@@ -27,17 +27,17 @@ export const updatePhoneNumber = async (params: z.infer<typeof ParamsSchema>): P
   const paramsPayload = ParamsSchema.parse(params);
   const session = await auth();
 
-  const updatedUser = await pcomparatorApiClient
-    .patch(`user/${session?.user?.id}/profile`, {
-      json: {
-        phone: paramsPayload.phone
-      }
-    })
-    .json();
+  // const updatedUser = await pcomparatorApiClient
+  //   .patch(`user/${session?.user?.id}/profile`, {
+  //     json: {
+  //       phone: paramsPayload.phone
+  //     }
+  //   })
+  //   .json();
 
-  const updatedUserPayload = PayloadSchema.parse(updatedUser);
+  // const updatedUserPayload = PayloadSchema.parse(updatedUser);
 
-  return {
-    phone: updatedUserPayload.phone
-  };
+  // return {
+  //   phone: updatedUserPayload.phone
+  // };
 };
