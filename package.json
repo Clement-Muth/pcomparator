@@ -14,7 +14,8 @@
     "compile": "lingui compile --typescript",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules env-cmd -f ./.env.test jest --maxWorkers=100%",
     "generate": "kysely-codegen --out-file ./src/types/db.d.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.2",

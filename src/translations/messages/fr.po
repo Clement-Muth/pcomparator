@@ -17,13 +17,25 @@ msgstr ""
 msgid "<0>Permanently remove your Personal Account and all of its contents from the PComparator platform. This action is not reversible, so please continue with caution.</0>"
 msgstr "<0>Supprimer définitivement votre compte personnel ainsi que tout son contenu de la plateforme PComparator. Cette action est irréversible, veuillez donc procéder avec prudence.</0>"
 
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+msgid "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
+msgstr "<0>Pour vérifier, tapez</0>s <1>supprimer mon compte</1><2> ci-dessous :</2>"
+
 #: src/app/[locale]/settings/page.tsx
 msgid "Account Settings"
 msgstr "Paramètres de compte"
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
+msgid "An avatar is optional but strongly recommended."
+msgstr "Un avatar est optionnel mais fortement recommandé."
+
+#: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "Avatar"
 msgstr "Avatar"
+
+#: src/applications/Profile/Ui/Settings/Avatar.tsx
+msgid "Avatar updated"
+msgstr "Avatar mis à jour"
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "Click on the avatar to upload a custom one from your files."
@@ -38,6 +50,11 @@ msgid "Delete Account"
 msgstr "Supprimer mon compte"
 
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+msgid "delete my account"
+msgstr "supprimer mon compte"
+
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "Delete Personal Account"
 msgstr "Supprimer mon compte personnel"
 
@@ -45,9 +62,33 @@ msgstr "Supprimer mon compte personnel"
 msgid "Display Name"
 msgstr "Nom d'affichage"
 
+#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
+msgid "Enter a phone number to receive important service updates by SMS."
+msgstr "Entrez un numéro de téléphone pour recevoir des mises à jour importantes du service par SMS."
+
+#: src/components/Inputs/Phone/Phone.tsx
+msgid "Enter your phone number"
+msgstr "Entrez votre numéro de téléphone"
+
+#: src/applications/Profile/Ui/Settings/DisplayName.tsx
+msgid "Fullname updated"
+msgstr "Nom complet mis à jour."
+
 #: src/app/[locale]/page.tsx
 msgid "Hello {0}"
 msgstr "Bonjour {0}"
+
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+msgid "I understand, delete my account"
+msgstr "Je comprends, supprimez mon compte."
+
+#: src/applications/Profile/Ui/Settings/DisplayName.tsx
+msgid "Invalid display name."
+msgstr "Nom d'affichage invalide."
+
+#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
+msgid "Invalid phone number."
+msgstr "Numéro de téléphone invalide."
 
 #: src/components/ThemeSwitcher/ThemeSwitcher.tsx
 msgid "Light"
@@ -71,10 +112,9 @@ msgstr "Numéro de téléphone"
 
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Phone number updated"
-msgstr ""
+msgstr "Numéro de téléphone mis à jour"
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
-#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Please enter your full name, or a display name you are comfortable with."
 msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vous êtes à l'aise"
 
@@ -83,7 +123,6 @@ msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vou
 msgid "Please use 32 characters at maximum."
 msgstr "Veuillez utiliser 32 caractères maximum."
 
-#: src/applications/Profile/Ui/Settings/Avatar.tsx
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Save"
@@ -108,3 +147,7 @@ msgstr "Système"
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."
 msgstr "Ceci est votre avatar."
+
+#: src/components/Inputs/Phone/Phone.tsx
+msgid "Your phone number is not valid"
+msgstr "Votre numéro de téléphone n'est pas valide."
