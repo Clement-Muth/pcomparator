@@ -2,10 +2,23 @@
 
 import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { Button, Card, CardBody, CardFooter, CardHeader, Input } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import { toast } from "react-toastify";
+import { updateFullname } from "~/applications/Profile/Api/updateFullname";
+import useForm from "~/components/Form/useForm";
+import { Input } from "~/components/Inputs/Input/Input";
 
-export const SettingsDisplayName = () => {
+interface SettingsDisplayNameProps {
+  defaultValue: string;
+}
+
+export const SettingsDisplayName = ({ defaultValue }: SettingsDisplayNameProps) => {
+  const form = useForm<{ fullname: string }>();
   const { i18n } = useLingui();
+  const notify = () =>
+    toast(<Trans>Fullname updated</Trans>, {
+      type: "success"
+    });
 
   return (
     <Card>
@@ -14,21 +27,33 @@ export const SettingsDisplayName = () => {
           <Trans>Display Name</Trans>
         </h4>
       </CardHeader>
-      <CardBody className="p-4">
-        <form>
+      <form.Form
+        methods={form.methods}
+        onSubmit={async ({ fullname }) => {
+          fullname !== defaultValue && (await updateFullname({ fullname }));
+          notify();
+        }}
+        actions={{
+          nextProps: {
+            title: <Trans>Save</Trans>,
+            color: "primary"
+          },
+          wrapper: CardFooter,
+          wrapperProps: { className: "justify-end border-t border-t-default" }
+        }}
+      >
+        <CardBody className="p-4">
           <Input
             labelPlacement="outside"
             placeholder=" "
+            defaultValue={defaultValue}
+            name="fullname"
             description={t(i18n)`Please use 32 characters at maximum.`}
             label={t(i18n)`Please enter your full name, or a display name you are comfortable with.`}
+            required={t(i18n)`Invalid display name.`}
           />
-        </form>
-      </CardBody>
-      <CardFooter className="justify-end border-t border-t-default">
-        <Button type="submit" color="primary">
-          <Trans>Save</Trans>
-        </Button>
-      </CardFooter>
+        </CardBody>
+      </form.Form>
     </Card>
   );
 };

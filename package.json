@@ -14,7 +14,8 @@
     "compile": "lingui compile --typescript",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules env-cmd -f ./.env.test jest --maxWorkers=100%",
     "generate": "kysely-codegen --out-file ./src/types/db.d.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.2",
@@ -29,6 +30,7 @@
     "@types/node": "20.4.1",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
+    "@vercel/blob": "^0.25.1",
     "@vercel/postgres": "^0.10.0",
     "@vercel/postgres-kysely": "^0.10.0",
     "algoliasearch": "^4.18.0",
@@ -45,6 +47,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.1",
+    "react-phone-number-input": "^3.4.9",
     "react-toastify": "^10.0.6",
     "react-wrap-balancer": "^1.0.0",
     "tailwindcss": "^3.4.14",

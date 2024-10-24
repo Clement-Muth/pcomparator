@@ -2,12 +2,21 @@
 
 import { Trans } from "@lingui/macro";
 import { Avatar, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
-import { useSession } from "next-auth/react";
-import useForm from "~/components/Form/useForm";
+import { useRef, useState } from "react";
+import { toast } from "react-toastify";
+import { updateAvatar } from "~/applications/Profile/Api/updateAvatar";
 
-export const SettingsAvatar = () => {
-  const session = useSession();
-  const form = useForm();
+interface SettingsAvatarProps {
+  defaultValue: string;
+}
+
+export const SettingsAvatar = ({ defaultValue }: SettingsAvatarProps) => {
+  const [avatar, setAvatar] = useState<string>(defaultValue);
+  const inputFileRef = useRef<HTMLInputElement>(null);
+  const notify = () =>
+    toast(<Trans>Avatar updated</Trans>, {
+      type: "success"
+    });
 
   return (
     <Card>
@@ -16,35 +25,42 @@ export const SettingsAvatar = () => {
           <Trans>Avatar</Trans>
         </h4>
       </CardHeader>
-      <form.Form
-        methods={form.methods}
-        onSubmit={(data) => console.log(data)}
-        actions={{
-          nextProps: {
-            title: <Trans>Save</Trans>,
-            color: "primary"
-          },
-          wrapper: CardFooter,
-          wrapperProps: { className: "justify-end border-t border-t-default" }
-        }}
-      >
-        <CardBody className="p-4">
-          <div className="flex w-full justify-between">
-            <div>
-              <p>
-                <Trans>This is your avatar.</Trans>
-              </p>
-              <p>
-                <Trans>Click on the avatar to upload a custom one from your files.</Trans>
-              </p>
-            </div>
-            <Avatar src={session?.data?.user!.image!} size="lg" color="primary" />
+      <CardBody className="p-4">
+        <div className="flex w-full justify-between gap-x-6">
+          <div className="text-small md:text-base">
+            <p>
+              <Trans>This is your avatar.</Trans>
+            </p>
+            <p>
+              <Trans>Click on the avatar to upload a custom one from your files.</Trans>
+            </p>
           </div>
-        </CardBody>
-      </form.Form>
-      {/* <CardFooter className="justify-end border-t border-t-default">
-        
-      </CardFooter> */}
+          <label htmlFor="avatar">
+            <Avatar src={avatar} className="w-20 h-20 text-large cursor-pointer" color="primary" />
+          </label>
+          <input
+            type="file"
+            id="avatar"
+            name="avatar"
+            accept=".png,.jpg,.webp"
+            ref={inputFileRef}
+            onChange={async () => {
+              if (!inputFileRef.current?.files) throw new Error("No file selected");
+
+              const file = inputFileRef.current.files[0];
+
+              setAvatar((await updateAvatar({ avatar: file })).avatar);
+              notify();
+            }}
+            hidden
+          />
+        </div>
+      </CardBody>
+      <CardFooter className="border-t border-t-default px-4 py-4">
+        <span className="text-small">
+          <Trans>An avatar is optional but strongly recommended.</Trans>
+        </span>
+      </CardFooter>
     </Card>
   );
 };

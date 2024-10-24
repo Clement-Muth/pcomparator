@@ -17,6 +17,7 @@ export interface FormProps<T> extends Omit<FormHookProps<any, any>, "onSubmit"> 
   methods: UseFormReturn<any, any, undefined>;
   actions?: FormActionsProps;
   wrapper?: ComponentType<{ children: ReactNode }>;
+  wrapperProps?: any;
   disableActions?: boolean;
 }
 
@@ -27,7 +28,8 @@ const Form = <T extends FieldValues>({
   className,
   disableActions,
   actions,
-  wrapper: Wrapper
+  wrapper: Wrapper,
+  wrapperProps
 }: FormProps<T>) => {
   // NOTE – Prevent bypass disabled submit button
   const isValid = !Object.keys(methods.formState.errors)
@@ -45,7 +47,7 @@ const Form = <T extends FieldValues>({
     </FormProvider>
   );
 
-  return Wrapper ? <Wrapper>{content}</Wrapper> : <>{content}</>;
+  return Wrapper ? <Wrapper {...wrapperProps}>{content}</Wrapper> : <>{content}</>;
 };
 
 export default Form;
