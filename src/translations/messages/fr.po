@@ -70,6 +70,10 @@ msgstr "Nom d'affichage"
 msgid "Enter a phone number to receive important service updates by SMS."
 msgstr "Entrez un numéro de téléphone pour recevoir des mises à jour importantes du service par SMS."
 
+#: src/applications/Searchbar/Ui/Searchbar.tsx
+msgid "Enter your codebar"
+msgstr "Entrez votre code-barres"
+
 #: src/components/Inputs/Phone/Phone.tsx
 msgid "Enter your phone number"
 msgstr "Entrez votre numéro de téléphone"
@@ -117,6 +121,10 @@ msgstr "Numéro de téléphone"
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Phone number updated"
 msgstr "Numéro de téléphone mis à jour"
+
+#: src/applications/Searchbar/Ui/Searchbar.tsx
+msgid "Please enter a valid barcode."
+msgstr "Veuillez entrer un code-barres valide."
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 msgid "Please enter your full name, or a display name you are comfortable with."
