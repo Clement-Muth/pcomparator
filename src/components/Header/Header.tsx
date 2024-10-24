@@ -3,6 +3,7 @@
 import { Image, Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import type { ReactNode } from "react";
 import Link from "~/components/Link/Link";
+import useScroll from "~/hooks/useScroll";
 import Logo from "../../../public/static/logo.png";
 
 interface HeaderProps {
@@ -10,10 +11,12 @@ interface HeaderProps {
 }
 
 export const Header = ({ rightArea }: HeaderProps) => {
+  const hasScrolled = useScroll(50);
+
   return (
-    <Navbar position="static" classNames={{ base: "bg-transparent" }}>
+    <Navbar position="sticky" classNames={{ base: "bg-transparent" }} isBlurred={hasScrolled}>
       <NavbarBrand>
-        <Link href="/">
+        <Link href="/" className="flex-[0_0_auto]">
           <Image src={Logo.src} fallbackSrc={Logo.blurDataURL} width={35} height={35} />
           <p className="text-xl text-inherit ml-2">PComparator</p>
         </Link>

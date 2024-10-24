@@ -9,10 +9,16 @@ const ParamsSchema = z.object({
 });
 
 const PayloadSchema = z.object({
-  name: z.string()
+  image: z.string()
 });
 
-export const updateAvatar = async (params: z.infer<typeof ParamsSchema>): Promise<any> => {
+/**
+ * `updateAvatar` updates a user's avatar
+ *
+ * Returns: user's avatar
+ *
+ */
+export const updateAvatar = async (params: z.infer<typeof ParamsSchema>): Promise<{ avatar: string }> => {
   const paramsPayload = ParamsSchema.parse(params);
   const session = await auth();
 
@@ -22,11 +28,9 @@ export const updateAvatar = async (params: z.infer<typeof ParamsSchema>): Promis
     })
     .json();
 
-  return updatedUser;
+  const updatedUserPayload = PayloadSchema.parse(updatedUser);
 
-  // const updatedUserPayload = PayloadSchema.parse(updatedUser);
-
-  // return {
-  //   fullname: updatedUserPayload.name
-  // };
+  return {
+    avatar: updatedUserPayload.image
+  };
 };

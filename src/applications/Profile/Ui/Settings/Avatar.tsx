@@ -5,7 +5,6 @@ import { Avatar, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/reac
 import { useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { updateAvatar } from "~/applications/Profile/Api/updateAvatar";
-import useForm from "~/components/Form/useForm";
 
 interface SettingsAvatarProps {
   defaultValue: string;
@@ -19,8 +18,6 @@ export const SettingsAvatar = ({ defaultValue }: SettingsAvatarProps) => {
       type: "success"
     });
 
-  const form = useForm();
-
   return (
     <Card>
       <CardHeader className="p-4">
@@ -29,8 +26,8 @@ export const SettingsAvatar = ({ defaultValue }: SettingsAvatarProps) => {
         </h4>
       </CardHeader>
       <CardBody className="p-4">
-        <div className="flex w-full justify-between">
-          <div>
+        <div className="flex w-full justify-between gap-x-6">
+          <div className="text-small md:text-base">
             <p>
               <Trans>This is your avatar.</Trans>
             </p>
@@ -52,7 +49,7 @@ export const SettingsAvatar = ({ defaultValue }: SettingsAvatarProps) => {
 
               const file = inputFileRef.current.files[0];
 
-              setAvatar(await updateAvatar({ avatar: file }));
+              setAvatar((await updateAvatar({ avatar: file })).avatar);
               notify();
             }}
             hidden

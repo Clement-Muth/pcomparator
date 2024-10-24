@@ -26,10 +26,12 @@ export const PATCH = async (request: Request, { params }: { params: Promise<{ id
   return NextResponse.json(updatedUser);
 };
 
+type PostReturn = NextResponse<{ image: string }>;
+
 export const POST = async (
   request: Request,
   { params }: { params: Promise<{ id: string }> }
-): Promise<NextResponse<string>> => {
+): Promise<PostReturn> => {
   const { searchParams } = new URL(request.url);
   const { id } = await params;
 
@@ -42,5 +44,5 @@ export const POST = async (
   });
 
   const url = await prisma.user.update({ data: { image: blob.url }, where: { id: id } });
-  return NextResponse.json(url.image!);
+  return NextResponse.json({ image: url.image! });
 };

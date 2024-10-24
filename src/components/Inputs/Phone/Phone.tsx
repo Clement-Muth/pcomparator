@@ -48,7 +48,7 @@ export default ({
               htmlFor={name}
               className={clsx(
                 !!required && "after:content-['*'] after:text-danger after:ml-0.5",
-                "block text-small text-left whitespace-nowrap mb-2",
+                "block text-small text-left whitespace-nowrap mb-2 text-wrap",
                 invalid ? "text-danger" : "text-black-primary"
               )}
             >

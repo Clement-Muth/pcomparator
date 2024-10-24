@@ -10,15 +10,14 @@ const SettingsPage = async () => {
   const session = await auth();
 
   return (
-    <main className="flex w-full justify-center p-4 mt-8">
-      <div className="flex flex-col gap-y-8 max-w-4xl">
-        <h1 className="text-4xl">
+    <main className="flex w-full justify-center p-4 md:mt-8">
+      <div className="flex flex-col gap-y-8 max-w-4xl w-[inherit]">
+        <h1 className="text-xl md:text-4xl">
           <Trans>Account Settings</Trans>
         </h1>
         <SettingsAvatar defaultValue={session?.user?.image!} />
-        <SettingsDisplayName defaultValue={session?.user!.name!} />
-        {/* @ts-expect-error add phone to user interface */}
-        <SettingsPhoneNumber defaultValue={session?.user?.phone!} />
+        <SettingsDisplayName defaultValue={session?.user?.name!} />
+        <SettingsPhoneNumber defaultValue={session?.user?.phone} />
         <SettingsDeleteAccount />
       </div>
     </main>

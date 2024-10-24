@@ -15,13 +15,23 @@ import {
   ModalHeader,
   useDisclosure
 } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import { deleteAccount } from "~/applications/Profile/Api/deleteAccount";
 import useForm from "~/components/Form/useForm";
 import { Input } from "~/components/Inputs/Input/Input";
+import useDevice from "~/hooks/useDevice";
 
 export const SettingsDeleteAccount = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const { i18n } = useLingui();
+  const device = useDevice();
   const form = useForm<{ confirm: string }>("confirm");
+  const notify = () =>
+    toast(<Trans>Account deleted</Trans>, {
+      type: "success"
+    });
+  const { replace } = useRouter();
 
   return (
     <>
@@ -33,14 +43,14 @@ export const SettingsDeleteAccount = () => {
         </CardHeader>
         <CardBody className="p-4">
           <Trans>
-            <p>
+            <p className="text-small md:text-base">
               Permanently remove your Personal Account and all of its contents from the PComparator platform.
               This action is not reversible, so please continue with caution.
             </p>
           </Trans>
         </CardBody>
         <CardFooter className="bg-danger/20 justify-end">
-          <Button color="danger" onPress={onOpen}>
+          <Button color="danger" onPress={onOpen} fullWidth={device === "mobile"}>
             <Trans>Delete Personal Account</Trans>
           </Button>
         </CardFooter>
@@ -55,7 +65,11 @@ export const SettingsDeleteAccount = () => {
           <ModalBody>
             <form.Form
               methods={form.methods}
-              onSubmit={() => {}}
+              onSubmit={async () => {
+                await deleteAccount();
+                notify();
+                replace("/");
+              }}
               actions={{
                 nextProps: {
                   title: <Trans>I understand, delete my account</Trans>,
@@ -68,6 +82,7 @@ export const SettingsDeleteAccount = () => {
               }}
             >
               <Input
+                className="mt-8 md:mt-0"
                 label={
                   <span>
                     <Trans>
@@ -78,6 +93,7 @@ export const SettingsDeleteAccount = () => {
                 }
                 name="confirm"
                 placeholder={t(i18n)`delete my account`}
+                autoComplete="off"
               />
             </form.Form>
           </ModalBody>

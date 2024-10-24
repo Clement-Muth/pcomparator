@@ -38,7 +38,7 @@ export const Input = ({
           {...field}
           size="lg"
           radius="sm"
-          classNames={{ label: "text-black-primary text-sm" }}
+          classNames={{ label: "text-black-primary text-sm", input: "text-small md:text-base" }}
           labelPlacement="outside"
           isRequired={!!required}
           isDisabled={props.disabled}
