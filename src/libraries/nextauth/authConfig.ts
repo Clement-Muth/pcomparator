@@ -1,27 +1,22 @@
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
-import { signup } from "~/applications/Authentication/Api/signup";
+import { prisma } from "~/libraries/prisma";
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
+  adapter: PrismaAdapter(prisma),
   providers: [Google],
   trustHost: true,
   callbacks: {
-    jwt: async (props) => {
-      let user = props.user;
-
-      if (props.trigger === "signIn") {
-        const registeredUser = await signup({
-          email: props.profile!.email!,
-          name: props.profile!.name!,
-          image: props.profile!.picture
-        });
-
-        user = {
-          ...user,
-          ...registeredUser
-        };
+    async session({ session, user }) {
+      session.user = user;
+      return session;
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        token.user = user;
       }
-      return props;
+      return token;
     }
   }
 });

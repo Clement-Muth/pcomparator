@@ -1,37 +1,32 @@
-import { Image, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
-import { SignButton } from "~/applications/Authentication/Ui/Signin/SignButton/SignButton";
-import Link from "~/components/Link/Link";
-import Logo from "/public/static/logo.png";
+"use client";
 
-export const Header = () => {
+import { Image, Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
+import type { ReactNode } from "react";
+import Link from "~/components/Link/Link";
+import useScroll from "~/hooks/useScroll";
+import Logo from "../../../public/static/logo.png";
+
+interface HeaderProps {
+  rightArea: ReactNode;
+}
+
+export const Header = ({ rightArea }: HeaderProps) => {
+  const hasScrolled = useScroll(50);
+
   return (
-    <Navbar position="static" classNames={{ base: "bg-transparent" }}>
+    <Navbar position="sticky" classNames={{ base: "bg-transparent" }} isBlurred={hasScrolled}>
       <NavbarBrand>
-        <Image src={Logo.src} fallbackSrc={Logo.blurDataURL} width={35} height={35} />
-        <p className="text-xl text-inherit ml-2">PComparator</p>
+        <Link href="/" className="flex-[0_0_auto]">
+          <Image src={Logo.src} fallbackSrc={Logo.blurDataURL} width={35} height={35} />
+          <p className="text-xl text-inherit ml-2">PComparator</p>
+        </Link>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
+
       <NavbarContent justify="end">
         {/* <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem> */}
-        <SignButton />
+        {rightArea}
       </NavbarContent>
     </Navbar>
   );

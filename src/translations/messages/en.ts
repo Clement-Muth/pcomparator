@@ -1,1 +1,1 @@
-/*eslint-disable*/import type{Messages}from"@lingui/core";export const messages=JSON.parse("{\"pvnfJD\":\"Dark\",\"uzTaYi\":\"Hello\",\"1njn7W\":\"Light\",\"D+NlUC\":\"System\"}")as Messages;
+/*eslint-disable*/import type{Messages}from"@lingui/core";export const messages=JSON.parse("{\"pvnfJD\":\"Dark\",\"Y7riaK\":[\"Hello \",[\"0\"]],\"1njn7W\":\"Light\",\"1u7plO\":\"PComparator Compare prices of many products\",\"q0RZAC\":\"PComparator is the price comparator for foods, cosmetic and more\",\"HDmYE1\":\"Signin\",\"NxOdGV\":\"Signout\",\"D+NlUC\":\"System\"}")as Messages;
