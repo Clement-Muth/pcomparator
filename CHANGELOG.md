@@ -6,6 +6,48 @@
 * **release:** change config branch to master ([f5ec644](https://github.com/Clement-Muth/pcomparator/commit/f5ec64434ef07a4ae8202fb362d04dfc4b6bf16a))
 * **release:** replace npm by yarn ([40443a6](https://github.com/Clement-Muth/pcomparator/commit/40443a6d79ad630cbdfc920e3ec74ece42238b4b))
 * **release:** replace npm by yarn ([#26](https://github.com/Clement-Muth/pcomparator/issues/26)) ([a28f3da](https://github.com/Clement-Muth/pcomparator/commit/a28f3da4d63d63f2d9faca24ac5274a601746bb4))
+* **semantic release:** change to be triggered on dev ([#41](https://github.com/Clement-Muth/pcomparator/issues/41)) ([f0b2153](https://github.com/Clement-Muth/pcomparator/commit/f0b215305dc3975bbdfebd802e436678059fd100))
+
+
+### Code Refactoring
+
+* restructure app ([#24](https://github.com/Clement-Muth/pcomparator/issues/24)) ([#25](https://github.com/Clement-Muth/pcomparator/issues/25)) ([39005b9](https://github.com/Clement-Muth/pcomparator/commit/39005b9e09a1d5e5c64e355a9bdf3e9f1f18799f))
+
+
+### Features
+
+* **auth:** implement authentication ([#27](https://github.com/Clement-Muth/pcomparator/issues/27)) ([9b2754c](https://github.com/Clement-Muth/pcomparator/commit/9b2754c6d325f4c087b406ee403b523583b70e9c))
+* **db:** implement database session strategy ([#35](https://github.com/Clement-Muth/pcomparator/issues/35)) ([7304726](https://github.com/Clement-Muth/pcomparator/commit/73047263d3a377da4cfb3e6b76c649b8f974a28e))
+* **db:** implement database system ([#29](https://github.com/Clement-Muth/pcomparator/issues/29)) ([00b5a62](https://github.com/Clement-Muth/pcomparator/commit/00b5a6292baf96d67ff2d030aff157716cd600ac))
+* **settings:** add phone number update ([#36](https://github.com/Clement-Muth/pcomparator/issues/36)) ([8608a3d](https://github.com/Clement-Muth/pcomparator/commit/8608a3d5c2ffe6ad6c77af1466d0bce72d8bc4b6))
+* **settings:** add settings page ([#33](https://github.com/Clement-Muth/pcomparator/issues/33)) ([75e9b29](https://github.com/Clement-Muth/pcomparator/commit/75e9b29d667a80052a8654badeedbde628569785)), closes [#24](https://github.com/Clement-Muth/pcomparator/issues/24) [#31](https://github.com/Clement-Muth/pcomparator/issues/31) [#26](https://github.com/Clement-Muth/pcomparator/issues/26) [#24](https://github.com/Clement-Muth/pcomparator/issues/24) [#25](https://github.com/Clement-Muth/pcomparator/issues/25) [#27](https://github.com/Clement-Muth/pcomparator/issues/27) [#28](https://github.com/Clement-Muth/pcomparator/issues/28) [#29](https://github.com/Clement-Muth/pcomparator/issues/29) [#30](https://github.com/Clement-Muth/pcomparator/issues/30) [#32](https://github.com/Clement-Muth/pcomparator/issues/32) [#26](https://github.com/Clement-Muth/pcomparator/issues/26) [#24](https://github.com/Clement-Muth/pcomparator/issues/24) [#25](https://github.com/Clement-Muth/pcomparator/issues/25) [#27](https://github.com/Clement-Muth/pcomparator/issues/27) [#28](https://github.com/Clement-Muth/pcomparator/issues/28) [#29](https://github.com/Clement-Muth/pcomparator/issues/29) [#30](https://github.com/Clement-Muth/pcomparator/issues/30) [#22](https://github.com/Clement-Muth/pcomparator/issues/22) [#20](https://github.com/Clement-Muth/pcomparator/issues/20) [#21](https://github.com/Clement-Muth/pcomparator/issues/21) [#26](https://github.com/Clement-Muth/pcomparator/issues/26) [#24](https://github.com/Clement-Muth/pcomparator/issues/24) [#25](https://github.com/Clement-Muth/pcomparator/issues/25) [#27](https://github.com/Clement-Muth/pcomparator/issues/27) [#28](https://github.com/Clement-Muth/pcomparator/issues/28) [#29](https://github.com/Clement-Muth/pcomparator/issues/29) [#30](https://github.com/Clement-Muth/pcomparator/issues/30) [#26](https://github.com/Clement-Muth/pcomparator/issues/26) [#24](https://github.com/Clement-Muth/pcomparator/issues/24) [#25](https://github.com/Clement-Muth/pcomparator/issues/25) [#27](https://github.com/Clement-Muth/pcomparator/issues/27) [#28](https://github.com/Clement-Muth/pcomparator/issues/28) [#29](https://github.com/Clement-Muth/pcomparator/issues/29) [#30](https://github.com/Clement-Muth/pcomparator/issues/30) [#24](https://github.com/Clement-Muth/pcomparator/issues/24) [#12](https://github.com/Clement-Muth/pcomparator/issues/12) [#19](https://github.com/Clement-Muth/pcomparator/issues/19) [#14](https://github.com/Clement-Muth/pcomparator/issues/14) [#18](https://github.com/Clement-Muth/pcomparator/issues/18) [#15](https://github.com/Clement-Muth/pcomparator/issues/15) [#17](https://github.com/Clement-Muth/pcomparator/issues/17) [#13](https://github.com/Clement-Muth/pcomparator/issues/13)
+* **settings:** add settings update profile routes ([#37](https://github.com/Clement-Muth/pcomparator/issues/37)) ([e3eccd6](https://github.com/Clement-Muth/pcomparator/commit/e3eccd67a707d5fcbe0604b4c251df6553c110aa))
+
+
+### Performance Improvements
+
+* **turborepo:** add turborepo ([#30](https://github.com/Clement-Muth/pcomparator/issues/30)) ([0f84abe](https://github.com/Clement-Muth/pcomparator/commit/0f84abec436eabda203c98422dc80b8cfa2112df))
+
+
+### BREAKING CHANGES
+
+* **settings:** restructure the app, implement linguijs, use biomejs, nextjs 14 and nextui
+
+* feat(settings): add settings page
+
+* add form library, device provider and missing translations
+* **settings:** restructure the app, implement linguijs, use biomejs, nextjs 14 and nextui
+* **settings:** restructure the app, implement linguijs, use biomejs, nextjs 14 and nextui
+* restructure the app, implement linguijs, use biomejs, nextjs 14 and nextui
+
+# [3.0.0](https://github.com/Clement-Muth/pcomparator/compare/v2.0.0...v3.0.0) (2024-10-24)
+
+
+### Bug Fixes
+
+* **release:** change config branch to master ([f5ec644](https://github.com/Clement-Muth/pcomparator/commit/f5ec64434ef07a4ae8202fb362d04dfc4b6bf16a))
+* **release:** replace npm by yarn ([40443a6](https://github.com/Clement-Muth/pcomparator/commit/40443a6d79ad630cbdfc920e3ec74ece42238b4b))
+* **release:** replace npm by yarn ([#26](https://github.com/Clement-Muth/pcomparator/issues/26)) ([a28f3da](https://github.com/Clement-Muth/pcomparator/commit/a28f3da4d63d63f2d9faca24ac5274a601746bb4))
 
 
 ### Code Refactoring
