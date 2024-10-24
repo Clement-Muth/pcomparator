@@ -21,6 +21,10 @@ msgstr "<0>Permanently remove your Personal Account and all of its contents from
 msgid "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 msgstr "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+msgid "Account deleted"
+msgstr "Account deleted"
+
 #: src/app/[locale]/settings/page.tsx
 msgid "Account Settings"
 msgstr "Account Settings"
