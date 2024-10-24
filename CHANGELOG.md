@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/Clement-Muth/pcomparator/compare/v3.0.1...v3.1.0) (2024-10-24)
+
+
+### Features
+
+* **search:** create product searchbar ([#43](https://github.com/Clement-Muth/pcomparator/issues/43)) ([a025c71](https://github.com/Clement-Muth/pcomparator/commit/a025c71dd66f630046d96838f8ba82cf712f2c90))
+
 ## [3.0.1](https://github.com/Clement-Muth/pcomparator/compare/v3.0.0...v3.0.1) (2024-10-24)
 
 
