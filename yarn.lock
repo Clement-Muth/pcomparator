@@ -4407,6 +4407,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@preflower/barcode-detector-polyfill@npm:^0.9.20":
+  version: 0.9.20
+  resolution: "@preflower/barcode-detector-polyfill@npm:0.9.20"
+  dependencies:
+    "@undecaf/zbar-wasm": ^0.10.1
+  checksum: 8b9b4ead477203d0eb1a903f7a6279139cfc4209b8a47b2727ccbdbbce5c2281e73881b93b9e4089608870473abdc99efb404d6e264f71d7399b36381c9f4322
+  languageName: node
+  linkType: hard
+
 "@prisma/adapter-neon@npm:^5.21.1":
   version: 5.21.1
   resolution: "@prisma/adapter-neon@npm:5.21.1"
@@ -7296,6 +7305,13 @@ __metadata:
   dependencies:
     "@types/yargs-parser": "*"
   checksum: ee013f257472ab643cb0584cf3e1ff9b0c44bca1c9ba662395300a7f1a6c55fa9d41bd40ddff42d99f5d95febb3907c9ff600fbcb92dadbec22c6a76de7e1236
+  languageName: node
+  linkType: hard
+
+"@undecaf/zbar-wasm@npm:^0.10.1":
+  version: 0.10.1
+  resolution: "@undecaf/zbar-wasm@npm:0.10.1"
+  checksum: cd1a28fb898a22045b2fa42db8889c8d7c664b90ea783d8759c60667c2c1b345d735f930485906199f5a13f99870de8e4ee94b4be46547e8ce452afae153bfe9
   languageName: node
   linkType: hard
 
@@ -13015,12 +13031,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.259.0":
-  version: 0.259.0
-  resolution: "lucide-react@npm:0.259.0"
+"lucide-react@npm:^0.453.0":
+  version: 0.453.0
+  resolution: "lucide-react@npm:0.453.0"
   peerDependencies:
-    react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: d760b2af40e36393e2f72beca3162eb8ab264e09fba8660649b7f955ecee38d2d7242ea513f7249c3d97a937b02257c3ee20af5d82d4f77509e3f143da7d009d
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+  checksum: 1a48153fd9338266d8bb14c735bfe8bfb046c505ab91421586cbae0a8ac1924536e813d430d1f91c883bb4ea67f0664bfca273f58e478438f0ad8f8f09fced76
   languageName: node
   linkType: hard
 
@@ -14463,13 +14479,14 @@ __metadata:
     kysely-codegen: ^0.17.0
     lint-staged: ^15.2.10
     lodash: ^4.17.21
-    lucide-react: ^0.259.0
+    lucide-react: ^0.453.0
     next: 15.0.0
     next-auth: beta
     next-themes: ^0.3.0
     postcss: 8.4.25
     prisma: ^5.21.1
     react: ^18.3.1
+    react-barcode-scanner: ^2.1.0
     react-dom: ^18.3.1
     react-hook-form: ^7.53.1
     react-phone-number-input: ^3.4.9
@@ -15047,6 +15064,20 @@ __metadata:
   bin:
     rc: ./cli.js
   checksum: 2e26e052f8be2abd64e6d1dabfbd7be03f80ec18ccbc49562d31f617d0015fbdbcf0f9eed30346ea6ab789e0fdfe4337f033f8016efdbee0df5354751842080e
+  languageName: node
+  linkType: hard
+
+"react-barcode-scanner@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "react-barcode-scanner@npm:2.1.0"
+  dependencies:
+    "@preflower/barcode-detector-polyfill": ^0.9.20
+    tslib: ^2.6.3
+    webrtc-adapter: ^9.0.1
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 823036fa4811fc4a16bb0e0f11dfa969282677c5f374d4b9bdb3d2cc9c9861f73a13d637e7cdca6b41f1d38faff2a53a1fa6497fe18c5c38b73585c128927669
   languageName: node
   linkType: hard
 
@@ -15794,6 +15825,13 @@ __metadata:
   dependencies:
     compute-scroll-into-view: ^3.0.2
   checksum: eab326e527620883040e1937329bce28396ac67199098202fc785853b1576646ff1c987594f5630f78bfd84fda8486a793845c0f5c0b1ad70638c6d015578ebb
+  languageName: node
+  linkType: hard
+
+"sdp@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "sdp@npm:3.2.0"
+  checksum: 227885bddab9a5845e56ae184ff51e43ec7bc155e7f1ed2f17ca1b012e6767011d5bd01b6c4064ded8e3b6f6bf3c9b26b2cf754b9c8662285988ed27b54f37b1
   languageName: node
   linkType: hard
 
@@ -17056,7 +17094,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.7.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.6.3, tslib@npm:^2.7.0":
   version: 2.8.0
   resolution: "tslib@npm:2.8.0"
   checksum: de852ecd81adfdb4870927e250763345f07dc13fe7f395ce261424966bb122a0992ad844c3ec875c9e63e72afe2220a150712984e44dfd1a8a7e538a064e3d46
@@ -17749,6 +17787,15 @@ __metadata:
   bin:
     webpack: bin/webpack.js
   checksum: 0c3dfe288de4d62f8f3dc25478a618894883cab739121330763b7847e43304630ea2815ae2351a5f8ff6ab7c9642caf530d503d89bda261fe2cd220e524dd5d1
+  languageName: node
+  linkType: hard
+
+"webrtc-adapter@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "webrtc-adapter@npm:9.0.1"
+  dependencies:
+    sdp: ^3.2.0
+  checksum: b9a5d24dc43e00f5fb5423d4f5974ddfd6d45019eea374e8fb947560a820d66ad7ab5bee976c734b3db4ff09641be8a362e3e800b5906a5e81c6dbb155cc4256
   languageName: node
   linkType: hard
 
