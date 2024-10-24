@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/Clement-Muth/pcomparator/compare/v3.0.0...v3.0.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* **release:** test release system on dev ([#42](https://github.com/Clement-Muth/pcomparator/issues/42)) ([2dde853](https://github.com/Clement-Muth/pcomparator/commit/2dde853567114e069a2f8b106cfaec718ea18aa7))
+
 # [3.0.0](https://github.com/Clement-Muth/pcomparator/compare/v2.0.0...v3.0.0) (2024-10-24)
 
 
