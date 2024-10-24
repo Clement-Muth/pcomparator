@@ -3,15 +3,17 @@
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Button } from "@nextui-org/react";
-import { ScanBarcode, Send } from "lucide-react";
-import { BarcodeScanner } from "react-barcode-scanner";
+import { Send } from "lucide-react";
 import useForm from "~/components/Form/useForm";
 import { Input } from "~/components/Inputs/Input/Input";
 import "react-barcode-scanner/polyfill";
-import { useState } from "react";
+import type { ReactNode } from "react";
 
-export const Searchbar = () => {
-  const [showScanner, setShowScanner] = useState(false);
+interface SearchbarProps {
+  startContent: ReactNode;
+}
+
+export const Searchbar = ({ startContent }: SearchbarProps) => {
   const form = useForm<{ search: string }>("search");
   const { i18n } = useLingui();
 
@@ -33,15 +35,7 @@ export const Searchbar = () => {
           value: /^(?:\d{12}|\d{13}|[A-Z0-9\-\. \$\/\+%]{1,43}|[\x20-\x7E]{1,48})$/,
           message: t(i18n)`Please enter a valid barcode.`
         }}
-        startContent={
-          <Button
-            startContent={<ScanBarcode />}
-            variant="light"
-            radius="full"
-            onPress={() => setShowScanner(true)}
-            isIconOnly
-          />
-        }
+        startContent={startContent}
         endContent={
           <Button
             startContent={<Send />}
@@ -53,7 +47,7 @@ export const Searchbar = () => {
           />
         }
       />
-      {showScanner ? (
+      {/* {showScanner ? (
         <BarcodeScanner
           onCapture={(barcode) => console.log(barcode)}
           options={{
@@ -73,7 +67,7 @@ export const Searchbar = () => {
             ]
           }}
         />
-      ) : null}
+      ) : null} */}
     </form.Form>
   );
 };

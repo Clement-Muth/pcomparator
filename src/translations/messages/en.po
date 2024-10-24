@@ -29,6 +29,14 @@ msgstr "Account deleted"
 msgid "Account Settings"
 msgstr "Account Settings"
 
+#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
+msgid "Add a new product"
+msgstr "Add a new product"
+
+#: src/applications/Products/Ui/NewProduct/NewProductForm.tsx
+msgid "Add the product"
+msgstr "Add the product"
+
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "An avatar is optional but strongly recommended."
 msgstr "An avatar is optional but strongly recommended."
@@ -159,6 +167,14 @@ msgstr "System"
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."
 msgstr "This is your avatar."
+
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "With barcode"
+msgstr "With barcode"
+
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Without barcode"
+msgstr "Without barcode"
 
 #: src/components/Inputs/Phone/Phone.tsx
 msgid "Your phone number is not valid"
