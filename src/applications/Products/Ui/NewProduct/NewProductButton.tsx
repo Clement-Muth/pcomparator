@@ -12,6 +12,7 @@ import {
 import { FilePlus, Plus, ScanBarcode } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import type { Barcode } from "~/applications/Products/Domain/Barcode";
 const BarcodeScannerModal = dynamic(() =>
   import("~/applications/Products/Ui/BarcodeScanner/BarcodeScannerModal").then(
     (mod) => mod.BarcodeScannerModal
@@ -24,6 +25,7 @@ const NewProductModal = dynamic(() =>
 export const NewProductButton = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [modal, setModal] = useState<"with" | "without" | undefined>(undefined);
+  const [barcode, setBarcode] = useState<Barcode | undefined>(undefined);
 
   return (
     <>
@@ -57,8 +59,22 @@ export const NewProductButton = () => {
         </DropdownMenu>
       </Dropdown>
 
-      {modal === "with" ? <BarcodeScannerModal isOpen={isOpen} onOpenChange={onOpenChange} /> : null}
-      {modal === "without" ? <NewProductModal isOpen={isOpen} onOpenChange={onOpenChange} /> : null}
+      {modal === "with" ? (
+        <BarcodeScannerModal
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          onBarcodeDetected={(detectedBarcode) => {
+            console.log(detectedBarcode);
+            if (!barcode) {
+              setBarcode(detectedBarcode);
+              setModal("without");
+            }
+          }}
+        />
+      ) : null}
+      {modal === "without" ? (
+        <NewProductModal isOpen={isOpen} onOpenChange={onOpenChange} barcode={barcode} />
+      ) : null}
     </>
   );
 };

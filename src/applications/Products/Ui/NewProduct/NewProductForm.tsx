@@ -1,8 +1,9 @@
 import { Trans } from "@lingui/macro";
 import { ModalBody, ModalFooter } from "@nextui-org/react";
+import type { Barcode } from "~/applications/Products/Domain/Barcode";
 import useForm from "~/components/Form/useForm";
 
-export const NewProductForm = () => {
+export const NewProductForm = ({ barcode }: { barcode: Barcode | undefined }) => {
   const form = useForm();
 
   return (
@@ -15,7 +16,11 @@ export const NewProductForm = () => {
       }}
     >
       <ModalBody>
-        <p>test</p>
+        {barcode ? (
+          <p>
+            Your barcode: {barcode.barcode} formatted {barcode.format}
+          </p>
+        ) : null}
       </ModalBody>
     </form.Form>
   );
