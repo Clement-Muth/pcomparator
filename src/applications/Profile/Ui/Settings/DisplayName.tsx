@@ -30,7 +30,7 @@ export const SettingsDisplayName = ({ defaultValue }: SettingsDisplayNameProps) 
       <form.Form
         methods={form.methods}
         onSubmit={async ({ fullname }) => {
-          fullname !== defaultValue && (await updateFullname({ fullname }));
+          fullname !== defaultValue && (await updateFullname({ name: fullname }));
           notify();
         }}
         actions={{

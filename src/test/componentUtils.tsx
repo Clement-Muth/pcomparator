@@ -1,8 +1,6 @@
 import { type RenderOptions, render as originalRender } from "@testing-library/react";
 import type React from "react";
-import ApplicationKernel from "~/core/ApplicationKernel";
 import { AVAILABLE_LOCALES } from "~/core/locale";
-import { FakeNextJsApplication } from "~/test/applicationUtils";
 
 type CustomTestWrapperOptions = {
   locale?: AVAILABLE_LOCALES;
@@ -17,11 +15,10 @@ export const TestWrapper = ({
 }: {
   children?: React.ReactNode;
 } & CustomTestWrapperOptions) => {
-  return (
-    <FakeNextJsApplication>
-      <ApplicationKernel locale={locale}>{children}</ApplicationKernel>
-    </FakeNextJsApplication>
-  );
+  return children;
+  // <FakeNextJsApplication>
+  // <ApplicationKernel locale={locale}>{children}</ApplicationKernel>
+  // </FakeNextJsApplication>
 };
 
 const customRender = (

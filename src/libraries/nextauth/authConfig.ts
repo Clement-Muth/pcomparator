@@ -1,6 +1,7 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
+import { NextResponse } from "next/server";
 import { prisma } from "~/libraries/prisma";
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
@@ -11,12 +12,13 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     async session({ session, user }) {
       session.user = user;
       return session;
-    },
-    async jwt({ token, user }) {
-      if (user) {
-        token.user = user;
-      }
-      return token;
     }
   }
 });
+
+export const withAuthentication = (callback: Parameters<typeof auth>[0]) =>
+  auth(async (request, ctx) => {
+    if (request.auth) return await callback(request, ctx);
+
+    return NextResponse.json({ message: "Not authenticated" }, { status: 401 });
+  });
