@@ -13,7 +13,7 @@ interface SettingsDisplayNameProps {
 }
 
 export const SettingsDisplayName = ({ defaultValue }: SettingsDisplayNameProps) => {
-  const form = useForm<{ fullname: string }>();
+  const form = useForm<{ fullname: string }>(undefined, { defaultValues: { fullname: defaultValue } });
   const { i18n } = useLingui();
   const notify = () =>
     toast(<Trans>Fullname updated</Trans>, {
