@@ -1,25 +1,60 @@
 "use server";
 
+import { HTTPError } from "ky";
 import { z } from "zod";
-import { pcomparatorApiClient } from "~/clients/PcomparatorApiClient";
+import type { Profile } from "~/applications/Profile/Domain/Entities/Profile";
+import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
 import { auth } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({
-  fullname: z.string()
+  name: z.string().min(0).max(32)
 });
 
+const PayloadSchema = z.object({
+  name: z.string().min(0).max(32)
+});
+
+export type UpdateFullnameParams = z.infer<typeof ParamsSchema>;
+export type UpdateFullnamePayload = z.infer<typeof PayloadSchema>;
+
 /**
- * `updateFullname` updates the fullname of a user profile
+ * Updates the authenticated user's full name.
  *
- * Args: `fullname`: string
+ * @async
+ * @function updateFullname
+ * @param {z.infer<typeof ParamsSchema>} params - The parameters containing the new name to update in the user profile.
+ * @throws {Error} Throws an error if the user is not authenticated.
+ * @throws {Error} Throws an error with the message "404 NOT FOUND" if the user is not found on the server.
+ * @throws {HTTPError} Re-throws any other HTTP errors encountered during the request.
+ * @returns {Promise<UpdateFullnamePayload>} Resolves to an object containing the updated name upon successful update.
  */
-export const updateFullname = async (params: z.infer<typeof ParamsSchema>): Promise<void> => {
+export const updateFullname = async (
+  params: z.infer<typeof ParamsSchema>
+): Promise<UpdateFullnamePayload> => {
   const paramsPayload = ParamsSchema.parse(params);
   const session = await auth();
 
-  await pcomparatorApiClient
-    .patch(`user/${session?.user?.id}/profile`, {
-      json: { name: paramsPayload.fullname }
-    })
-    .json();
+  if (!session?.user?.id) throw new Error("User not authenticated");
+
+  try {
+    const userPayload = PayloadSchema.parse(
+      await pcomparatorAuthenticatedApiClient
+        .patch(`user/${session.user.id}/profile`, {
+          json: { name: paramsPayload.name }
+        })
+        .json<Profile>()
+    );
+
+    return { name: userPayload.name };
+  } catch (err) {
+    if (err instanceof HTTPError) {
+      switch (err.response.status) {
+        case 404: {
+          console.log("Not Found");
+          throw new Error("404 NOT FOUND");
+        }
+      }
+    }
+    throw err;
+  }
 };

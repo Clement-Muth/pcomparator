@@ -1,36 +1,59 @@
 "use server";
 
+import { HTTPError } from "ky";
 import { z } from "zod";
-import { pcomparatorApiClient } from "~/clients/PcomparatorApiClient";
+import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
 import { auth } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({
-  avatar: z.any()
+  image: z.instanceof(File)
 });
 
 const PayloadSchema = z.object({
   image: z.string()
 });
 
+export type UpdateAvatarParams = z.infer<typeof ParamsSchema>;
+export type UpdateAvatarPayload = z.infer<typeof PayloadSchema>;
+
 /**
- * `updateAvatar` updates a user's avatar
+ * Updates the authenticated user's avatar.
  *
- * Returns: user's avatar
- *
+ * @async
+ * @function updateAvatar
+ * @param {z.infer<typeof ParamsSchema>} params - The parameters containing the image file to upload as the user's new avatar.
+ * @throws {Error} Throws an error if the user is not authenticated.
+ * @throws {Error} Throws an error with the message "404 NOT FOUND" if the user is not found on the server.
+ * @throws {HTTPError} Re-throws any other HTTP errors encountered during the request.
+ * @returns {Promise<UpdateAvatarPayload>} Resolves to an object containing the updated avatar image URL upon successful update.
  */
-export const updateAvatar = async (params: z.infer<typeof ParamsSchema>): Promise<{ avatar: string }> => {
+export const updateAvatar = async (params: z.infer<typeof ParamsSchema>): Promise<UpdateAvatarPayload> => {
   const paramsPayload = ParamsSchema.parse(params);
   const session = await auth();
 
-  const updatedUser = await pcomparatorApiClient
-    .post(`user/${session?.user?.id}/profile?filename=${paramsPayload.avatar.name}`, {
-      body: paramsPayload.avatar
-    })
-    .json();
+  if (!session?.user?.id) throw new Error("User not authenticated");
 
-  const updatedUserPayload = PayloadSchema.parse(updatedUser);
+  try {
+    const updatedUser = await pcomparatorAuthenticatedApiClient
+      .post(`user/${session.user.id}/profile?filename=${paramsPayload.image.name}`, {
+        body: paramsPayload.image
+      })
+      .json();
 
-  return {
-    avatar: updatedUserPayload.image
-  };
+    const updatedUserPayload = PayloadSchema.parse(updatedUser);
+
+    return {
+      image: updatedUserPayload.image
+    };
+  } catch (err) {
+    if (err instanceof HTTPError) {
+      switch (err.response.status) {
+        case 404: {
+          console.log("Not Found");
+          throw new Error("404 NOT FOUND");
+        }
+      }
+    }
+    throw err;
+  }
 };
