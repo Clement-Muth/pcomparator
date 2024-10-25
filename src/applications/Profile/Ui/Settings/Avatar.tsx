@@ -36,7 +36,12 @@ export const SettingsAvatar = ({ defaultValue }: SettingsAvatarProps) => {
             </p>
           </div>
           <label htmlFor="avatar">
-            <Avatar src={avatar} className="w-20 h-20 text-large cursor-pointer" color="primary" />
+            <Avatar
+              src={avatar}
+              className="w-20 h-20 text-large cursor-pointer"
+              alt="avatar"
+              color="primary"
+            />
           </label>
           <input
             type="file"
@@ -49,7 +54,7 @@ export const SettingsAvatar = ({ defaultValue }: SettingsAvatarProps) => {
 
               const file = inputFileRef.current.files[0];
 
-              setAvatar((await updateAvatar({ avatar: file })).avatar);
+              setAvatar((await updateAvatar({ image: file })).image);
               notify();
             }}
             hidden

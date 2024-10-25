@@ -1,5 +1,6 @@
 import { Trans } from "@lingui/macro";
 import Balancer from "react-wrap-balancer";
+import { Searchbar } from "~/applications/Searchbar/Ui/Searchbar";
 import { withLinguiPage } from "~/core/withLinguiLayout";
 import { auth } from "~/libraries/nextauth/authConfig";
 
@@ -9,10 +10,11 @@ const HomePage = async () => {
   return (
     <main className="relative flex flex-1 w-full flex-col items-center justify-center px-4 py-32">
       {session?.user ? (
-        <div className="flex flex-col items-center max-w-2xl">
-          <h1 className="text-center font-display text-5xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]">
+        <div className="flex flex-col items-center max-w-2xl w-full">
+          <h1 className="text-center font-display text-5xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-4xl md:leading-[5rem]">
             <Trans>Hello {session.user.name}</Trans>
           </h1>
+          <Searchbar />
         </div>
       ) : (
         <div className="flex flex-col items-center max-w-2xl">

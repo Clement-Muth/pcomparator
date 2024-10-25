@@ -75,7 +75,7 @@ export const SettingsDeleteAccount = () => {
                   title: <Trans>I understand, delete my account</Trans>,
                   fullWidth: true,
                   color: "danger",
-                  isDisabled: !form.watch("confirm")?.match("delete my account")
+                  isDisabled: !form.watch("confirm")?.match(t(i18n)`delete my account`)
                 },
                 wrapper: ModalFooter,
                 wrapperProps: { className: "justify-end border-t border-t-default -px-4" }
