@@ -1,4 +1,5 @@
-const nextJest = require("next/jest");
+import type { Config } from 'jest'
+import nextJest from "next/jest";
 
 const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
@@ -6,10 +7,12 @@ const createJestConfig = nextJest({
 });
 
 // Add any custom config to be passed to Jest
-const customJestConfig = {
+const customJestConfig: Config = {
+  coverageProvider: 'v8',
+  testEnvironment: 'jsdom',
   setupFilesAfterEnv: ["<rootDir>/src/test/setupTests.ts"],
   setupFiles: ["jest-canvas-mock"],
-  testSequencer: "<rootDir>/jestTestSequencer.js",
+  // testSequencer: "<rootDir>/jestTestSequencer.ts",
   resetMocks: true,
   modulePaths: ["<rootDir>/src"],
   moduleNameMapper: {
@@ -20,8 +23,6 @@ const customJestConfig = {
     "^@lingui\\/loader!(.+.po)$": "<rootDir>/src/translations/$1",
     "^~/(.*)$": "<rootDir>/src/$1"
   },
-  collectCoverage: false,
-  testEnvironment: "jsdom",
   transformIgnorePatterns: ["node_modules/(?!(ky|@react-hook/throttle|@react-hook/latest)/)"],
   transform: {
     "^.+\\.po$": "<rootDir>/__mocks__/gettextFileTransformer.js",
@@ -34,11 +35,10 @@ const customJestConfig = {
               runtime: "automatic"
             }
           }
-        },
+        }
       }
     ]
-  },
-  extensionsToTreatAsEsm: ['.tsx']
+  }
 };
 
 // createJestConfig is exported in this way to ensure that next/jest can load the Next.js configuration, which is async

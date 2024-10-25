@@ -1,9 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { Bounce, ToastContainer } from "react-toastify";
 import { useTheme } from "~/hooks/useTheme";
 
-export const Toast = () => {
+const ToastComponent = () => {
   const { activeTheme } = useTheme();
 
   return (
@@ -25,3 +26,7 @@ export const Toast = () => {
     />
   );
 };
+
+export const Toast = dynamic(() => Promise.resolve(ToastComponent), {
+  ssr: false
+});

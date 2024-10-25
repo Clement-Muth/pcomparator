@@ -1,3 +1,17 @@
+## [3.2.1](https://github.com/Clement-Muth/pcomparator/compare/v3.2.0...v3.2.1) (2024-10-25)
+
+
+### Bug Fixes
+
+* **locale:** locale not found ([#46](https://github.com/Clement-Muth/pcomparator/issues/46)) ([29df358](https://github.com/Clement-Muth/pcomparator/commit/29df35889337dfaa43b80963f43407450bea8379))
+
+# [3.2.0](https://github.com/Clement-Muth/pcomparator/compare/v3.1.0...v3.2.0) (2024-10-25)
+
+
+### Features
+
+* implement repo and create tests ([#45](https://github.com/Clement-Muth/pcomparator/issues/45)) ([8fd5315](https://github.com/Clement-Muth/pcomparator/commit/8fd5315c197b37fe8ba3a0073222986e38cb3ca9))
+
 # [3.1.0](https://github.com/Clement-Muth/pcomparator/compare/v3.0.1...v3.1.0) (2024-10-24)
 
 

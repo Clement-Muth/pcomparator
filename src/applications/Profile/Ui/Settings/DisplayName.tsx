@@ -13,7 +13,7 @@ interface SettingsDisplayNameProps {
 }
 
 export const SettingsDisplayName = ({ defaultValue }: SettingsDisplayNameProps) => {
-  const form = useForm<{ fullname: string }>();
+  const form = useForm<{ fullname: string }>(undefined, { defaultValues: { fullname: defaultValue } });
   const { i18n } = useLingui();
   const notify = () =>
     toast(<Trans>Fullname updated</Trans>, {
@@ -30,7 +30,7 @@ export const SettingsDisplayName = ({ defaultValue }: SettingsDisplayNameProps) 
       <form.Form
         methods={form.methods}
         onSubmit={async ({ fullname }) => {
-          fullname !== defaultValue && (await updateFullname({ fullname }));
+          fullname !== defaultValue && (await updateFullname({ name: fullname }));
           notify();
         }}
         actions={{

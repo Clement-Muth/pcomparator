@@ -62,6 +62,7 @@ msgid "Delete Account"
 msgstr "Delete Account"
 
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "delete my account"
 msgstr "delete my account"
 

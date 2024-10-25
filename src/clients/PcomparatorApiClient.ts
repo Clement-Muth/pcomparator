@@ -1,5 +1,6 @@
 // import { addBreadcrumb as sentryAddBreadcrumb } from "@sentry/nextjs";
 import ky, { HTTPError, type NormalizedOptions } from "ky";
+import { headers } from "next/headers";
 
 const pcomparatorApiEndpoint = process.env.PCOMPARATOR_API_ENDPOINT;
 if (!pcomparatorApiEndpoint) {
@@ -78,17 +79,14 @@ export const pcomparatorApiClient = ky.create({
   }
 });
 
-// export const pcomparatorAuthenticatedApiClient = pcomparatorApiClient.extend({
-//   hooks: {
-//     beforeRequest: [
-//       async (request: Request) => {
-//         const token = await readUserAuthToken();
-//         if (token) {
-//           request.headers.set("authorization", `Bearer ${token?.accessToken}`);
-//         }
+export const pcomparatorAuthenticatedApiClient = pcomparatorApiClient.extend({
+  hooks: {
+    beforeRequest: [
+      async (request: Request) => {
+        request.headers.set("cookie", (await headers()).get("cookie")!);
 
-//         return request;
-//       }
-//     ]
-//   }
-// });
+        return request;
+      }
+    ]
+  }
+});

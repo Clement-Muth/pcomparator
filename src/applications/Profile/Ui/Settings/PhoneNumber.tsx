@@ -14,7 +14,7 @@ interface SettingsPhoneNumberProps {
 }
 
 export const SettingsPhoneNumber = ({ defaultValue }: SettingsPhoneNumberProps) => {
-  const form = useForm<{ phone: string }>();
+  const form = useForm<{ phone: string }>(undefined, { defaultValues: { phone: defaultValue } });
   const { i18n } = useLingui();
   const notify = () =>
     toast(<Trans>Phone number updated</Trans>, {
