@@ -54,6 +54,7 @@ msgid "Delete Account"
 msgstr "Delete Account"
 
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
+#: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "delete my account"
 msgstr "delete my account"
 
@@ -131,10 +132,12 @@ msgid "Please enter your full name, or a display name you are comfortable with."
 msgstr "Please enter your full name, or a display name you are comfortable with."
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
+#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Please use 32 characters at maximum."
 msgstr "Please use 32 characters at maximum."
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
+#: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Save"
 msgstr "Save"
 
