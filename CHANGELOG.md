@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/Clement-Muth/pcomparator/compare/v3.2.1...v3.2.2) (2024-10-27)
+
+
+### Bug Fixes
+
+* use authenticated client for delete account ([#50](https://github.com/Clement-Muth/pcomparator/issues/50)) ([655059d](https://github.com/Clement-Muth/pcomparator/commit/655059d42b187754ce06e3c5bc41d068643d875c))
+
 ## [3.2.1](https://github.com/Clement-Muth/pcomparator/compare/v3.2.0...v3.2.1) (2024-10-25)
 
 
