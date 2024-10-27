@@ -1,6 +1,6 @@
 import { Trans } from "@lingui/macro";
 import { Modal, ModalContent, ModalHeader } from "@nextui-org/react";
-import type { Barcode } from "~/applications/Products/Domain/Barcode";
+import type { Barcode } from "~/applications/Products/Domain/valueObjects/Barcode";
 import { NewProductForm } from "~/applications/Products/Ui/NewProduct/NewProductForm";
 
 interface NewProductModalProps {

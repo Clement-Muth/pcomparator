@@ -12,7 +12,7 @@ import {
 import { FilePlus, Plus, ScanBarcode } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import type { Barcode } from "~/applications/Products/Domain/Barcode";
+import type { Barcode } from "~/applications/Products/Domain/valueObjects/Barcode";
 const BarcodeScannerModal = dynamic(() =>
   import("~/applications/Products/Ui/BarcodeScanner/BarcodeScannerModal").then(
     (mod) => mod.BarcodeScannerModal

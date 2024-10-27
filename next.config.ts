@@ -29,7 +29,7 @@ const nextConfig = (): NextConfig => {
     reactStrictMode: true,
     compress: true,
     images: {
-      domains: ["lh3.googleusercontent.com", "firebasestorage.googleapis.com", "vercel.com"]
+      domains: ["lh3.googleusercontent.com", "firebasestorage.googleapis.com", "vercel.com", "images.openfoodfacts.org"]
     },
     experimental: {
       turbo: {

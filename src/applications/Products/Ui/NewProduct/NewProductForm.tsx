@@ -1,10 +1,25 @@
+"use client";
+
 import { Trans } from "@lingui/macro";
 import { ModalBody, ModalFooter } from "@nextui-org/react";
-import type { Barcode } from "~/applications/Products/Domain/Barcode";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { getProduct } from "~/applications/Products/Api/getProduct";
+import type { Product } from "~/applications/Products/Domain/Entities/Product";
+import type { Barcode } from "~/applications/Products/Domain/valueObjects/Barcode";
 import useForm from "~/components/Form/useForm";
 
 export const NewProductForm = ({ barcode }: { barcode: Barcode | undefined }) => {
   const form = useForm();
+  const [product, setProduct] = useState<Product | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      if (!barcode) return;
+
+      setProduct(await getProduct({ barcode }));
+    })();
+  }, [barcode]);
 
   return (
     <form.Form
@@ -17,9 +32,17 @@ export const NewProductForm = ({ barcode }: { barcode: Barcode | undefined }) =>
     >
       <ModalBody>
         {barcode ? (
-          <p>
-            Your barcode: {barcode.barcode} formatted {barcode.format}
-          </p>
+          <>
+            <p>
+              Your barcode: {barcode.barcode} formatted {barcode.format}
+            </p>
+            {product && (
+              <>
+                <p>{product.name}</p>
+                <Image src={product.image} width={200} height={150} alt="" />
+              </>
+            )}
+          </>
         ) : null}
       </ModalBody>
     </form.Form>
