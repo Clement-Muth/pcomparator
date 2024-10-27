@@ -1,7 +1,7 @@
 "use server";
 
 import { HTTPError } from "ky";
-import { pcomparatorApiClient } from "~/clients/PcomparatorApiClient";
+import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
 import { auth } from "~/libraries/nextauth/authConfig";
 
 /**
@@ -20,7 +20,7 @@ export const deleteAccount = async (): Promise<void> => {
   if (!session?.user?.id) throw new Error("User not authenticated");
 
   try {
-    await pcomparatorApiClient.delete(`user/${session?.user?.id}/account/delete`).json();
+    await pcomparatorAuthenticatedApiClient.delete(`user/${session?.user?.id}/account/delete`).json();
   } catch (err) {
     if (err instanceof HTTPError) {
       switch (err.response.status) {
