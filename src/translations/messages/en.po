@@ -21,6 +21,10 @@ msgstr "<0>Permanently remove your Personal Account and all of its contents from
 msgid "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 msgstr "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 
+#: src/components/Inputs/Input/Barcode.tsx
+msgid "8690804407383"
+msgstr "8690804407383"
+
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "Account deleted"
 msgstr "Account deleted"
@@ -29,13 +33,25 @@ msgstr "Account deleted"
 msgid "Account Settings"
 msgstr "Account Settings"
 
-#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
 msgid "Add a new product"
 msgstr "Add a new product"
 
-#: src/applications/Products/Ui/NewProduct/NewProductForm.tsx
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Add new product by scanning barcode"
+msgstr "Add new product by scanning barcode"
+
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Add new product by typing barcode"
+msgstr "Add new product by typing barcode"
+
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
 msgid "Add the product"
 msgstr "Add the product"
+
+#: src/components/Inputs/Input/Barcode.tsx
+msgid "All barcode types are accepted."
+msgstr "All barcode types are accepted."
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "An avatar is optional but strongly recommended."
@@ -48,6 +64,10 @@ msgstr "Avatar"
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "Avatar updated"
 msgstr "Avatar updated"
+
+#: src/components/Inputs/Input/Barcode.tsx
+msgid "Barcode"
+msgstr "Barcode"
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "Click on the avatar to upload a custom one from your files."
@@ -131,7 +151,7 @@ msgstr "Phone Number"
 msgid "Phone number updated"
 msgstr "Phone number updated"
 
-#: src/applications/Searchbar/Ui/Searchbar.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Please enter a valid barcode."
 msgstr "Please enter a valid barcode."
 
@@ -144,10 +164,18 @@ msgstr "Please enter your full name, or a display name you are comfortable with.
 msgid "Please use 32 characters at maximum."
 msgstr "Please use 32 characters at maximum."
 
+#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
+msgid "Price"
+msgstr "Price"
+
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Save"
 msgstr "Save"
+
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Scan barcode"
+msgstr "Scan barcode"
 
 #: src/applications/Authentication/Ui/Signin/SignButton/ProfileButton.tsx
 msgid "Settings"
@@ -168,6 +196,10 @@ msgstr "System"
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."
 msgstr "This is your avatar."
+
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Type barcode"
+msgstr "Type barcode"
 
 #: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
 msgid "With barcode"

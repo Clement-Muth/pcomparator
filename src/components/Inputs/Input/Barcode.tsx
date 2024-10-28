@@ -8,7 +8,7 @@ export const Barcode = (props: InputProps) => {
 
   return (
     <Input
-      placeholder={t(i18n)`8690804407383`}
+      placeholder="8690804407383"
       label={<Trans>Barcode</Trans>}
       startContent={<BarcodeIcon />}
       description={t(i18n)`All barcode types are accepted.`}

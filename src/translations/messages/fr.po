@@ -29,13 +29,25 @@ msgstr "Compte supprimé"
 msgid "Account Settings"
 msgstr "Paramètres de compte"
 
-#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
 msgid "Add a new product"
 msgstr "Ajouter un nouveau produit"
 
-#: src/applications/Products/Ui/NewProduct/NewProductForm.tsx
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Add new product by scanning barcode"
+msgstr "Ajouter un produit en scannant le code bar"
+
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Add new product by typing barcode"
+msgstr "Ajouter un produit en écrivant le code bar"
+
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
 msgid "Add the product"
 msgstr "Ajouter le produit"
+
+#: src/components/Inputs/Input/Barcode.tsx
+msgid "All barcode types are accepted."
+msgstr "Tous les types de code bars sont acceptés."
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "An avatar is optional but strongly recommended."
@@ -48,6 +60,10 @@ msgstr "Avatar"
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "Avatar updated"
 msgstr "Avatar mis à jour"
+
+#: src/components/Inputs/Input/Barcode.tsx
+msgid "Barcode"
+msgstr "Code bar"
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "Click on the avatar to upload a custom one from your files."
@@ -131,7 +147,7 @@ msgstr "Numéro de téléphone"
 msgid "Phone number updated"
 msgstr "Numéro de téléphone mis à jour"
 
-#: src/applications/Searchbar/Ui/Searchbar.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Please enter a valid barcode."
 msgstr "Veuillez entrer un code-barres valide."
 
@@ -144,10 +160,18 @@ msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vou
 msgid "Please use 32 characters at maximum."
 msgstr "Veuillez utiliser 32 caractères maximum."
 
+#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
+msgid "Price"
+msgstr "Prix"
+
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Save"
 msgstr "Sauvegarder"
+
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Scan barcode"
+msgstr "Scanner code bar"
 
 #: src/applications/Authentication/Ui/Signin/SignButton/ProfileButton.tsx
 msgid "Settings"
@@ -168,6 +192,10 @@ msgstr "Système"
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."
 msgstr "Ceci est votre avatar."
+
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Type barcode"
+msgstr "Type de code bar"
 
 #: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
 msgid "With barcode"
