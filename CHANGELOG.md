@@ -1,3 +1,10 @@
+# [3.3.0](https://github.com/Clement-Muth/pcomparator/compare/v3.2.2...v3.3.0) (2024-10-28)
+
+
+### Features
+
+* create stepper component ([#57](https://github.com/Clement-Muth/pcomparator/issues/57)) ([10bac6a](https://github.com/Clement-Muth/pcomparator/commit/10bac6a552734626bb32ce6608591b94fbcc59d9)), closes [#53](https://github.com/Clement-Muth/pcomparator/issues/53) [#55](https://github.com/Clement-Muth/pcomparator/issues/55) [#56](https://github.com/Clement-Muth/pcomparator/issues/56)
+
 ## [3.2.2](https://github.com/Clement-Muth/pcomparator/compare/v3.2.1...v3.2.2) (2024-10-27)
 
 

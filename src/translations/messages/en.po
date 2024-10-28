@@ -95,6 +95,10 @@ msgstr "Delete Personal Account"
 msgid "Display Name"
 msgstr "Display Name"
 
+#: src/components/Stepper/Stepper.tsx
+msgid "Done"
+msgstr "Done"
+
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Enter a phone number to receive important service updates by SMS."
 msgstr "Enter a phone number to receive important service updates by SMS."

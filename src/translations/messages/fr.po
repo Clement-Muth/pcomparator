@@ -91,6 +91,10 @@ msgstr "Supprimer mon compte personnel"
 msgid "Display Name"
 msgstr "Nom d'affichage"
 
+#: src/components/Stepper/Stepper.tsx
+msgid "Done"
+msgstr "Terminer"
+
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Enter a phone number to receive important service updates by SMS."
 msgstr "Entrez un numéro de téléphone pour recevoir des mises à jour importantes du service par SMS."
