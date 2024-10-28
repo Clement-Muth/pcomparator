@@ -47,27 +47,6 @@ export const Searchbar = ({ startContent }: SearchbarProps) => {
           />
         }
       />
-      {/* {showScanner ? (
-        <BarcodeScanner
-          onCapture={(barcode) => console.log(barcode)}
-          options={{
-            formats: [
-              "codabar",
-              "upc_a",
-              "code_128",
-              "code_39",
-              "code_93",
-              "data_matrix",
-              "ean_13",
-              "ean_8",
-              "itf",
-              "pdf417",
-              "qr_code",
-              "upc_e"
-            ]
-          }}
-        />
-      ) : null} */}
     </form.Form>
   );
 };

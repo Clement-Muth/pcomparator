@@ -1,6 +1,7 @@
 "use client";
 
-import { Trans } from "@lingui/macro";
+import { Trans, t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import {
   Button,
   Dropdown,
@@ -9,7 +10,7 @@ import {
   DropdownTrigger,
   useDisclosure
 } from "@nextui-org/react";
-import { FilePlus, Plus, ScanBarcode } from "lucide-react";
+import { Plus, ScanBarcode, Type } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import type { Barcode } from "~/applications/Products/Domain/valueObjects/Barcode";
@@ -24,6 +25,7 @@ const NewProductModal = dynamic(() =>
 
 export const NewProductButton = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { i18n } = useLingui();
   const [modal, setModal] = useState<"with" | "without" | undefined>(undefined);
   const [barcode, setBarcode] = useState<Barcode | undefined>(undefined);
 
@@ -36,25 +38,29 @@ export const NewProductButton = () => {
         <DropdownMenu aria-label="Profile Actions" variant="flat">
           <DropdownItem
             key="settings"
-            textValue="with barcode"
+            textValue="Scan barcode"
             startContent={<ScanBarcode />}
             onPress={() => {
               setModal("with");
               onOpen();
             }}
+            description={t(i18n)`Add new product by scanning barcode`}
+            shortcut="⌘C"
           >
-            <Trans>With barcode</Trans>
+            <Trans>Scan barcode</Trans>
           </DropdownItem>
           <DropdownItem
             key="logout"
-            textValue="without barcode"
-            startContent={<FilePlus />}
+            textValue="Type barcode"
+            startContent={<Type />}
             onPress={() => {
               setModal("without");
               onOpen();
             }}
+            description={t(i18n)`Add new product by typing barcode`}
+            shortcut="⌘N"
           >
-            <Trans>Without barcode</Trans>
+            <Trans>Type barcode</Trans>
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>

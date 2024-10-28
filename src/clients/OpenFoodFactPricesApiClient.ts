@@ -1,16 +1,15 @@
 // import { addBreadcrumb as sentryAddBreadcrumb } from "@sentry/nextjs";
 import ky, { HTTPError, type NormalizedOptions } from "ky";
-import { headers } from "next/headers";
 
-const pcomparatorApiEndpoint = process.env.PCOMPARATOR_API_ENDPOINT;
-if (!pcomparatorApiEndpoint) {
-  throw new Error("The environment variable 'PCOMPARATOR_API_ENDPOINT' is missing");
+const openFoodFactApiEndpoint = process.env.OPEN_FOOD_FACT_API_ENDPOINT;
+if (!openFoodFactApiEndpoint) {
+  throw new Error("The environment variable 'OPEN_FOOD_FACT_API_ENDPOINT' is missing");
 }
 
-export const pcomparatorApiClient = ky.create({
+export const OpenFoodFactPricesApiClient = ky.create({
   retry: 1,
 
-  prefixUrl: `${process.env.PCOMPARATOR_API_ENDPOINT}/api/`,
+  prefixUrl: `${process.env.OPEN_FOOD_FACT_PRICES_API_ENDPOINT}`,
 
   headers: {
     Accept: "application/json",
@@ -30,18 +29,6 @@ export const pcomparatorApiClient = ky.create({
         if (response.status === 202) throw new HTTPError(response, request, options);
 
         return response;
-      }
-    ]
-  }
-});
-
-export const pcomparatorAuthenticatedApiClient = pcomparatorApiClient.extend({
-  hooks: {
-    beforeRequest: [
-      async (request: Request) => {
-        request.headers.set("cookie", (await headers()).get("cookie")!);
-
-        return request;
       }
     ]
   }
