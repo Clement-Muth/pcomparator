@@ -41,7 +41,7 @@ msgstr "Ajouter un produit en scannant le code bar"
 msgid "Add new product by typing barcode"
 msgstr "Ajouter un produit en écrivant le code bar"
 
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
+#: src/applications/Products/Ui/NewProduct/NewProductForm.tsx
 msgid "Add the product"
 msgstr "Ajouter le produit"
 
@@ -61,6 +61,7 @@ msgstr "Avatar"
 msgid "Avatar updated"
 msgstr "Avatar mis à jour"
 
+#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
 #: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Code bar"
@@ -94,6 +95,10 @@ msgstr "Nom d'affichage"
 #: src/components/Stepper/Stepper.tsx
 msgid "Done"
 msgstr "Terminer"
+
+#: src/components/Inputs/File/File.tsx
+msgid "Drag and drop your file"
+msgstr "Drag and drop votre fichier"
 
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Enter a phone number to receive important service updates by SMS."
@@ -131,7 +136,8 @@ msgstr "Numéro de téléphone invalide."
 msgid "Light"
 msgstr "Clair"
 
-#: src/components/Form/FormActions.tsx
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
 msgid "Next"
 msgstr "Suivant"
 
@@ -155,6 +161,10 @@ msgstr "Numéro de téléphone mis à jour"
 msgid "Please enter a valid barcode."
 msgstr "Veuillez entrer un code-barres valide."
 
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
+msgid "Please enter a valid price."
+msgstr "Veuillez entrer un prix valide."
+
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 msgid "Please enter your full name, or a display name you are comfortable with."
 msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vous êtes à l'aise"
@@ -164,6 +174,11 @@ msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vou
 msgid "Please use 32 characters at maximum."
 msgstr "Veuillez utiliser 32 caractères maximum."
 
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
+msgid "Previous"
+msgstr "Précédent"
+
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
 #: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
 msgid "Price"
 msgstr "Prix"
@@ -176,6 +191,11 @@ msgstr "Sauvegarder"
 #: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
 msgid "Scan barcode"
 msgstr "Scanner code bar"
+
+#: src/components/Inputs/File/File.spec.tsx
+#: src/components/Inputs/File/File.tsx
+msgid "Select your file"
+msgstr "Choisissez vitre fichier"
 
 #: src/applications/Authentication/Ui/Signin/SignButton/ProfileButton.tsx
 msgid "Settings"
@@ -193,6 +213,10 @@ msgstr "Se déconnecter"
 msgid "System"
 msgstr "Système"
 
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
+msgid "Take a picture"
+msgstr "Prendre un photo"
+
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."
 msgstr "Ceci est votre avatar."
@@ -208,6 +232,23 @@ msgstr "Avec un code bar"
 #: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
 msgid "Without barcode"
 msgstr "Sans code bar"
+
+#: src/components/Inputs/File/useFileHandler.ts
+msgid "You can only add a maximum of {maxFile} files"
+msgstr "Vous ne pouvez ajouter que {maxFile} fichiers maximum"
+
+#: src/components/Inputs/File/useFileHandler.ts
+#: src/components/Inputs/File/useFileHandler.ts
+msgid "You must add more than {minFile} files"
+msgstr "Vous devez ajouter plus de {minFile} fichiers"
+
+#: src/components/Inputs/File/useFileHandler.ts
+msgid "Your file exceeded the limit {0}Mo"
+msgstr "Votre fichier a dépassé la limite de {0} Mo"
+
+#: src/components/Inputs/File/File.spec.tsx
+msgid "Your file exceeded the limit {maxSize}Mo"
+msgstr "Votre fichier a dépassé la limite de {maxSize} Mo"
 
 #: src/components/Inputs/Phone/Phone.tsx
 msgid "Your phone number is not valid"
