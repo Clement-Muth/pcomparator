@@ -23,6 +23,8 @@ const nextConfig = (): NextConfig => {
     env: {
       PCOMPARATOR_ENV,
       PCOMPARATOR_API_ENDPOINT: readEnvironmentVariable("PCOMPARATOR_API_ENDPOINT"),
+      OPEN_FOOD_FACT_API_ENDPOINT: readEnvironmentVariable("OPEN_FOOD_FACT_API_ENDPOINT"),
+      OPEN_FOOD_FACT_PRICES_API_ENDPOINT: readEnvironmentVariable("OPEN_FOOD_FACT_PRICES_API_ENDPOINT"),
       ALGOLIA_APP_ID: readEnvironmentVariable("ALGOLIA_APP_ID")!,
       ALGOLIA_API_KEY: readEnvironmentVariable("ALGOLIA_API_KEY")!,
     },

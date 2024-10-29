@@ -17,7 +17,7 @@ export const NewProductForm = ({ barcode }: { barcode: Barcode | undefined }) =>
     (async () => {
       if (!barcode) return;
 
-      setProduct(await getProduct({ barcode }));
+      setProduct(await getProduct({ barcode: { barcode: barcode.barcode, format: barcode.format! } }));
     })();
   }, [barcode]);
 

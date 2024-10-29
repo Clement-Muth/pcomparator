@@ -11,11 +11,6 @@ export const OpenFoodFactPricesApiClient = ky.create({
 
   prefixUrl: `${process.env.OPEN_FOOD_FACT_PRICES_API_ENDPOINT}`,
 
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json"
-  },
-
   hooks: {
     beforeRequest: [],
 

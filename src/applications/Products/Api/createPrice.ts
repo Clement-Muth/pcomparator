@@ -7,20 +7,16 @@ import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClien
 import { auth } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({
-  barcode: z.object({
-    barcode: z.string().min(1),
-    format: z.string().min(1)
-  })
+  barcode: z.string(),
+  proof: z.instanceof(Blob)
 });
 
-const PayloadSchema = z.object({
-  image: z.string()
-});
+const PayloadSchema = z.object({});
 
-export type UpdateAvatarParams = z.infer<typeof ParamsSchema>;
-export type UpdateAvatarPayload = z.infer<typeof PayloadSchema>;
+export type CreatePriceParams = z.infer<typeof ParamsSchema>;
+export type CreatePricePayload = z.infer<typeof PayloadSchema>;
 
-export const getProduct = async (params: z.infer<typeof ParamsSchema>): Promise<Product> => {
+export const createPrice = async (params: z.infer<typeof ParamsSchema>): Promise<Product> => {
   const paramsPayload = ParamsSchema.parse(params);
   const session = await auth();
 
@@ -28,7 +24,12 @@ export const getProduct = async (params: z.infer<typeof ParamsSchema>): Promise<
 
   try {
     const product = await pcomparatorAuthenticatedApiClient
-      .get(`product/${paramsPayload.barcode.barcode}`)
+      .post(`product/${paramsPayload.barcode}`, {
+        json: paramsPayload.proof,
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      })
       .json<Product>();
 
     return product;

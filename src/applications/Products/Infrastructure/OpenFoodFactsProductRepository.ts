@@ -3,6 +3,7 @@ import type { ProductRepository } from "~/applications/Products/Domain/Repositor
 import type { Barcode } from "~/applications/Products/Domain/valueObjects/Barcode";
 import type { OpenFoodFactsProductResponse } from "~/applications/Products/Infrastructure/OpenFoodFactsResponse";
 import { openFoodFactApiClient } from "~/clients/OpenFoodFactApiClient";
+import { OpenFoodFactPricesApiClient } from "~/clients/OpenFoodFactPricesApiClient";
 
 export class OpenFoodFactsProductRepository implements ProductRepository {
   async findByBarcode(barcode: Barcode): Promise<Product | null> {
@@ -18,5 +19,18 @@ export class OpenFoodFactsProductRepository implements ProductRepository {
       type: data.product.product_type,
       image: data.product.image_front_small_url
     };
+  }
+
+  async createProof(proof: Blob): Promise<void> {
+    const data = await OpenFoodFactPricesApiClient.post("proofs/upload", {
+      json: {
+        file: proof
+      },
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    });
+
+    console.log(data);
   }
 }
