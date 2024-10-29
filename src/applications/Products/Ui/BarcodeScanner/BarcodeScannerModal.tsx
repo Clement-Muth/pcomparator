@@ -1,6 +1,6 @@
 import { Modal, ModalContent } from "@nextui-org/react";
 import { BarcodeScanner } from "react-barcode-scanner";
-import type { Barcode } from "~/applications/Products/Domain/valueObjects/Barcode";
+import type { Barcode } from "~/applications/Products/Domain/ValueObjects/Barcode";
 
 interface BarcodeScannerModalProps {
   isOpen: boolean;

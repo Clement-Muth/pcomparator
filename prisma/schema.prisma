@@ -80,7 +80,7 @@ model Product {
 
 model Category {
   id          String   @id @default(uuid()) @db.Uuid
-  name        String
+  name        String   @unique
   description String?
   parent_category_id String? @db.Uuid
 
@@ -90,7 +90,7 @@ model Category {
 
 model Brand {
   id          String   @id @default(uuid()) @db.Uuid
-  name        String
+  name        String   @unique
   description String?
   website_url String?
 
@@ -98,12 +98,24 @@ model Brand {
   products    Product[]
 }
 
+enum Currency {
+  AED // Dirham des Émirats arabes unis
+  AUD // Dollar australien
+  CAD // Dollar canadien
+  CHF // Franc suisse
+  CNY // Yuan renminbi chinois
+  EUR // Euro
+  GBP // Livre sterling
+  JPY // Yen japonais
+  USD // Dollar américain
+}
+
 model Price {
   id             String   @id @default(uuid()) @db.Uuid
   product_id     String   @db.Uuid
   store_id       String   @db.Uuid
   amount         Float
-  currency       String
+  currency       Currency
   date_recorded  DateTime @default(now())
   price_proof_image String?
 
@@ -115,9 +127,11 @@ model Price {
 model Store {
   id          String   @id @default(uuid()) @db.Uuid
   name        String
-  location    String?
+  location    String
   website_url String?
 
   // Relations
   prices      Price[]
+
+  @@unique([name, location])
 }

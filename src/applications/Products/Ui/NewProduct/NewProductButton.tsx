@@ -13,7 +13,8 @@ import {
 import { Plus, ScanBarcode, Type } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import type { Barcode } from "~/applications/Products/Domain/valueObjects/Barcode";
+import { toast } from "react-toastify";
+import type { Barcode } from "~/applications/Products/Domain/ValueObjects/Barcode";
 const BarcodeScannerModal = dynamic(() =>
   import("~/applications/Products/Ui/BarcodeScanner/BarcodeScannerModal").then(
     (mod) => mod.BarcodeScannerModal
@@ -24,10 +25,14 @@ const NewProductModal = dynamic(() =>
 );
 
 export const NewProductButton = () => {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
   const { i18n } = useLingui();
   const [modal, setModal] = useState<"with" | "without" | undefined>(undefined);
   const [barcode, setBarcode] = useState<Barcode | undefined>(undefined);
+  const notify = (productName: string) =>
+    toast(<Trans>Product {productName} added!</Trans>, {
+      type: "success"
+    });
 
   return (
     <>
@@ -79,7 +84,15 @@ export const NewProductButton = () => {
         />
       ) : null}
       {modal === "without" ? (
-        <NewProductModal isOpen={isOpen} onOpenChange={onOpenChange} barcode={barcode} />
+        <NewProductModal
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          onSuccessfull={(productName) => {
+            notify(productName);
+            onClose();
+          }}
+          barcode={barcode}
+        />
       ) : null}
     </>
   );

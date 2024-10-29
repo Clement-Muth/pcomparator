@@ -1,8 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { OpenFoodFactsProductRepository } from "~/applications/Products/Infrastructure/OpenFoodFactsProductRepository";
+// import { OpenFoodFactsProductRepository } from "~/applications/Products/Infrastructure/Repositories/PrismaProductRepository";
 
-const productRepository = new OpenFoodFactsProductRepository();
+// const productRepository = new OpenFoodFactsProductRepository();
 
 export const POST = async (
   request: NextRequest,
@@ -12,7 +12,7 @@ export const POST = async (
   const { barcode } = await params;
 
   try {
-    await productRepository.createProof(payload.proof);
+    // await productRepository.createProof(payload.proof);
 
     return NextResponse.json({}, { status: 200 });
   } catch (error) {
@@ -30,9 +30,9 @@ export const GET = async (
   const { barcode, format } = await params;
 
   try {
-    const product = await productRepository.findByBarcode({ barcode: barcode, format: format });
+    // const product = await productRepository.findByBarcode({ barcode: barcode, format: format });
 
-    return NextResponse.json(product, { status: 200 });
+    return NextResponse.json({}, { status: 200 });
   } catch (error) {
     if (error instanceof z.ZodError) return NextResponse.json({ errors: error.errors }, { status: 400 });
 

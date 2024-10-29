@@ -2,11 +2,10 @@
 
 import { Trans } from "@lingui/macro";
 import { ModalBody, ModalFooter } from "@nextui-org/react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getProduct } from "~/applications/Products/Api/getProduct";
 import type { Product } from "~/applications/Products/Domain/Entities/Product";
-import type { Barcode } from "~/applications/Products/Domain/valueObjects/Barcode";
+import type { Barcode } from "~/applications/Products/Domain/ValueObjects/Barcode";
 import useForm from "~/components/Form/useForm";
 
 export const NewProductForm = ({ barcode }: { barcode: Barcode | undefined }) => {
@@ -39,7 +38,7 @@ export const NewProductForm = ({ barcode }: { barcode: Barcode | undefined }) =>
             {product && (
               <>
                 <p>{product.name}</p>
-                <Image src={product.image} width={200} height={150} alt="" />
+                {/* <Image src={product.image} width={200} height={150} alt="" /> */}
               </>
             )}
           </>
