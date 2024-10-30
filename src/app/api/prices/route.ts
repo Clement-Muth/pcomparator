@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { Currency } from "~/applications/Products/Domain/ValueObjects/Currency";
-import { PrismaBrandRepository } from "~/applications/Products/Infrastructure/Repositories/PrismaBrandRepository";
-import { PrismaCategoryRepository } from "~/applications/Products/Infrastructure/Repositories/PrismaCategoryRepository";
-import { PrismaPriceRepository } from "~/applications/Products/Infrastructure/Repositories/PrismaPriceRepository";
-import { PrismaProductRepository } from "~/applications/Products/Infrastructure/Repositories/PrismaProductRepository";
-import { PrismaStoreRepository } from "~/applications/Products/Infrastructure/Repositories/PrismaStoreRepository";
+import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
+import { PrismaBrandRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaBrandRepository";
+import { PrismaCategoryRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaCategoryRepository";
+import { PrismaPriceRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaPriceRepository";
+import { PrismaProductRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaProductRepository";
+import { PrismaStoreRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaStoreRepository";
 import { withAuthentication } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({

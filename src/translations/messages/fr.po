@@ -33,11 +33,11 @@ msgstr "Paramètres de compte"
 msgid "Add a new product"
 msgstr "Ajouter un nouveau produit"
 
-#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Add new product by scanning barcode"
 msgstr "Ajouter un produit en scannant le code bar"
 
-#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Add new product by typing barcode"
 msgstr "Ajouter un produit en écrivant le code bar"
 
@@ -61,7 +61,7 @@ msgstr "Avatar"
 msgid "Avatar updated"
 msgstr "Avatar mis à jour"
 
-#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
 msgid "Barcode"
 msgstr "Code bar"
 
@@ -135,9 +135,9 @@ msgstr "Numéro de téléphone invalide."
 msgid "Light"
 msgstr "Clair"
 
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step3/Proof.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 msgid "Next"
 msgstr "Suivant"
 
@@ -161,7 +161,7 @@ msgstr "Numéro de téléphone mis à jour"
 msgid "Please enter a valid barcode."
 msgstr "Veuillez entrer un code-barres valide."
 
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 msgid "Please enter a valid price."
 msgstr "Veuillez entrer un prix valide."
 
@@ -174,17 +174,17 @@ msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vou
 msgid "Please use 32 characters at maximum."
 msgstr "Veuillez utiliser 32 caractères maximum."
 
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step3/Proof.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 msgid "Previous"
 msgstr "Précédent"
 
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
-#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
 msgid "Price"
 msgstr "Prix"
 
-#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Product {productName} added!"
 msgstr "Produit {productName} ajouté !"
 
@@ -197,7 +197,7 @@ msgstr "Preuve"
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Scan barcode"
 msgstr "Scanner code bar"
 
@@ -222,7 +222,7 @@ msgstr "Se déconnecter"
 msgid "System"
 msgstr "Système"
 
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step3/Proof.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 msgid "Take a picture"
 msgstr "Prendre un photo"
 
@@ -230,7 +230,7 @@ msgstr "Prendre un photo"
 msgid "This is your avatar."
 msgstr "Ceci est votre avatar."
 
-#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Type barcode"
 msgstr "Type de code bar"
 

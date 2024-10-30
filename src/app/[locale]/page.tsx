@@ -1,6 +1,6 @@
 import { Trans } from "@lingui/macro";
 import Balancer from "react-wrap-balancer";
-import { NewProductButton } from "~/applications/Products/Ui/NewProduct/NewProductButton";
+import { NewPriceButton } from "~/applications/Prices/Ui/NewPrice/NewPriceButton";
 import { Searchbar } from "~/applications/Searchbar/Ui/Searchbar";
 import { withLinguiPage } from "~/core/withLinguiLayout";
 import { auth } from "~/libraries/nextauth/authConfig";
@@ -15,7 +15,7 @@ const HomePage = async () => {
           <h1 className="text-center font-display mb-6 text-3xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-4xl md:leading-[5rem]">
             <Trans>Hello {session.user.name}</Trans>
           </h1>
-          <Searchbar startContent={<NewProductButton />} />
+          <Searchbar startContent={<NewPriceButton />} />
         </div>
       ) : (
         <div className="flex flex-col items-center max-w-2xl">
