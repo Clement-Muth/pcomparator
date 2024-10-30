@@ -21,10 +21,6 @@ msgstr "<0>Permanently remove your Personal Account and all of its contents from
 msgid "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 msgstr "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 
-#: src/components/Inputs/Input/Barcode.tsx
-msgid "8690804407383"
-msgstr "8690804407383"
-
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "Account deleted"
 msgstr "Account deleted"
@@ -33,21 +29,13 @@ msgstr "Account deleted"
 msgid "Account Settings"
 msgstr "Account Settings"
 
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
-msgid "Add a new product"
-msgstr "Add a new product"
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+msgid "Add new price by scanning barcode"
+msgstr "Add new price by scanning barcode"
 
 #: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
-msgid "Add new product by scanning barcode"
-msgstr "Add new product by scanning barcode"
-
-#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
-msgid "Add new product by typing barcode"
-msgstr "Add new product by typing barcode"
-
-#: src/applications/Products/Ui/NewProduct/NewProductForm.tsx
-msgid "Add the product"
-msgstr "Add the product"
+msgid "Add new price by typing barcode"
+msgstr "Add new price by typing barcode"
 
 #: src/components/Inputs/Input/Barcode.tsx
 msgid "All barcode types are accepted."
@@ -66,6 +54,7 @@ msgid "Avatar updated"
 msgstr "Avatar updated"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Barcode"
 
@@ -142,6 +131,7 @@ msgstr "Light"
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
+#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Next"
 
@@ -189,12 +179,8 @@ msgid "Price"
 msgstr "Price"
 
 #: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
-msgid "Product {productName} added!"
-msgstr "Product {productName} added!"
-
-#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
-msgid "Proof"
-msgstr "Proof"
+msgid "Price for {productName} added!"
+msgstr "Price for {productName} added!"
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
@@ -237,14 +223,6 @@ msgstr "This is your avatar."
 #: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Type barcode"
 msgstr "Type barcode"
-
-#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
-msgid "With barcode"
-msgstr "With barcode"
-
-#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
-msgid "Without barcode"
-msgstr "Without barcode"
 
 #: src/components/Inputs/File/useFileHandler.ts
 msgid "You can only add a maximum of {maxFile} files"

@@ -30,7 +30,7 @@ export const NewPriceButton = () => {
   const [modal, setModal] = useState<"with" | "without" | undefined>(undefined);
   const [barcode, setBarcode] = useState<Barcode | undefined>(undefined);
   const notify = (productName: string) =>
-    toast(<Trans>Product {productName} added!</Trans>, {
+    toast(<Trans>Price for {productName} added!</Trans>, {
       type: "success"
     });
 
@@ -49,7 +49,7 @@ export const NewPriceButton = () => {
               setModal("with");
               onOpen();
             }}
-            description={t(i18n)`Add new product by scanning barcode`}
+            description={t(i18n)`Add new price by scanning barcode`}
             shortcut="⌘C"
           >
             <Trans>Scan barcode</Trans>
@@ -62,7 +62,7 @@ export const NewPriceButton = () => {
               setModal("without");
               onOpen();
             }}
-            description={t(i18n)`Add new product by typing barcode`}
+            description={t(i18n)`Add new price by typing barcode`}
             shortcut="⌘N"
           >
             <Trans>Type barcode</Trans>

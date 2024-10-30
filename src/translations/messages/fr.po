@@ -29,25 +29,17 @@ msgstr "Compte supprimé"
 msgid "Account Settings"
 msgstr "Paramètres de compte"
 
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
-msgid "Add a new product"
-msgstr "Ajouter un nouveau produit"
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+msgid "Add new price by scanning barcode"
+msgstr "Ajouter un nouveau prix en scannant le code-barre"
 
 #: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
-msgid "Add new product by scanning barcode"
-msgstr "Ajouter un produit en scannant le code bar"
-
-#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
-msgid "Add new product by typing barcode"
-msgstr "Ajouter un produit en écrivant le code bar"
-
-#: src/applications/Products/Ui/NewProduct/NewProductForm.tsx
-msgid "Add the product"
-msgstr "Ajouter le produit"
+msgid "Add new price by typing barcode"
+msgstr "Ajouter un nouveau prix en saisissant le code-barre"
 
 #: src/components/Inputs/Input/Barcode.tsx
 msgid "All barcode types are accepted."
-msgstr "Tous les types de code bars sont acceptés."
+msgstr "Tous les types de code-barres sont acceptés."
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "An avatar is optional but strongly recommended."
@@ -62,8 +54,9 @@ msgid "Avatar updated"
 msgstr "Avatar mis à jour"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
-msgstr "Code bar"
+msgstr "Code-barre"
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "Click on the avatar to upload a custom one from your files."
@@ -138,6 +131,7 @@ msgstr "Clair"
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
+#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Suivant"
 
@@ -185,12 +179,8 @@ msgid "Price"
 msgstr "Prix"
 
 #: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
-msgid "Product {productName} added!"
-msgstr "Produit {productName} ajouté !"
-
-#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
-msgid "Proof"
-msgstr "Preuve"
+msgid "Price for {productName} added!"
+msgstr "Prix pour {productName} ajouté !"
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
@@ -199,7 +189,7 @@ msgstr "Sauvegarder"
 
 #: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Scan barcode"
-msgstr "Scanner code bar"
+msgstr "Scanner code-barre"
 
 #: src/components/Inputs/File/File.spec.tsx
 #: src/components/Inputs/File/File.tsx
@@ -232,15 +222,7 @@ msgstr "Ceci est votre avatar."
 
 #: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Type barcode"
-msgstr "Type de code bar"
-
-#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
-msgid "With barcode"
-msgstr "Avec un code bar"
-
-#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
-msgid "Without barcode"
-msgstr "Sans code bar"
+msgstr "Type de code-barre"
 
 #: src/components/Inputs/File/useFileHandler.ts
 msgid "You can only add a maximum of {maxFile} files"
