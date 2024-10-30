@@ -66,7 +66,6 @@ msgid "Avatar updated"
 msgstr "Avatar updated"
 
 #: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
-#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Barcode"
 
@@ -142,6 +141,7 @@ msgstr "Light"
 
 #: src/applications/Products/Ui/NewProduct/FormSteps/Step1/TypeBarcode.tsx
 #: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step3/Proof.tsx
 msgid "Next"
 msgstr "Next"
 
@@ -179,6 +179,7 @@ msgid "Please use 32 characters at maximum."
 msgstr "Please use 32 characters at maximum."
 
 #: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step3/Proof.tsx
 msgid "Previous"
 msgstr "Previous"
 
@@ -186,6 +187,14 @@ msgstr "Previous"
 #: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
 msgid "Price"
 msgstr "Price"
+
+#: src/applications/Products/Ui/NewProduct/NewProductButton.tsx
+msgid "Product {productName} added!"
+msgstr "Product {productName} added!"
+
+#: src/applications/Products/Ui/NewProduct/NewProductModal.tsx
+msgid "Proof"
+msgstr "Proof"
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
@@ -217,7 +226,7 @@ msgstr "Signout"
 msgid "System"
 msgstr "System"
 
-#: src/applications/Products/Ui/NewProduct/FormSteps/Step2/Price.tsx
+#: src/applications/Products/Ui/NewProduct/FormSteps/Step3/Proof.tsx
 msgid "Take a picture"
 msgstr "Take a picture"
 
