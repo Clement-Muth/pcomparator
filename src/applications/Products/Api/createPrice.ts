@@ -47,7 +47,5 @@ export const createPrice = async (params: z.infer<typeof ParamsSchema>): Promise
     })
     .json<Product>();
 
-  console.log(product);
-
   return product;
 };

@@ -19,7 +19,7 @@ export const Searchbar = ({ startContent }: SearchbarProps) => {
   return (
     // <form.Form
     //   methods={form.methods}
-    //   onSubmit={(data) => console.log(data)}
+    //   onSubmit={(data) => {}}
     //   disableActions
     //   className="w-full mt-8"
     // >

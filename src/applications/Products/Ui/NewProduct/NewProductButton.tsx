@@ -16,7 +16,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import type { Barcode } from "~/applications/Products/Domain/ValueObjects/Barcode";
 const BarcodeScannerModal = dynamic(() =>
-  import("~/applications/Products/Ui/BarcodeScanner/BarcodeScannerModal").then(
+  import("~/applications/Products/Ui/NewProduct/BarcodeScanner/BarcodeScannerModal").then(
     (mod) => mod.BarcodeScannerModal
   )
 );
@@ -75,7 +75,6 @@ export const NewProductButton = () => {
           isOpen={isOpen}
           onOpenChange={onOpenChange}
           onBarcodeDetected={(detectedBarcode) => {
-            console.log(detectedBarcode);
             if (!barcode) {
               setBarcode(detectedBarcode);
               setModal("without");

@@ -50,7 +50,6 @@ export const updatePhoneNumber = async (params: UpdatePhoneParams): Promise<Upda
     if (err instanceof HTTPError) {
       switch (err.response.status) {
         case 404: {
-          console.log("Not Found");
           throw new Error("404 NOT FOUND");
         }
       }

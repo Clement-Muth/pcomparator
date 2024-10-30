@@ -26,38 +26,24 @@ export const NewProductModal = ({ isOpen, onOpenChange, onSuccessfull }: NewProd
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="4xl">
         <ModalContent>
           <ModalHeader className="mt-4">
-            <Stepper
-              steps={[{ label: t(i18n)`Barcode` }, { label: t(i18n)`Price` }, { label: t(i18n)`Proof` }]}
-              currentStep={step}
-            />
+            <Stepper steps={[{ label: t(i18n)`Barcode` }, { label: t(i18n)`Price` }]} currentStep={step} />
           </ModalHeader>
           <FormSteps
             step={step}
-            onNextStep={(data) => {
+            onNextStep={async (data) => {
               setProductData((product) => ({ ...product, ...data }));
               setStep((currentStep) => currentStep + 1);
             }}
             onLastStep={async (data) => {
-              try {
-                const finalProductData = { ...productData, ...data };
-                // const byteCharacters = data.proof;
-                // const byteNumbers = new Array(byteCharacters.length);
-                // for (let i = 0; i < byteCharacters.length; i++) {
-                //   byteNumbers[i] = byteCharacters.charCodeAt(i);
-                // }
-                // const byteArray = new Uint8Array(byteNumbers);
-                // const blob = new Blob([byteArray], { type: "" });
+              const finalProductData = { ...productData, ...data };
 
-                const product = await createPrice({
-                  amount: finalProductData.price,
-                  barcode: finalProductData.barcode,
-                  currency: Currency.Euro,
-                  location: "22 rue d'eschau"
-                });
-                onSuccessfull(product.name);
-              } catch (err) {
-                console.log(err);
-              }
+              const product = await createPrice({
+                amount: finalProductData.price,
+                barcode: finalProductData.barcode,
+                currency: Currency.Euro,
+                location: "4 Rue du Dôme, 67000 Strasbourg"
+              });
+              onSuccessfull(product.name);
             }}
             onPrevious={() => setStep((currentStep) => currentStep - 1)}
             onCheckBarcode={(barcode) => getProduct({ barcode: { barcode: barcode, format: "test" } })}

@@ -36,7 +36,6 @@ export const getProduct = async (params: z.infer<typeof ParamsSchema>): Promise<
     if (err instanceof HTTPError) {
       switch (err.response.status) {
         case 404: {
-          console.log("Not Found");
           throw new Error("404 NOT FOUND");
         }
       }

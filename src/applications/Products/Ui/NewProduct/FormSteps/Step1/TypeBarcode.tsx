@@ -18,11 +18,7 @@ export const TypeBarcode = ({ onNextStep, onCheckBarcode }: TypeBarcodeProps) =>
     <>
       <form.Form
         methods={form.methods}
-        onSubmit={async (data) => {
-          // const product = await onCheckBarcode(data.barcode);
-
-          onNextStep({ ..._.omit(data, "empty"), ...{ barcode: data.barcode } });
-        }}
+        onSubmit={async (data) => onNextStep({ ..._.omit(data, "empty"), ...{ barcode: data.barcode } })}
         actions={{
           nextProps: { title: <Trans>Next</Trans>, color: "primary", type: "submit" },
           wrapper: ModalFooter

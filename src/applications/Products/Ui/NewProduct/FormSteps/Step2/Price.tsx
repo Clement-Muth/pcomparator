@@ -5,7 +5,7 @@ import useForm from "~/components/Form/useForm";
 import { Input } from "~/components/Inputs/Input/Input";
 
 interface PriceProps {
-  onNextStep: ({ price }: { price: number }) => void;
+  onNextStep: ({ price }: { price: number }) => Promise<void>;
   onPrevious: () => void;
 }
 
@@ -16,9 +16,7 @@ export const Price = ({ onNextStep, onPrevious }: PriceProps) => {
     <>
       <form.Form
         methods={form.methods}
-        onSubmit={(data) => {
-          onNextStep({ price: Number(data.price) });
-        }}
+        onSubmit={async (data) => await onNextStep({ price: Number(data.price) })}
         actions={{
           nextProps: { title: <Trans>Next</Trans>, color: "primary" },
           prevProps: { title: <Trans>Previous</Trans>, onPress: onPrevious },
