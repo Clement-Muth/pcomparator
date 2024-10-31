@@ -42,8 +42,9 @@ export const NewPriceButton = () => {
         </DropdownTrigger>
         <DropdownMenu aria-label="Profile Actions" variant="flat">
           <DropdownItem
-            key="settings"
+            key="scan-barcode"
             textValue="Scan barcode"
+            data-testid="scan-barcode"
             startContent={<ScanBarcode />}
             onPress={() => {
               setModal("with");
@@ -55,7 +56,8 @@ export const NewPriceButton = () => {
             <Trans>Scan barcode</Trans>
           </DropdownItem>
           <DropdownItem
-            key="logout"
+            key="type-barcode"
+            data-testid="type-barcode"
             textValue="Type barcode"
             startContent={<Type />}
             onPress={() => {

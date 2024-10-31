@@ -3,7 +3,6 @@ import { useLingui } from "@lingui/react";
 import { Modal, ModalContent, ModalHeader } from "@nextui-org/react";
 import { useState } from "react";
 import { createPrice } from "~/applications/Prices/Api/createPrice";
-import { getProduct } from "~/applications/Prices/Api/getProduct";
 import type { Barcode } from "~/applications/Prices/Domain/ValueObjects/Barcode";
 import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
 import { FormSteps } from "~/applications/Prices/Ui/NewPrice/FormSteps/FormSteps";
@@ -46,7 +45,6 @@ export const NewPriceModal = ({ isOpen, onOpenChange, onSuccessfull }: NewProduc
               onSuccessfull(product.name);
             }}
             onPrevious={() => setStep((currentStep) => currentStep - 1)}
-            onCheckBarcode={(barcode) => getProduct({ barcode: { barcode: barcode, format: "test" } })}
           />
         </ModalContent>
       </Modal>

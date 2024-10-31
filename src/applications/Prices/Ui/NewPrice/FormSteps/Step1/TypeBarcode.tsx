@@ -1,17 +1,16 @@
 import { Trans } from "@lingui/macro";
 import { ModalBody, ModalFooter } from "@nextui-org/react";
 import _ from "lodash";
-import type { Product } from "~/applications/Prices/Domain/Entities/Product";
 import useForm from "~/components/Form/useForm";
 import { Barcode } from "~/components/Inputs/Input/Barcode";
 import { Input } from "~/components/Inputs/Input/Input";
 
 interface TypeBarcodeProps {
   onNextStep: ({ barcode }: { barcode: string }) => void;
-  onCheckBarcode: (barcode: string) => Promise<Product | null>;
+  // onCheckBarcode: (barcode: string) => Promise<Product | null>;
 }
 
-export const TypeBarcode = ({ onNextStep, onCheckBarcode }: TypeBarcodeProps) => {
+export const TypeBarcode = ({ onNextStep }: TypeBarcodeProps) => {
   const form = useForm<{ barcode: string; empty: never }>();
 
   return (
