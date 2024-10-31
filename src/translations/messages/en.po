@@ -54,7 +54,6 @@ msgid "Avatar updated"
 msgstr "Avatar updated"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
-#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Barcode"
 
@@ -129,9 +128,6 @@ msgid "Light"
 msgstr "Light"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
-#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Next"
 
@@ -173,7 +169,6 @@ msgstr "Please use 32 characters at maximum."
 msgid "Previous"
 msgstr "Previous"
 
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
 msgid "Price"
 msgstr "Price"
