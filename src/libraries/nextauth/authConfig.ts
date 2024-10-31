@@ -8,6 +8,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
   providers: [Google],
   trustHost: true,
+
   callbacks: {
     async session({ session, user }) {
       session.user = user;

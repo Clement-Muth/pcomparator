@@ -2,10 +2,14 @@
 
 import { Trans } from "@lingui/macro";
 import { Button } from "@nextui-org/react";
-import { signin } from "~/applications/Authentication/Api/signin";
+import { signIn } from "next-auth/react";
 
 export const SigninButton = () => (
-  <form action={async () => await signin()}>
+  <form
+    action={async () => {
+      await signIn("google");
+    }}
+  >
     <Button color="primary" variant="flat" type="submit">
       <Trans>Signin</Trans>
     </Button>

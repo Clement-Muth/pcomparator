@@ -60,3 +60,78 @@ model VerificationToken {
 
   @@id([identifier, token])
 }
+
+model Product {
+  id             String   @id @default(uuid()) @db.Uuid
+  barcode        String   @unique
+  name           String
+  description    String?
+  category_id    String?  @db.Uuid
+  brand_id       String?  @db.Uuid
+  nutrition_score Json?   @db.JsonB
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+
+  // Relations
+  category       Category? @relation(fields: [category_id], references: [id])
+  brand          Brand?    @relation(fields: [brand_id], references: [id])
+  prices         Price[]
+}
+
+model Category {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String   @unique
+  description String?
+  parent_category_id String? @db.Uuid
+
+  // Relations
+  products    Product[]
+}
+
+model Brand {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String   @unique
+  description String?
+  website_url String?
+
+  // Relations
+  products    Product[]
+}
+
+enum Currency {
+  AED // Dirham des Émirats arabes unis
+  AUD // Dollar australien
+  CAD // Dollar canadien
+  CHF // Franc suisse
+  CNY // Yuan renminbi chinois
+  EUR // Euro
+  GBP // Livre sterling
+  JPY // Yen japonais
+  USD // Dollar américain
+}
+
+model Price {
+  id             String   @id @default(uuid()) @db.Uuid
+  product_id     String   @db.Uuid
+  store_id       String   @db.Uuid
+  amount         Float
+  currency       Currency
+  date_recorded  DateTime @default(now())
+  price_proof_image String?
+
+  // Relations
+  product Product @relation(fields: [product_id], references: [id])
+  store   Store   @relation(fields: [store_id], references: [id])
+}
+
+model Store {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String
+  location    String
+  website_url String?
+
+  // Relations
+  prices      Price[]
+
+  @@unique([name, location])
+}

@@ -24,18 +24,18 @@ export default middleware(async (request) => {
     "x-device": viewport
   };
 
-  if (!isAuthenticated && pathname !== `/${locale}`)
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}?redirect_url=${encodeURIComponent(
-          process.env.PCOMPARATOR_PUBLIC_URL + request.nextUrl.pathname
-        )}${request.nextUrl.search}`,
-        request.url
-      ),
-      {
-        headers: headers
-      }
-    );
+  // if (!isAuthenticated && pathname !== `/${locale}`)
+  //   return NextResponse.redirect(
+  //     new URL(
+  //       `/${locale}?redirect_url=${encodeURIComponent(
+  //         process.env.PCOMPARATOR_PUBLIC_URL + request.nextUrl.pathname
+  //       )}${request.nextUrl.search}`,
+  //       request.url
+  //     ),
+  //     {
+  //       headers: headers
+  //     }
+  //   );
 
   if (pathnameIsMissingLocale) {
     return NextResponse.redirect(new URL(`/${locale}/${pathname}${request.nextUrl.search}`, request.url), {

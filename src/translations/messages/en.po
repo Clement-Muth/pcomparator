@@ -29,6 +29,18 @@ msgstr "Account deleted"
 msgid "Account Settings"
 msgstr "Account Settings"
 
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+msgid "Add new price by scanning barcode"
+msgstr "Add new price by scanning barcode"
+
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+msgid "Add new price by typing barcode"
+msgstr "Add new price by typing barcode"
+
+#: src/components/Inputs/Input/Barcode.tsx
+msgid "All barcode types are accepted."
+msgstr "All barcode types are accepted."
+
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "An avatar is optional but strongly recommended."
 msgstr "An avatar is optional but strongly recommended."
@@ -40,6 +52,10 @@ msgstr "Avatar"
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "Avatar updated"
 msgstr "Avatar updated"
+
+#: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+msgid "Barcode"
+msgstr "Barcode"
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "Click on the avatar to upload a custom one from your files."
@@ -70,6 +86,10 @@ msgstr "Display Name"
 #: src/components/Stepper/Stepper.tsx
 msgid "Done"
 msgstr "Done"
+
+#: src/components/Inputs/File/File.tsx
+msgid "Drag and drop your file"
+msgstr "Drag and drop your file"
 
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Enter a phone number to receive important service updates by SMS."
@@ -107,7 +127,7 @@ msgstr "Invalid phone number."
 msgid "Light"
 msgstr "Light"
 
-#: src/components/Form/FormActions.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
 msgid "Next"
 msgstr "Next"
 
@@ -127,9 +147,13 @@ msgstr "Phone Number"
 msgid "Phone number updated"
 msgstr "Phone number updated"
 
-#: src/applications/Searchbar/Ui/Searchbar.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Please enter a valid barcode."
 msgstr "Please enter a valid barcode."
+
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+msgid "Please enter a valid price."
+msgstr "Please enter a valid price."
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 msgid "Please enter your full name, or a display name you are comfortable with."
@@ -140,10 +164,32 @@ msgstr "Please enter your full name, or a display name you are comfortable with.
 msgid "Please use 32 characters at maximum."
 msgstr "Please use 32 characters at maximum."
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
+msgid "Previous"
+msgstr "Previous"
+
+#: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+msgid "Price"
+msgstr "Price"
+
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+msgid "Price for {productName} added!"
+msgstr "Price for {productName} added!"
+
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
 msgid "Save"
 msgstr "Save"
+
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+msgid "Scan barcode"
+msgstr "Scan barcode"
+
+#: src/components/Inputs/File/File.spec.tsx
+#: src/components/Inputs/File/File.tsx
+msgid "Select your file"
+msgstr "Select your file"
 
 #: src/applications/Authentication/Ui/Signin/SignButton/ProfileButton.tsx
 msgid "Settings"
@@ -161,9 +207,34 @@ msgstr "Signout"
 msgid "System"
 msgstr "System"
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
+msgid "Take a picture"
+msgstr "Take a picture"
+
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."
 msgstr "This is your avatar."
+
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+msgid "Type barcode"
+msgstr "Type barcode"
+
+#: src/components/Inputs/File/useFileHandler.ts
+msgid "You can only add a maximum of {maxFile} files"
+msgstr "You can only add a maximum of {maxFile} files"
+
+#: src/components/Inputs/File/useFileHandler.ts
+#: src/components/Inputs/File/useFileHandler.ts
+msgid "You must add more than {minFile} files"
+msgstr "You must add more than {minFile} files"
+
+#: src/components/Inputs/File/useFileHandler.ts
+msgid "Your file exceeded the limit {0}Mo"
+msgstr "Your file exceeded the limit {0}Mo"
+
+#: src/components/Inputs/File/File.spec.tsx
+msgid "Your file exceeded the limit {maxSize}Mo"
+msgstr "Your file exceeded the limit {maxSize}Mo"
 
 #: src/components/Inputs/Phone/Phone.tsx
 msgid "Your phone number is not valid"

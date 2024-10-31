@@ -49,7 +49,6 @@ export const updateAvatar = async (params: z.infer<typeof ParamsSchema>): Promis
     if (err instanceof HTTPError) {
       switch (err.response.status) {
         case 404: {
-          console.log("Not Found");
           throw new Error("404 NOT FOUND");
         }
       }

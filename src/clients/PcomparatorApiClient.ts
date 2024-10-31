@@ -20,58 +20,14 @@ export const pcomparatorApiClient = ky.create({
   hooks: {
     beforeRequest: [],
 
-    beforeError: [
-      (error) => {
-        // sentryAddBreadcrumb({
-        //   type: "http",
-        //   category: "network",
-        //   data: {
-        //     // Request
-        //     method: error.request.method,
-        //     url: error.request.url,
-        //     headers: Object.fromEntries(error.request.headers.entries()),
-        //     body: error.request.body,
-
-        //     // Response
-        //     status_code: error.response.status,
-        //     reason: error.response.statusText,
-        //     apiGwRequestId: error.response.headers.get("apigw-requestid")
-        //   },
-        //   level: "error"
-        // });
-
-        return error;
-      }
-    ],
+    beforeError: [(error) => error],
 
     afterResponse: [
-      (request: Request, options: NormalizedOptions, response: Response) => {
-        // sentryAddBreadcrumb({
-        //   type: "http",
-        //   category: "network",
-        //   data: {
-        //     // Request
-        //     method: request.method,
-        //     url: request.url,
-        //     headers: Object.fromEntries(request.headers.entries()),
-        //     body: request.body,
-
-        //     // Response
-        //     status_code: response.status,
-        //     reason: response.statusText,
-        //     apiGwRequestId: response.headers.get("apigw-requestid")
-        //   },
-        //   level: "info"
-        // });
-
-        return response;
-      },
+      (request: Request, options: NormalizedOptions, response: Response) => response,
 
       (request: Request, options: NormalizedOptions, response: Response) => {
         // Transform 202 into error to allow retry at higher level
-        if (response.status === 202) {
-          throw new HTTPError(response, request, options);
-        }
+        if (response.status === 202) throw new HTTPError(response, request, options);
 
         return response;
       }
