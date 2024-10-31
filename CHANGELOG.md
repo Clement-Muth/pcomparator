@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/Clement-Muth/pcomparator/compare/v3.3.0...v3.4.0) (2024-10-31)
+
+
+### Features
+
+* **product:** create new product form ([#44](https://github.com/Clement-Muth/pcomparator/issues/44)) ([56dad32](https://github.com/Clement-Muth/pcomparator/commit/56dad32c49fde8fb92758d24230f828a60e2ef28))
+
 # [3.3.0](https://github.com/Clement-Muth/pcomparator/compare/v3.2.2...v3.3.0) (2024-10-28)
 
 
