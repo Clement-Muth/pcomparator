@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
-import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
 import { PrismaBrandRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaBrandRepository";
 import { PrismaCategoryRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaCategoryRepository";
 import { PrismaPriceRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaPriceRepository";
@@ -8,18 +6,7 @@ import { PrismaProductRepository } from "~/applications/Prices/Infrastructure/Re
 import { PrismaStoreRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaStoreRepository";
 import { errorHandler } from "~/core/errorHandler";
 import { withAuthentication } from "~/libraries/nextauth/authConfig";
-
-export const ParamsSchema = z.object({
-  barcode: z.string(),
-  storeName: z.string(),
-  productName: z.string(),
-  categoryName: z.string(),
-  brandName: z.string(),
-  location: z.string(),
-  amount: z.number().positive(),
-  proof: z.string(),
-  currency: z.nativeEnum(Currency)
-});
+import { ParamsSchema } from "./validator";
 
 const categoryRepository = new PrismaCategoryRepository();
 const productRepository = new PrismaProductRepository();

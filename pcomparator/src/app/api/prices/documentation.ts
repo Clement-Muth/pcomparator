@@ -1,13 +1,13 @@
 import { z } from "zod";
 import { type ZodOpenApiOperationObject, extendZodWithOpenApi } from "zod-openapi";
-import { ParamsSchema } from "~/app/api/prices/route";
 import { ProductSchema } from "~/applications/Prices/Domain/Entities/Product";
 import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
+import { ParamsSchema } from "./validator";
 
 extendZodWithOpenApi(z);
 
 const ExtendedParamsSchema = ParamsSchema.extend({
-  barcode: ParamsSchema.shape.barcode.openapi({
+  barcode: z.string().openapi({
     example: "8690804407383",
     description: "Unique identifier for the product in barcode format"
   }),
