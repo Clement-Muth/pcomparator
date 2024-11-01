@@ -16,7 +16,13 @@ export const Price = ({ onNextStep, onPrevious }: PriceProps) => {
     <>
       <form.Form
         methods={form.methods}
-        onSubmit={async (data) => await onNextStep({ price: Number(data.price) })}
+        onSubmit={async (data) => {
+          try {
+            await onNextStep({ price: Number(data.price) });
+          } catch (error) {
+            form.setError("price", { message: "An error occured, please try later." });
+          }
+        }}
         actions={{
           nextProps: { title: <Trans>Next</Trans>, color: "primary" },
           prevProps: { title: <Trans>Previous</Trans>, onPress: onPrevious },

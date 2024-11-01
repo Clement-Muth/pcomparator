@@ -1,7 +1,7 @@
 declare namespace NodeJS {
   interface ProcessEnv {
     PCOMPARATOR_PUBLIC_URL: string;
-    PCOMPARATOR_ENV: string;
+    PCOMPARATOR_ENV: "development" | "test" | "staging" | "production";
     PCOMPARATOR_API_ENDPOINT: string;
     OPEN_FOOD_FACT_API_ENDPOINT: string;
     OPEN_FOOD_FACT_PRICES_API_ENDPOINT: string;

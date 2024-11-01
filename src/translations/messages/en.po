@@ -21,6 +21,10 @@ msgstr "<0>Permanently remove your Personal Account and all of its contents from
 msgid "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 msgstr "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 
+#: src/core/errorHandler.ts
+msgid "A similar entry already exists."
+msgstr "A similar entry already exists."
+
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "Account deleted"
 msgstr "Account deleted"
@@ -54,6 +58,7 @@ msgid "Avatar updated"
 msgstr "Avatar updated"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Barcode"
 
@@ -115,6 +120,11 @@ msgstr "Hello {0}"
 msgid "I understand, delete my account"
 msgstr "I understand, delete my account"
 
+#: src/core/errorHandler.ts
+#: src/core/errorHandler.ts
+msgid "Internal Server Error."
+msgstr "Internal Server Error."
+
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 msgid "Invalid display name."
 msgstr "Invalid display name."
@@ -128,6 +138,7 @@ msgid "Light"
 msgstr "Light"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 msgid "Next"
 msgstr "Next"
 
@@ -165,11 +176,10 @@ msgid "Please use 32 characters at maximum."
 msgstr "Please use 32 characters at maximum."
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 msgid "Previous"
 msgstr "Previous"
 
-#: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 msgid "Price"
 msgstr "Price"
 
@@ -210,6 +220,14 @@ msgstr "System"
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 msgid "Take a picture"
 msgstr "Take a picture"
+
+#: src/core/errorHandler.ts
+msgid "The request is malformed or contains invalid parameters. Please check the data provided."
+msgstr "The request is malformed or contains invalid parameters. Please check the data provided."
+
+#: src/core/errorHandler.ts
+msgid "The requested resource could not be found."
+msgstr "The requested resource could not be found."
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."

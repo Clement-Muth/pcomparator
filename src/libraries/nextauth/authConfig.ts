@@ -21,5 +21,5 @@ export const withAuthentication = (callback: Parameters<typeof auth>[0]) =>
   auth(async (request, ctx) => {
     if (request.auth) return await callback(request, ctx);
 
-    return NextResponse.json({ message: "Not authenticated" }, { status: 401 });
+    return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   });

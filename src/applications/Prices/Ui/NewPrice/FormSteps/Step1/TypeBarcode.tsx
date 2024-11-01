@@ -17,7 +17,13 @@ export const TypeBarcode = ({ onNextStep }: TypeBarcodeProps) => {
     <>
       <form.Form
         methods={form.methods}
-        onSubmit={async (data) => onNextStep({ ..._.omit(data, "empty"), ...{ barcode: data.barcode } })}
+        onSubmit={(data) => {
+          try {
+            onNextStep({ ..._.omit(data, "empty"), ...{ barcode: data.barcode } });
+          } catch (error) {
+            form.setError("barcode", { message: "An error occured, please try later." });
+          }
+        }}
         actions={{
           nextProps: { title: <Trans>Next</Trans>, color: "primary", type: "submit" },
           wrapper: ModalFooter
