@@ -1,7 +1,7 @@
 import * as yaml from "yaml";
 import { z } from "zod";
 import { createDocument, extendZodWithOpenApi } from "zod-openapi";
-import { components, paths } from "pcomparator/src/app/api/documentation";
+import { components, paths } from "~/app/api/documentation";
 
 extendZodWithOpenApi(z);
 

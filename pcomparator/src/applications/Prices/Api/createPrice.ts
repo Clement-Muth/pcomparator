@@ -1,10 +1,10 @@
 "use server";
 
 import { z } from "zod";
-import type { Product } from "pcomparator/src/applications/Prices/Domain/Entities/Product";
-import { Currency } from "pcomparator/src/applications/Prices/Domain/ValueObjects/Currency";
-import { OpenFoodFactPricesApiClient } from "pcomparator/src/clients/OpenFoodFactPricesApiClient";
-import { pcomparatorAuthenticatedApiClient } from "pcomparator/src/clients/PcomparatorApiClient";
+import type { Product } from "~/applications/Prices/Domain/Entities/Product";
+import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
+import { OpenFoodFactPricesApiClient } from "~/clients/OpenFoodFactPricesApiClient";
+import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
 
 const ParamsSchema = z.object({
   barcode: z.string(),

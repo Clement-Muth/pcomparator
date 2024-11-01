@@ -6,7 +6,7 @@ import clsx from "clsx";
 import _ from "lodash";
 import type { ComponentType, ReactNode } from "react";
 import { useFormContext } from "react-hook-form";
-import useDevice from "pcomparator/src/hooks/useDevice";
+import useDevice from "~/hooks/useDevice";
 
 export interface FormActionsProps {
   prevProps?: Omit<ButtonProps, "ref" | "title" | "as"> & {

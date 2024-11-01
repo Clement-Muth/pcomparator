@@ -2,7 +2,7 @@
 import ky, { type NormalizedOptions } from "ky";
 import { HTTPError as HTTPErrorKy } from "ky";
 import { headers } from "next/headers";
-import { HTTPError } from "pcomparator/src/types/error";
+import { HTTPError } from "~/types/error";
 
 const pcomparatorApiEndpoint = process.env.PCOMPARATOR_API_ENDPOINT;
 if (!pcomparatorApiEndpoint) {

@@ -14,14 +14,14 @@ import { Plus, ScanBarcode, Type } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import type { Barcode } from "pcomparator/src/applications/Prices/Domain/ValueObjects/Barcode";
+import type { Barcode } from "~/applications/Prices/Domain/ValueObjects/Barcode";
 const BarcodeScannerModal = dynamic(() =>
-  import("pcomparator/src/applications/Prices/Ui/NewPrice/BarcodeScanner/BarcodeScannerModal").then(
+  import("~/applications/Prices/Ui/NewPrice/BarcodeScanner/BarcodeScannerModal").then(
     (mod) => mod.BarcodeScannerModal
   )
 );
 const NewPriceModal = dynamic(() =>
-  import("pcomparator/src/applications/Prices/Ui/NewPrice/NewPiceModal").then((mod) => mod.NewPriceModal)
+  import("~/applications/Prices/Ui/NewPrice/NewPiceModal").then((mod) => mod.NewPriceModal)
 );
 
 export const NewPriceButton = () => {

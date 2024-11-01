@@ -7,10 +7,10 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
 import { Provider as ReactWrapBalancerProvider } from "react-wrap-balancer";
-import DeviceProvider from "pcomparator/src/core/DeviceProvider";
-import TranslationProvider from "pcomparator/src/core/TranslationProvider";
-import type { AVAILABLE_LOCALES } from "pcomparator/src/core/locale";
-import type { Device } from "pcomparator/src/types/device";
+import DeviceProvider from "~/core/DeviceProvider";
+import TranslationProvider from "~/core/TranslationProvider";
+import type { AVAILABLE_LOCALES } from "~/core/locale";
+import type { Device } from "~/types/device";
 
 interface ApplicationProviderProps {
   children: ReactNode;

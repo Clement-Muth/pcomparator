@@ -1,6 +1,6 @@
-import type { Profile, ProfileUpdate } from "pcomparator/src/applications/Profile/Domain/Entities/Profile";
-import type { ProfileRepository } from "pcomparator/src/applications/Profile/Domain/Repositories/ProfileRepository";
-import { prisma } from "pcomparator/src/libraries/prisma";
+import type { Profile, ProfileUpdate } from "~/applications/Profile/Domain/Entities/Profile";
+import type { ProfileRepository } from "~/applications/Profile/Domain/Repositories/ProfileRepository";
+import { prisma } from "~/libraries/prisma";
 
 export class PrismaProfileRepository implements ProfileRepository {
   async update(data: ProfileUpdate): Promise<Profile> {

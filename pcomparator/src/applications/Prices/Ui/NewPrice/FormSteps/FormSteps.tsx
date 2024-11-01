@@ -1,5 +1,5 @@
-import { TypeBarcode } from "pcomparator/src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode";
-import { Price } from "pcomparator/src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price";
+import { TypeBarcode } from "~/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode";
+import { Price } from "~/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price";
 
 interface FormStepsProps {
   step: number;

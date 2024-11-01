@@ -16,7 +16,7 @@
     "compile": "lingui compile --typescript",
     "test": "env-cmd -f ./.env.test jest --maxWorkers=100%",
     "generate": "kysely-codegen --out-file ./src/types/db.d.ts",
-    "prepare": "cd ../ && husky pcomparator/.husky",
+    "prepare": "cd .. && husky ./pcomparator/.husky",
     "postinstall": "prisma generate",
     "openapi:create": "npx tsx src/libraries/openAPI/index.ts --noEmit > openapi.yaml"
   },
@@ -110,9 +110,6 @@
     "turbo": "^2.2.2",
     "webpack": "^5.95.0",
     "zod": "^3.23.8"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css,md}": "format:check"
   },
   "packageManager": "yarn@3.6.1"
 }

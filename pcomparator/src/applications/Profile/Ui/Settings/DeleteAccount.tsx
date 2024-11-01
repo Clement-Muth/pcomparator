@@ -17,10 +17,10 @@ import {
 } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import { deleteAccount } from "pcomparator/src/applications/Profile/Api/deleteAccount";
-import useForm from "pcomparator/src/components/Form/useForm";
-import { Input } from "pcomparator/src/components/Inputs/Input/Input";
-import useDevice from "pcomparator/src/hooks/useDevice";
+import { deleteAccount } from "~/applications/Profile/Api/deleteAccount";
+import useForm from "~/components/Form/useForm";
+import { Input } from "~/components/Inputs/Input/Input";
+import useDevice from "~/hooks/useDevice";
 
 export const SettingsDeleteAccount = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();

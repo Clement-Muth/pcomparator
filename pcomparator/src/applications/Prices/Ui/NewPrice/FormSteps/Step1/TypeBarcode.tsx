@@ -1,9 +1,9 @@
 import { Trans } from "@lingui/macro";
 import { ModalBody, ModalFooter } from "@nextui-org/react";
 import _ from "lodash";
-import useForm from "pcomparator/src/components/Form/useForm";
-import { Barcode } from "pcomparator/src/components/Inputs/Input/Barcode";
-import { Input } from "pcomparator/src/components/Inputs/Input/Input";
+import useForm from "~/components/Form/useForm";
+import { Barcode } from "~/components/Inputs/Input/Barcode";
+import { Input } from "~/components/Inputs/Input/Input";
 
 interface TypeBarcodeProps {
   onNextStep: ({ barcode }: { barcode: string }) => void;

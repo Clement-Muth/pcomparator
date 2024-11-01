@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DeviceContext } from "pcomparator/src/core/DeviceProvider";
+import { DeviceContext } from "~/core/DeviceProvider";
 
 const useDevice = () => useContext(DeviceContext);
 

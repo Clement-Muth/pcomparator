@@ -1,8 +1,8 @@
 "use server";
 
 import { HTTPError } from "ky";
-import { pcomparatorAuthenticatedApiClient } from "pcomparator/src/clients/PcomparatorApiClient";
-import { auth } from "pcomparator/src/libraries/nextauth/authConfig";
+import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
+import { auth } from "~/libraries/nextauth/authConfig";
 
 /**
  * Deletes the authenticated user's account.

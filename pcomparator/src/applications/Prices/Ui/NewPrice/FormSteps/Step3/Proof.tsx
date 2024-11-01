@@ -3,8 +3,8 @@ import { Button, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react
 import { Camera } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import { TakePicture } from "pcomparator/src/applications/Prices/Ui/NewPrice/FormSteps/Step3/TakePicture";
-import useForm from "pcomparator/src/components/Form/useForm";
+import { TakePicture } from "~/applications/Prices/Ui/NewPrice/FormSteps/Step3/TakePicture";
+import useForm from "~/components/Form/useForm";
 
 interface ProofProps {
   onNextStep: (data: any) => void;

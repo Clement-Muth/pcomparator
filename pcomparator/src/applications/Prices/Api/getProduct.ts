@@ -2,9 +2,9 @@
 
 import { HTTPError } from "ky";
 import { z } from "zod";
-import type { Product } from "pcomparator/src/applications/Prices/Domain/Entities/Product";
-import { pcomparatorAuthenticatedApiClient } from "pcomparator/src/clients/PcomparatorApiClient";
-import { auth } from "pcomparator/src/libraries/nextauth/authConfig";
+import type { Product } from "~/applications/Prices/Domain/Entities/Product";
+import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
+import { auth } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({
   barcode: z.object({

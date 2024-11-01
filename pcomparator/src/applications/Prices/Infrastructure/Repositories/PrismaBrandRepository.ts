@@ -1,5 +1,5 @@
-import type { Brand, CreateBrand } from "pcomparator/src/applications/Prices/Domain/Entities/Brand";
-import { prisma } from "pcomparator/src/libraries/prisma";
+import type { Brand, CreateBrand } from "~/applications/Prices/Domain/Entities/Brand";
+import { prisma } from "~/libraries/prisma";
 
 export class PrismaBrandRepository {
   async create(brand: CreateBrand): Promise<Brand> {

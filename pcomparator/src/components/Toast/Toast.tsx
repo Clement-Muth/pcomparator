@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { Bounce, ToastContainer } from "react-toastify";
-import { useTheme } from "pcomparator/src/hooks/useTheme";
+import { useTheme } from "~/hooks/useTheme";
 
 const ToastComponent = () => {
   const { activeTheme } = useTheme();

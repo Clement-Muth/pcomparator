@@ -1,6 +1,6 @@
-import type { ProfileUpdate } from "pcomparator/src/applications/Profile/Domain/Entities/Profile";
-import { PrismaProfileRepository } from "pcomparator/src/applications/Profile/Infrastructure/PrismaUserRepository";
-import { prisma } from "pcomparator/src/libraries/prisma";
+import type { ProfileUpdate } from "~/applications/Profile/Domain/Entities/Profile";
+import { PrismaProfileRepository } from "~/applications/Profile/Infrastructure/PrismaUserRepository";
+import { prisma } from "~/libraries/prisma";
 
 jest.mock("~/libraries/prisma", () => ({
   __esModule: true,

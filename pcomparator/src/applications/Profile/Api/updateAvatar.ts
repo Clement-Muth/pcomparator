@@ -2,8 +2,8 @@
 
 import { HTTPError } from "ky";
 import { z } from "zod";
-import { pcomparatorAuthenticatedApiClient } from "pcomparator/src/clients/PcomparatorApiClient";
-import { auth } from "pcomparator/src/libraries/nextauth/authConfig";
+import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
+import { auth } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({
   image: z.instanceof(File)

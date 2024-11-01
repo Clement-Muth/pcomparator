@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
-import { updateAvatar } from "pcomparator/src/applications/Profile/Api/updateAvatar";
-import { SettingsAvatar } from "pcomparator/src/applications/Profile/Ui/Settings/Avatar";
-import { fireEvent, render, waitFor } from "pcomparator/src/test/componentUtils";
+import { updateAvatar } from "~/applications/Profile/Api/updateAvatar";
+import { SettingsAvatar } from "~/applications/Profile/Ui/Settings/Avatar";
+import { fireEvent, render, waitFor } from "~/test/componentUtils";
 
 jest.mock("~/applications/Profile/Api/updateAvatar", () => ({
   updateAvatar: jest.fn()

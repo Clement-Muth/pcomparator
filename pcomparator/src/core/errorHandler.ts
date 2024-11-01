@@ -3,7 +3,7 @@ import type { NextAuthRequest } from "next-auth/lib";
 import type { AppRouteHandlerFnContext } from "next-auth/lib/types";
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { HTTPError } from "pcomparator/src/types/error";
+import { HTTPError } from "~/types/error";
 
 export const errorHandler = (
   callback: (request: NextAuthRequest, ctx: AppRouteHandlerFnContext) => Promise<NextResponse>

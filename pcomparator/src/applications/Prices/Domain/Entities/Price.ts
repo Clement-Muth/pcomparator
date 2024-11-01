@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Currency } from "pcomparator/src/applications/Prices/Domain/ValueObjects/Currency";
+import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
 
 export const PriceSchema = z.object({
   id: z.string().uuid(),

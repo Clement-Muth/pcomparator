@@ -1,8 +1,8 @@
 // @ts-ignore
 import { setI18n } from "@lingui/react/server";
 import type { ReactNode } from "react";
-import type { AVAILABLE_LOCALES } from "pcomparator/src/core/locale";
-import { getI18nInstance } from "pcomparator/src/translations/i18n";
+import type { AVAILABLE_LOCALES } from "~/core/locale";
+import { getI18nInstance } from "~/translations/i18n";
 
 export type PageLocaleParam = {
   params: Promise<{ locale: AVAILABLE_LOCALES }>;

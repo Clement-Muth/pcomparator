@@ -1,7 +1,7 @@
 import "server-only";
 
 import { type I18n, type Messages, setupI18n } from "@lingui/core";
-import { locales } from "pcomparator/src/core/locale";
+import { locales } from "~/core/locale";
 
 type SupportedLocales = "fr" | "en";
 

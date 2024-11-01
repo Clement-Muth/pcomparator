@@ -1,6 +1,6 @@
-import { ProfileButton } from "pcomparator/src/applications/Authentication/Ui/Signin/SignButton/ProfileButton";
-import { SigninButton } from "pcomparator/src/applications/Authentication/Ui/Signin/SignButton/SigninButton";
-import { auth } from "pcomparator/src/libraries/nextauth/authConfig";
+import { ProfileButton } from "~/applications/Authentication/Ui/Signin/SignButton/ProfileButton";
+import { SigninButton } from "~/applications/Authentication/Ui/Signin/SignButton/SigninButton";
+import { auth } from "~/libraries/nextauth/authConfig";
 
 export const SignButton = async () => {
   const session = await auth();

@@ -1,8 +1,8 @@
 import { Trans, t } from "@lingui/macro";
 import { ModalBody, ModalFooter } from "@nextui-org/react";
 import { Euro } from "lucide-react";
-import useForm from "pcomparator/src/components/Form/useForm";
-import { Input } from "pcomparator/src/components/Inputs/Input/Input";
+import useForm from "~/components/Form/useForm";
+import { Input } from "~/components/Inputs/Input/Input";
 
 interface PriceProps {
   onNextStep: ({ price }: { price: number }) => Promise<void>;

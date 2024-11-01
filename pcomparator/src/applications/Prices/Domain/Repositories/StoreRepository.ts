@@ -1,4 +1,4 @@
-import type { Store } from "pcomparator/src/applications/Prices/Domain/Entities/Store";
+import type { Store } from "~/applications/Prices/Domain/Entities/Store";
 
 export interface StoreRepository {
   create(store: Store): Promise<Store>;

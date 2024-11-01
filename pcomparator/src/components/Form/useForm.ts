@@ -1,6 +1,6 @@
 import { type FormEvent, useCallback, useEffect } from "react";
 import { type FieldValues, type UseFormProps, useForm as useHookForm } from "react-hook-form";
-import Form from "pcomparator/src/components/Form/Form";
+import Form from "~/components/Form/Form";
 
 export type ClearError = <T extends FieldValues>(e: FormEvent<T>) => void;
 

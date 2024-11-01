@@ -3,7 +3,7 @@ import {
   type AppRouterInstance
 } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import type React from "react";
-import { AVAILABLE_LOCALES } from "pcomparator/src/core/locale";
+import { AVAILABLE_LOCALES } from "~/core/locale";
 
 type FakeRouterProps = Partial<AppRouterInstance>;
 

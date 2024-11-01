@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { Currency } from "pcomparator/src/applications/Prices/Domain/ValueObjects/Currency";
-import { PrismaBrandRepository } from "pcomparator/src/applications/Prices/Infrastructure/Repositories/PrismaBrandRepository";
-import { PrismaCategoryRepository } from "pcomparator/src/applications/Prices/Infrastructure/Repositories/PrismaCategoryRepository";
-import { PrismaPriceRepository } from "pcomparator/src/applications/Prices/Infrastructure/Repositories/PrismaPriceRepository";
-import { PrismaProductRepository } from "pcomparator/src/applications/Prices/Infrastructure/Repositories/PrismaProductRepository";
-import { PrismaStoreRepository } from "pcomparator/src/applications/Prices/Infrastructure/Repositories/PrismaStoreRepository";
-import { errorHandler } from "pcomparator/src/core/errorHandler";
-import { withAuthentication } from "pcomparator/src/libraries/nextauth/authConfig";
+import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
+import { PrismaBrandRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaBrandRepository";
+import { PrismaCategoryRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaCategoryRepository";
+import { PrismaPriceRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaPriceRepository";
+import { PrismaProductRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaProductRepository";
+import { PrismaStoreRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaStoreRepository";
+import { errorHandler } from "~/core/errorHandler";
+import { withAuthentication } from "~/libraries/nextauth/authConfig";
 
 export const ParamsSchema = z.object({
   barcode: z.string(),

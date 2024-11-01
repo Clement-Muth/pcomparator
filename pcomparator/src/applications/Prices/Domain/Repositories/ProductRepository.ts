@@ -1,4 +1,4 @@
-import type { Product } from "pcomparator/src/applications/Prices/Domain/Entities/Product";
+import type { Product } from "~/applications/Prices/Domain/Entities/Product";
 
 export interface ProductRepository {
   create(product: Product): Promise<Product>;

@@ -1,4 +1,4 @@
-import type { Category } from "pcomparator/src/applications/Prices/Domain/Entities/Category";
+import type { Category } from "~/applications/Prices/Domain/Entities/Category";
 
 export interface CategoryRepository {
   create(category: Category): Promise<Category>;

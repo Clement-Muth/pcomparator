@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
-import ApplicationProvider from "pcomparator/src/core/ApplicationProvider";
-import { getDevice } from "pcomparator/src/core/getDevice";
-import type { AVAILABLE_LOCALES } from "pcomparator/src/core/locale";
-import { allMessages } from "pcomparator/src/translations/i18n";
+import ApplicationProvider from "~/core/ApplicationProvider";
+import { getDevice } from "~/core/getDevice";
+import type { AVAILABLE_LOCALES } from "~/core/locale";
+import { allMessages } from "~/translations/i18n";
 
 interface ApplicationKernelProps {
   children: ReactNode;

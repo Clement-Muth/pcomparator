@@ -1,8 +1,8 @@
 import { z } from "zod";
 import { type ZodOpenApiOperationObject, extendZodWithOpenApi } from "zod-openapi";
-import { ParamsSchema } from "pcomparator/src/app/api/prices/route";
-import { ProductSchema } from "pcomparator/src/applications/Prices/Domain/Entities/Product";
-import { Currency } from "pcomparator/src/applications/Prices/Domain/ValueObjects/Currency";
+import { ParamsSchema } from "~/app/api/prices/route";
+import { ProductSchema } from "~/applications/Prices/Domain/Entities/Product";
+import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
 
 extendZodWithOpenApi(z);
 

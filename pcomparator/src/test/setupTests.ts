@@ -1,9 +1,9 @@
 // import { I18n, type MessageDescriptor } from "@lingui/core";
 import "@testing-library/jest-dom/extend-expect";
 // import type React from "react";
-import cacheMock from "pcomparator/src/test/cacheMock";
-import { restoreConsoleOutput, spyConsoleOutput } from "pcomparator/src/test/consoleMock";
-import { matchMediaMock } from "pcomparator/src/test/matchMediaMock";
+import cacheMock from "~/test/cacheMock";
+import { restoreConsoleOutput, spyConsoleOutput } from "~/test/consoleMock";
+import { matchMediaMock } from "~/test/matchMediaMock";
 
 // jest.mock("@lingui/macro", () => ({
 //   defineMessage: ({ id }: MessageDescriptor) => {

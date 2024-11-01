@@ -1,8 +1,8 @@
 "use client";
 
 import { type ReactNode, createContext, useEffect, useState } from "react";
-import useMediaQuery, { MediaQuery } from "pcomparator/src/hooks/useMediaQuery";
-import type { Device } from "pcomparator/src/types/device";
+import useMediaQuery, { MediaQuery } from "~/hooks/useMediaQuery";
+import type { Device } from "~/types/device";
 
 export const DeviceContext = createContext<Device>("desktop");
 

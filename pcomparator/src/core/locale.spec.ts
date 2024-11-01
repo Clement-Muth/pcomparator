@@ -7,7 +7,7 @@ import {
   getLocalePartsFrom,
   isAcceptedLocale,
   selectFirstAcceptedLocale
-} from "pcomparator/src/core/locale";
+} from "~/core/locale";
 
 describe("isAcceptedLocale function", () => {
   it("returns true for accepted locales", () => {

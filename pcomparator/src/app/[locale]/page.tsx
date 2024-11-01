@@ -1,9 +1,9 @@
 import { Trans } from "@lingui/macro";
 import Balancer from "react-wrap-balancer";
-import { NewPriceButton } from "pcomparator/src/applications/Prices/Ui/NewPrice/NewPriceButton";
-import { Searchbar } from "pcomparator/src/applications/Searchbar/Ui/Searchbar";
-import { withLinguiPage } from "pcomparator/src/core/withLinguiLayout";
-import { auth } from "pcomparator/src/libraries/nextauth/authConfig";
+import { NewPriceButton } from "~/applications/Prices/Ui/NewPrice/NewPriceButton";
+import { Searchbar } from "~/applications/Searchbar/Ui/Searchbar";
+import { withLinguiPage } from "~/core/withLinguiLayout";
+import { auth } from "~/libraries/nextauth/authConfig";
 
 const HomePage = async () => {
   const session = await auth();

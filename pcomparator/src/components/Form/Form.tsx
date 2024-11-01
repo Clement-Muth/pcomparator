@@ -7,8 +7,8 @@ import {
   FormProvider,
   type UseFormReturn
 } from "react-hook-form";
-import type { FormActionsProps } from "pcomparator/src/components/Form/FormActions";
-import FormActions from "pcomparator/src/components/Form/FormActions";
+import type { FormActionsProps } from "~/components/Form/FormActions";
+import FormActions from "~/components/Form/FormActions";
 
 export interface FormProps<T> extends Omit<FormHookProps<any, any>, "onSubmit"> {
   onSubmit: (data: T) => void;

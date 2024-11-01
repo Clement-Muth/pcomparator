@@ -4,7 +4,7 @@ import { Trans } from "@lingui/macro";
 import { Avatar, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { useRef, useState } from "react";
 import { toast } from "react-toastify";
-import { updateAvatar } from "pcomparator/src/applications/Profile/Api/updateAvatar";
+import { updateAvatar } from "~/applications/Profile/Api/updateAvatar";
 
 interface SettingsAvatarProps {
   defaultValue: string;

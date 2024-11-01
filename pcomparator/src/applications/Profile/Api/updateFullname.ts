@@ -2,9 +2,9 @@
 
 import { HTTPError } from "ky";
 import { z } from "zod";
-import type { Profile } from "pcomparator/src/applications/Profile/Domain/Entities/Profile";
-import { pcomparatorAuthenticatedApiClient } from "pcomparator/src/clients/PcomparatorApiClient";
-import { auth } from "pcomparator/src/libraries/nextauth/authConfig";
+import type { Profile } from "~/applications/Profile/Domain/Entities/Profile";
+import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
+import { auth } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({
   name: z.string().min(0).max(32)

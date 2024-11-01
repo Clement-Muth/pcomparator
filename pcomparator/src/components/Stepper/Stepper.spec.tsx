@@ -1,4 +1,4 @@
-import { render } from "pcomparator/src/test/componentUtils";
+import { render } from "~/test/componentUtils";
 import { Stepper, type StepperProps } from "./Stepper";
 import "@testing-library/jest-dom";
 

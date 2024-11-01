@@ -1,7 +1,7 @@
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { type ChangeEvent, type DragEvent, useCallback, useState } from "react";
-import FormError from "pcomparator/src/components/Form/FormError";
+import FormError from "~/components/Form/FormError";
 
 class Byte {
   public readonly size: number;

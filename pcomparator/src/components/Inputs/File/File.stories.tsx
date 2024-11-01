@@ -3,8 +3,8 @@ import _ from "lodash";
 import { FileIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import type { FieldValues, RegisterOptions } from "react-hook-form";
-import useForm from "pcomparator/src/components/Form/useForm";
-import { File, type FileProps } from "pcomparator/src/components/Inputs/File/File";
+import useForm from "~/components/Form/useForm";
+import { File, type FileProps } from "~/components/Inputs/File/File";
 
 export default {
   title: "components/Inputs/File",

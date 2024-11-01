@@ -22,7 +22,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "~/*": ["pcomparator/src/*"]
+      "~/*": ["src/*"]
     },
   },
   "include": ["pcomparator/src/next-env.d.ts", "**/*.ts", "**/*.tsx", "pcomparator/.next/types/**/*.ts", ".lintpcomparator/src/types/*.d.tstypes/*.d.ts"],

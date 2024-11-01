@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from "pcomparator/src/test/componentUtils";
+import { fireEvent, render, waitFor } from "~/test/componentUtils";
 import { NewPriceButton } from "./NewPriceButton";
 
 jest.mock("~/applications/Prices/Api/createPrice", () => ({ createPrice: () => Promise.resolve() }));

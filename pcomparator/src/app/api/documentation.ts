@@ -1,3 +1,3 @@
-import { components, paths } from "pcomparator/src/app/api/prices/documentation";
+import { components, paths } from "~/app/api/prices/documentation";
 
 export { paths, components };

@@ -1,6 +1,6 @@
-import type { CreatePrice, Price } from "pcomparator/src/applications/Prices/Domain/Entities/Price";
-import type { Currency } from "pcomparator/src/applications/Prices/Domain/ValueObjects/Currency";
-import { prisma } from "pcomparator/src/libraries/prisma";
+import type { CreatePrice, Price } from "~/applications/Prices/Domain/Entities/Price";
+import type { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
+import { prisma } from "~/libraries/prisma";
 
 export class PrismaPriceRepository {
   async create(price: CreatePrice): Promise<Price> {

@@ -3,8 +3,8 @@
  */
 import { t } from "@lingui/macro";
 import type React from "react";
-import useForm from "pcomparator/src/components/Form/useForm";
-import { fireEvent, render } from "pcomparator/src/test/componentUtils";
+import useForm from "~/components/Form/useForm";
+import { fireEvent, render } from "~/test/componentUtils";
 import { File as FileComponent } from "./File";
 
 class File {

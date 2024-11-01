@@ -1,6 +1,6 @@
 import { del, list } from "@vercel/blob";
-import { withAuthentication } from "pcomparator/src/libraries/nextauth/authConfig";
-import { prisma } from "pcomparator/src/libraries/prisma";
+import { withAuthentication } from "~/libraries/nextauth/authConfig";
+import { prisma } from "~/libraries/prisma";
 
 export const DELETE = withAuthentication(async (request, ctx) => {
   const { id } = await (ctx.params as unknown as Promise<{ id: string }>);

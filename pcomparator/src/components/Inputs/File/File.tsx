@@ -5,9 +5,9 @@ import { Input, type InputProps as InputPropsNextUi } from "@nextui-org/input";
 import clsx from "clsx";
 import { useState } from "react";
 import { Controller, type FieldValues, type RegisterOptions, useFormContext } from "react-hook-form";
-import FormError from "pcomparator/src/components/Form/FormError";
-import { FileNames } from "pcomparator/src/components/Inputs/File/FileNames";
-import { useFileHandler } from "pcomparator/src/components/Inputs/File/useFileHandler";
+import FormError from "~/components/Form/FormError";
+import { FileNames } from "~/components/Inputs/File/FileNames";
+import { useFileHandler } from "~/components/Inputs/File/useFileHandler";
 
 export interface FileProps extends Omit<InputPropsNextUi, keyof RegisterOptions<FieldValues, any>> {
   name: string;

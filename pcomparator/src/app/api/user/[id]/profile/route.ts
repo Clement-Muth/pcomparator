@@ -1,9 +1,9 @@
 import { put } from "@vercel/blob";
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { PrismaProfileRepository } from "pcomparator/src/applications/Profile/Infrastructure/PrismaUserRepository";
-import { withAuthentication } from "pcomparator/src/libraries/nextauth/authConfig";
-import { prisma } from "pcomparator/src/libraries/prisma";
+import { PrismaProfileRepository } from "~/applications/Profile/Infrastructure/PrismaUserRepository";
+import { withAuthentication } from "~/libraries/nextauth/authConfig";
+import { prisma } from "~/libraries/prisma";
 
 const RequestSchema = z.object({
   phone: z.string().optional(),

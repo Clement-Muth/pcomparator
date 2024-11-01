@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { type NextRequest, NextResponse, userAgent } from "next/server";
-import { AVAILABLE_LOCALES } from "pcomparator/src/core/locale";
-import { auth as middleware } from "pcomparator/src/libraries/nextauth/authConfig";
+import { AVAILABLE_LOCALES } from "~/core/locale";
+import { auth as middleware } from "~/libraries/nextauth/authConfig";
 
 const locales = ["en", "fr"];
 

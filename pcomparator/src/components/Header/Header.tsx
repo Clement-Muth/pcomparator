@@ -2,8 +2,8 @@
 
 import { Image, Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import type { ReactNode } from "react";
-import Link from "pcomparator/src/components/Link/Link";
-import useScroll from "pcomparator/src/hooks/useScroll";
+import Link from "~/components/Link/Link";
+import useScroll from "~/hooks/useScroll";
 import Logo from "../../../public/static/logo.png";
 
 interface HeaderProps {

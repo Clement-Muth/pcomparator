@@ -1,5 +1,5 @@
-import type { Category, CreateCategory } from "pcomparator/src/applications/Prices/Domain/Entities/Category";
-import { prisma } from "pcomparator/src/libraries/prisma";
+import type { Category, CreateCategory } from "~/applications/Prices/Domain/Entities/Category";
+import { prisma } from "~/libraries/prisma";
 
 export class PrismaCategoryRepository {
   async create(category: CreateCategory): Promise<Category> {

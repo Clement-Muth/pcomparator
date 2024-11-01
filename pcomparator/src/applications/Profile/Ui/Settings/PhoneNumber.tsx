@@ -5,9 +5,9 @@ import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { toast } from "react-toastify";
-import { updatePhoneNumber } from "pcomparator/src/applications/Profile/Api/updatePhoneNumber";
-import useForm from "pcomparator/src/components/Form/useForm";
-import Phone from "pcomparator/src/components/Inputs/Phone/Phone";
+import { updatePhoneNumber } from "~/applications/Profile/Api/updatePhoneNumber";
+import useForm from "~/components/Form/useForm";
+import Phone from "~/components/Inputs/Phone/Phone";
 
 interface SettingsPhoneNumberProps {
   defaultValue?: string;

@@ -1,10 +1,10 @@
 import { Trans } from "@lingui/macro";
-import { SettingsAvatar } from "pcomparator/src/applications/Profile/Ui/Settings/Avatar";
-import { SettingsDeleteAccount } from "pcomparator/src/applications/Profile/Ui/Settings/DeleteAccount";
-import { SettingsDisplayName } from "pcomparator/src/applications/Profile/Ui/Settings/DisplayName";
-import { SettingsPhoneNumber } from "pcomparator/src/applications/Profile/Ui/Settings/PhoneNumber";
-import { withLinguiPage } from "pcomparator/src/core/withLinguiLayout";
-import { auth } from "pcomparator/src/libraries/nextauth/authConfig";
+import { SettingsAvatar } from "~/applications/Profile/Ui/Settings/Avatar";
+import { SettingsDeleteAccount } from "~/applications/Profile/Ui/Settings/DeleteAccount";
+import { SettingsDisplayName } from "~/applications/Profile/Ui/Settings/DisplayName";
+import { SettingsPhoneNumber } from "~/applications/Profile/Ui/Settings/PhoneNumber";
+import { withLinguiPage } from "~/core/withLinguiLayout";
+import { auth } from "~/libraries/nextauth/authConfig";
 
 const SettingsPage = async () => {
   const session = await auth();

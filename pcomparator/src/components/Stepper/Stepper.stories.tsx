@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { type ReactNode, useState } from "react";
 import type { FieldValues, RegisterOptions } from "react-hook-form";
-import useForm from "pcomparator/src/components/Form/useForm";
-import { Stepper, type StepperProps } from "pcomparator/src/components/Stepper/Stepper";
+import useForm from "~/components/Form/useForm";
+import { Stepper, type StepperProps } from "~/components/Stepper/Stepper";
 
 export default {
   title: "components/Inputs/Stepper",

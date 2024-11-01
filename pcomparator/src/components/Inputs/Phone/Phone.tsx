@@ -10,7 +10,7 @@ import PhoneInput, {
   type FeatureProps,
   isValidPhoneNumber
 } from "react-phone-number-input";
-import { ErrorMessage } from "pcomparator/src/components/Inputs/ErrorMessage/ErrorMessage";
+import { ErrorMessage } from "~/components/Inputs/ErrorMessage/ErrorMessage";
 
 export interface PhoneProps
   extends FeatureProps<DefaultInputComponentProps>,

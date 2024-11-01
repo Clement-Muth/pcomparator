@@ -6,9 +6,9 @@ import {
 } from "@testing-library/react-hooks";
 import type React from "react";
 import type { ReactNode } from "react";
-import ApplicationKernel from "pcomparator/src/core/ApplicationKernel";
-import { AVAILABLE_LOCALES } from "pcomparator/src/core/locale";
-import { FakeNextJsApplication } from "pcomparator/src/test/applicationUtils";
+import ApplicationKernel from "~/core/ApplicationKernel";
+import { AVAILABLE_LOCALES } from "~/core/locale";
+import { FakeNextJsApplication } from "~/test/applicationUtils";
 
 export type CustomTestWrapperOptions = {
   locale?: AVAILABLE_LOCALES;

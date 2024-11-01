@@ -4,9 +4,9 @@ import { Trans, t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { toast } from "react-toastify";
-import { updateFullname } from "pcomparator/src/applications/Profile/Api/updateFullname";
-import useForm from "pcomparator/src/components/Form/useForm";
-import { Input } from "pcomparator/src/components/Inputs/Input/Input";
+import { updateFullname } from "~/applications/Profile/Api/updateFullname";
+import useForm from "~/components/Form/useForm";
+import { Input } from "~/components/Inputs/Input/Input";
 
 interface SettingsDisplayNameProps {
   defaultValue: string;

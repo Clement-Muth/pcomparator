@@ -1,6 +1,6 @@
 import { type RenderOptions, render as originalRender } from "@testing-library/react";
 import type React from "react";
-import { AVAILABLE_LOCALES } from "pcomparator/src/core/locale";
+import { AVAILABLE_LOCALES } from "~/core/locale";
 
 type CustomTestWrapperOptions = {
   locale?: AVAILABLE_LOCALES;

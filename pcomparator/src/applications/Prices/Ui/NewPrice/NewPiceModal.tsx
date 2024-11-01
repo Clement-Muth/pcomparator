@@ -2,11 +2,11 @@ import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Modal, ModalContent, ModalHeader } from "@nextui-org/react";
 import { useState } from "react";
-import { createPrice } from "pcomparator/src/applications/Prices/Api/createPrice";
-import type { Barcode } from "pcomparator/src/applications/Prices/Domain/ValueObjects/Barcode";
-import { Currency } from "pcomparator/src/applications/Prices/Domain/ValueObjects/Currency";
-import { FormSteps } from "pcomparator/src/applications/Prices/Ui/NewPrice/FormSteps/FormSteps";
-import { Stepper } from "pcomparator/src/components/Stepper/Stepper";
+import { createPrice } from "~/applications/Prices/Api/createPrice";
+import type { Barcode } from "~/applications/Prices/Domain/ValueObjects/Barcode";
+import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
+import { FormSteps } from "~/applications/Prices/Ui/NewPrice/FormSteps/FormSteps";
+import { Stepper } from "~/components/Stepper/Stepper";
 
 interface NewProductModalProps {
   isOpen: boolean;

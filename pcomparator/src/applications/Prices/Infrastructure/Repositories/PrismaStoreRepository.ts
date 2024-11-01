@@ -1,6 +1,6 @@
-import type { CreateStore, Store } from "pcomparator/src/applications/Prices/Domain/Entities/Store";
-import type { StoreRepository } from "pcomparator/src/applications/Prices/Domain/Repositories/StoreRepository";
-import { prisma } from "pcomparator/src/libraries/prisma";
+import type { CreateStore, Store } from "~/applications/Prices/Domain/Entities/Store";
+import type { StoreRepository } from "~/applications/Prices/Domain/Repositories/StoreRepository";
+import { prisma } from "~/libraries/prisma";
 
 export class PrismaStoreRepository implements StoreRepository {
   async create(store: CreateStore): Promise<Store> {
