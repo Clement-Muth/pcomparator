@@ -2,6 +2,10 @@ name: CI / Price comparator
 
 on: [pull_request]
 
+defaults:
+  run:
+    working-directory: prcomparator
+
 jobs:
   quality:
     name: Quality
