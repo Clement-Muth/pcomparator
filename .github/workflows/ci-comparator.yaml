@@ -4,7 +4,7 @@ on: [pull_request]
 
 defaults:
   run:
-    working-directory: prcomparator
+    working-directory: pcomparator
 
 jobs:
   quality:
