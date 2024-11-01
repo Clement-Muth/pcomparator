@@ -21,6 +21,10 @@ msgstr "<0>Supprimer définitivement votre compte personnel ainsi que tout son c
 msgid "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 msgstr "<0>Pour vérifier, tapez</0>s <1>supprimer mon compte</1><2> ci-dessous :</2>"
 
+#: src/core/errorHandler.ts
+msgid "A similar entry already exists."
+msgstr "Une entrée similaire existe déjà."
+
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "Account deleted"
 msgstr "Compte supprimé"
@@ -54,6 +58,7 @@ msgid "Avatar updated"
 msgstr "Avatar mis à jour"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Code-barre"
 
@@ -115,6 +120,11 @@ msgstr "Bonjour {0}"
 msgid "I understand, delete my account"
 msgstr "Je comprends, supprimez mon compte."
 
+#: src/core/errorHandler.ts
+#: src/core/errorHandler.ts
+msgid "Internal Server Error."
+msgstr "Erreur interne du serveur."
+
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 msgid "Invalid display name."
 msgstr "Nom d'affichage invalide."
@@ -128,6 +138,7 @@ msgid "Light"
 msgstr "Clair"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 msgid "Next"
 msgstr "Suivant"
 
@@ -165,11 +176,10 @@ msgid "Please use 32 characters at maximum."
 msgstr "Veuillez utiliser 32 caractères maximum."
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 msgid "Previous"
 msgstr "Précédent"
 
-#: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 msgid "Price"
 msgstr "Prix"
 
@@ -210,6 +220,14 @@ msgstr "Système"
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 msgid "Take a picture"
 msgstr "Prendre un photo"
+
+#: src/core/errorHandler.ts
+msgid "The request is malformed or contains invalid parameters. Please check the data provided."
+msgstr "La requête est mal formée ou contient des paramètres invalides. Veuillez vérifier les données fournies."
+
+#: src/core/errorHandler.ts
+msgid "The requested resource could not be found."
+msgstr "La ressource demandée n'a pas pu être trouvée."
 
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."

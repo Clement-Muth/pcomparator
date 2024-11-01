@@ -1,4 +1,5 @@
 "use server";
+
 import { z } from "zod";
 import type { Product } from "~/applications/Prices/Domain/Entities/Product";
 import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
@@ -23,29 +24,41 @@ export type CreatePriceParams = z.infer<typeof ParamsSchema>;
 export type CreatePricePayload = z.infer<typeof PayloadSchema>;
 
 export const createPrice = async (params: z.infer<typeof ParamsSchema>): Promise<Product> => {
-  const paramsPayload = ParamsSchema.parse(params);
+  try {
+    const paramsPayload = ParamsSchema.parse(params);
 
-  const offProduct = await OpenFoodFactPricesApiClient.get(`products/code/${paramsPayload.barcode}`).json<{
-    product_name: string;
-    brands: string;
-    image_url: string;
-  }>();
+    const offProduct = await OpenFoodFactPricesApiClient.get(`products/code/${paramsPayload.barcode}`).json<{
+      product_name: string;
+      brands: string;
+      image_url: string;
+    }>();
 
-  const product = await pcomparatorAuthenticatedApiClient
-    .post("prices", {
-      json: {
-        barcode: paramsPayload.barcode,
-        storeName: "N/A",
-        productName: offProduct.product_name,
-        categoryName: "N/A",
-        brandName: offProduct.brands,
-        location: paramsPayload.location,
-        amount: paramsPayload.amount,
-        proof: offProduct.image_url,
-        currency: paramsPayload.currency
-      }
-    })
-    .json<Product>();
+    const product = await pcomparatorAuthenticatedApiClient
+      .post("prices", {
+        json: {
+          barcode: paramsPayload.barcode,
+          storeName: "N/A",
+          productName: offProduct.product_name,
+          categoryName: "N/A",
+          brandName: undefined,
+          location: paramsPayload.location,
+          amount: paramsPayload.amount,
+          proof: offProduct.image_url,
+          currency: paramsPayload.currency
+        }
+      })
+      .json<Product>();
 
-  return product;
+    return product;
+  } catch (error) {
+    throw new Error("Price not found", { cause: "FormError" });
+    // if (error instanceof HTTPError) {
+    //   switch (error.status) {
+    //     case 404:
+    //   }
+    //   console.error("error message:", error);
+    // }
+
+    // throw error;
+  }
 };

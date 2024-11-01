@@ -6,6 +6,7 @@ import { PrismaCategoryRepository } from "~/applications/Prices/Infrastructure/R
 import { PrismaPriceRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaPriceRepository";
 import { PrismaProductRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaProductRepository";
 import { PrismaStoreRepository } from "~/applications/Prices/Infrastructure/Repositories/PrismaStoreRepository";
+import { errorHandler } from "~/core/errorHandler";
 import { withAuthentication } from "~/libraries/nextauth/authConfig";
 
 const ParamsSchema = z.object({
@@ -26,8 +27,8 @@ const storeRepository = new PrismaStoreRepository();
 const priceRepository = new PrismaPriceRepository();
 const brandRepository = new PrismaBrandRepository();
 
-export const POST = withAuthentication(async (request: Request): Promise<NextResponse> => {
-  try {
+export const POST = withAuthentication(
+  errorHandler(async (request): Promise<NextResponse> => {
     const paramsPayload = ParamsSchema.parse(await request.json());
 
     const category = await categoryRepository.findOrCreate(paramsPayload.categoryName, {
@@ -61,11 +62,5 @@ export const POST = withAuthentication(async (request: Request): Promise<NextRes
     });
 
     return NextResponse.json(product, { status: 201 });
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json({ errors: error.errors }, { status: 400 });
-    }
-
-    return NextResponse.json({ message: "Internal Server Error" }, { status: 500 });
-  }
-});
+  })
+);
