@@ -1,3 +1,37 @@
+# [4.0.0](https://github.com/Clement-Muth/pcomparator/compare/v3.4.0...v4.0.0) (2024-11-02)
+
+
+### Bug Fixes
+
+* **ci:** semantic-release module not found ([f9c5224](https://github.com/Clement-Muth/pcomparator/commit/f9c5224e6c5c5529020e8eb0dd178bccb1bfb712))
+* **ci:** use -y with yarn init ([49cc6fe](https://github.com/Clement-Muth/pcomparator/commit/49cc6fec36df5ba845f65f581b437b149ee76e4e))
+
+
+### Code Refactoring
+
+* documentation and pcomparator folder ([#59](https://github.com/Clement-Muth/pcomparator/issues/59)) ([ddd115c](https://github.com/Clement-Muth/pcomparator/commit/ddd115c1919fcdb565d53d4b7f6c1f92955f536f))
+
+
+### BREAKING CHANGES
+
+* restructure the app by adding new documentation and pcomparator repositories
+
+* add husky in pcomparator
+
+* fix relative paths
+
+* fix tsconfig
+
+* fix ci wrong wording
+
+* fix yarn nm install
+
+* replace yarn install ci
+
+* add validator to fix nextjs unvalid export route
+
+* revert tsconfig
+
 # [3.4.0](https://github.com/Clement-Muth/pcomparator/compare/v3.3.0...v3.4.0) (2024-10-31)
 
 

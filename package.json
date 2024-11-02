@@ -1,0 +1,15 @@
+{
+  "name": "pcomparator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Clement-Muth/pcomparator",
+  "license": "MIT",
+  "dependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^14.0.1"
+  }
+}
