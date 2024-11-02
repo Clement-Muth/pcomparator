@@ -25,7 +25,10 @@ export const NewPriceModal = ({ isOpen, onOpenChange, onSuccessfull }: NewProduc
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="4xl">
         <ModalContent>
           <ModalHeader className="mt-4">
-            <Stepper steps={[{ label: t(i18n)`Barcode` }, { label: t(i18n)`Price` }]} currentStep={step} />
+            <Stepper
+              steps={[{ label: t(i18n)`Barcode` }, { label: t(i18n)`Price` }, { label: t(i18n)`Location` }]}
+              currentStep={step}
+            />
           </ModalHeader>
           <FormSteps
             step={step}
@@ -40,7 +43,8 @@ export const NewPriceModal = ({ isOpen, onOpenChange, onSuccessfull }: NewProduc
                 amount: finalProductData.price,
                 barcode: finalProductData.barcode,
                 currency: Currency.Euro,
-                location: "4 Rue du Dôme, 67000 Strasbourg"
+                location: finalProductData.location,
+                storeName: finalProductData.storeName
               });
               onSuccessfull(product.name);
             }}

@@ -8,10 +8,7 @@ import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClien
 
 const ParamsSchema = z.object({
   barcode: z.string(),
-  // storeName: z.string(),
-  // productName: z.string(),
-  // categoryName: z.string(),
-  // brandName: z.string(),
+  storeName: z.string(),
   location: z.string(),
   amount: z.number().positive(),
   proof: z.instanceof(Blob).optional(),
@@ -34,13 +31,13 @@ export const createPrice = async (params: z.infer<typeof ParamsSchema>): Promise
     }>();
 
     const product = await pcomparatorAuthenticatedApiClient
-      .post("prices", {
+      .post("v1/prices", {
         json: {
           barcode: paramsPayload.barcode,
-          storeName: "N/A",
+          storeName: paramsPayload.storeName,
           productName: offProduct.product_name,
           categoryName: "N/A",
-          brandName: undefined,
+          brandName: offProduct.brands,
           location: paramsPayload.location,
           amount: paramsPayload.amount,
           proof: offProduct.image_url,
