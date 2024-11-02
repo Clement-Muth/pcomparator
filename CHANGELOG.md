@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/Clement-Muth/pcomparator/compare/v4.0.0...v4.1.0) (2024-11-02)
+
+
+### Features
+
+* **price:** handle store and location on create price ([#65](https://github.com/Clement-Muth/pcomparator/issues/65)) ([6cd5c12](https://github.com/Clement-Muth/pcomparator/commit/6cd5c1202f0e3f32e603632acf3ca94b65605052))
+
 # [4.0.0](https://github.com/Clement-Muth/pcomparator/compare/v3.4.0...v4.0.0) (2024-11-02)
 
 
