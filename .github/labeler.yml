@@ -1,15 +1,15 @@
 kind/pcomparator:
-  - src/**/*
+  - pcomparator/src/**/*
 
 kind/documentation:
   - documentation/**/*
 
 kind/storybook:
-  - '**/*/*.stories.*'
-  - '**/*/.storybook/**/*'
+  - 'pcomparator/**/*/*.stories.*'
+  - 'pcomparator/**/*/.storybook/**/*'
 
 kind/tests:
-  - '**/*/*.spec.*'
+  - 'pcomparator/**/*/*.spec.*'
 
 area/workflow:
   - .github/workflows/**/*
