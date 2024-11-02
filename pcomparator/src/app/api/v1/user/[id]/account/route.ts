@@ -1,6 +1,8 @@
 import { del, list } from "@vercel/blob";
+import { NextResponse } from "next/server";
 import { withAuthentication } from "~/libraries/nextauth/authConfig";
 import { prisma } from "~/libraries/prisma";
+import { HttpStatus } from "~/types/httpError";
 
 export const DELETE = withAuthentication(async (request, ctx) => {
   const { id } = await (ctx.params as unknown as Promise<{ id: string }>);
@@ -11,5 +13,5 @@ export const DELETE = withAuthentication(async (request, ctx) => {
 
   if (userAvatars.blobs.length > 0) await del(userAvatars.blobs.map((blob) => blob.url));
 
-  return new Response(null, { status: 204 });
+  return NextResponse.json(null, { status: HttpStatus.NO_CONTENT });
 });

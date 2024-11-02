@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { type ZodOpenApiOperationObject, extendZodWithOpenApi } from "zod-openapi";
+import { type ZodOpenApiPathsObject, extendZodWithOpenApi } from "zod-openapi";
+import { ParamsSchema } from "~/app/api/v1/prices/route";
 import { ProductSchema } from "~/applications/Prices/Domain/Entities/Product";
 import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
-import { ParamsSchema } from "./validator";
 
 extendZodWithOpenApi(z);
 
@@ -56,35 +56,31 @@ const ExtendedProductSchema = ProductSchema.extend({
   updatedAt: ProductSchema.shape.updatedAt.openapi({ example: new Date() })
 });
 
-const createPrice: ZodOpenApiOperationObject = {
-  operationId: "createPrice",
-  summary: "Create a new price",
-  description:
-    "Creates a new price entry for a product, allowing users to add price information for a product found in a specific store. The route accepts details such as the product's barcode, name, brand, category, store location, price, and a link to a proof image. This enables the application to update its database with current prices from various stores, helping users compare prices effectively.",
-  requestBody: {
-    description: "The price to create.",
-    content: {
-      "application/json": {
-        schema: ExtendedParamsSchema
-      }
-    }
-  },
-  responses: {
-    "201": {
-      description: "The burger was created successfully.",
-      content: {
-        "application/json": {
-          schema: ExtendedProductSchema
+export const paths: ZodOpenApiPathsObject = {
+  "/prices": {
+    post: {
+      operationId: "createPrice",
+      summary: "Create a new price",
+      description:
+        "Creates a new price entry for a product, allowing users to add price information for a product found in a specific store. The route accepts details such as the product's barcode, name, brand, category, store location, price, and a link to a proof image. This enables the application to update its database with current prices from various stores, helping users compare prices effectively.",
+      requestBody: {
+        description: "The price to create.",
+        content: {
+          "application/json": {
+            schema: ExtendedParamsSchema
+          }
+        }
+      },
+      responses: {
+        "201": {
+          description: "The burger was created successfully.",
+          content: {
+            "application/json": {
+              schema: ExtendedProductSchema
+            }
+          }
         }
       }
     }
   }
 };
-
-const paths = {
-  "/prices": {
-    post: createPrice
-  }
-};
-
-export { paths, ParamsSchema as components };
