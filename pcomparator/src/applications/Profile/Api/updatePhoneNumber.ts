@@ -37,7 +37,7 @@ export const updatePhoneNumber = async (params: UpdatePhoneParams): Promise<Upda
   try {
     const payload = PayloadSchema.parse(
       await pcomparatorAuthenticatedApiClient
-        .patch(`user/${session.user.id}/profile`, {
+        .patch(`v1/user/${session.user.id}/profile`, {
           json: {
             phone: paramsPayload.phone
           }

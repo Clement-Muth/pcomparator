@@ -20,7 +20,7 @@ export const deleteAccount = async (): Promise<void> => {
   if (!session?.user?.id) throw new Error("User not authenticated");
 
   try {
-    await pcomparatorAuthenticatedApiClient.delete(`user/${session?.user?.id}/account/delete`).json();
+    await pcomparatorAuthenticatedApiClient.delete(`v1/user/${session?.user?.id}/account`).json();
   } catch (err) {
     if (err instanceof HTTPError) {
       switch (err.response.status) {

@@ -39,7 +39,7 @@ export const updateFullname = async (
   try {
     const userPayload = PayloadSchema.parse(
       await pcomparatorAuthenticatedApiClient
-        .patch(`user/${session.user.id}/profile`, {
+        .patch(`v1/user/${session.user.id}/profile`, {
           json: { name: paramsPayload.name }
         })
         .json<Profile>()

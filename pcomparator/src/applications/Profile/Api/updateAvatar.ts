@@ -35,7 +35,7 @@ export const updateAvatar = async (params: z.infer<typeof ParamsSchema>): Promis
 
   try {
     const updatedUser = await pcomparatorAuthenticatedApiClient
-      .post(`user/${session.user.id}/profile?filename=${paramsPayload.image.name}`, {
+      .patch(`v1/user/${session.user.id}/profile/avatar?filename=${paramsPayload.image.name}`, {
         body: paramsPayload.image
       })
       .json();
