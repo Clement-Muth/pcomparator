@@ -7,75 +7,356 @@ servers:
   - url: https://pcomparator.vercel.app/api
     description: The production server.
 paths:
+  /v1/user/{id}/account:
+    delete:
+      operationId: deleteAccount
+      summary: Delete user account.
+      description: This operation permanently deletes the account associated with the
+        specified user ID. This action is irreversible and removes all
+        information linked to this account.
+      requestBody:
+        description: No request body is required for this operation.
+        content: {}
+      responses:
+        "204":
+          description: The account was deleted successfully.
+        "400":
+          description: The request is malformed or contains invalid parameters. Please
+            check the data provided.
+          content:
+            application/json:
+              schema: &a1
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: The request is malformed or contains invalid parameters. Please check
+                      the data provided.
+                  name:
+                    type: string
+                    example: HTTPError
+                  status:
+                    type: integer
+                    example: 400
+                  cause:
+                    type: string
+                    example: error cause
+                required:
+                  - message
+                  - name
+                  - status
+                  - cause
+        "404":
+          description: The requested resource could not be found.
+          content:
+            application/json:
+              schema: &a2
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: The requested resource could not be found.
+                required:
+                  - error
+        "409":
+          description: A similar entry already exists.
+          content:
+            application/json:
+              schema: &a3
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: A similar entry already exists.
+                required:
+                  - error
+        "500":
+          description: Internal server error. Something went wrong on the server side.
+          content:
+            application/json:
+              schema: &a4
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Internal Server Error.
+                required:
+                  - error
   /prices:
     post:
       operationId: createPrice
       summary: Create a new price
-      description: Creates a new price in the database.
+      description: Creates a new price entry for a product, allowing users to add
+        price information for a product found in a specific store. The route
+        accepts details such as the product's barcode, name, brand, category,
+        store location, price, and a link to a proof image. This enables the
+        application to update its database with current prices from various
+        stores, helping users compare prices effectively.
       requestBody:
         description: The price to create.
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/components"
+              type: object
+              properties:
+                barcode:
+                  type: string
+                  example: "8690804407383"
+                  description: Unique identifier for the product in barcode format
+                storeName:
+                  type: string
+                  example: Auchan
+                  description: Name of the store where the product is sold
+                productName:
+                  type: string
+                  example: Nutella
+                  description: Name of the product
+                categoryName:
+                  type: string
+                  example: Pate a tartiner
+                  description: Category of the product
+                brandName:
+                  type: string
+                  example: Ferrero
+                  description: Brand or manufacturer of the product
+                location:
+                  type: string
+                  example: 4 rue du dome, 67000, Strasbourg
+                  description: Address of the store where the product was found
+                amount:
+                  type: number
+                  exclusiveMinimum: 0
+                  example: 9.99
+                  description: Price of the product
+                proof:
+                  type: string
+                  example: https://pcomparator/files
+                  description: Link to an image or file providing proof of the price
+                currency:
+                  type: string
+                  enum:
+                    - EUR
+                    - USD
+                    - GBP
+                    - CHF
+                    - AUD
+                    - CAD
+                    - CNY
+                    - JPY
+                    - AED
+                  example: EUR
+                  description: Currency used for the product price
+              required:
+                - barcode
+                - storeName
+                - productName
+                - categoryName
+                - brandName
+                - location
+                - amount
+                - proof
+                - currency
       responses:
         "201":
           description: The burger was created successfully.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/components"
-components:
-  schemas:
-    components:
-      type: object
-      properties:
-        barcode:
-          type: string
-          example: "2929292929292"
-        storeName:
-          type: string
-          example: Auchan
-        productName:
-          type: string
-          example: Nutella
-        categoryName:
-          type: string
-          example: Pate a tartiner
-        brandName:
-          type: string
-          example: Ferrero
-        location:
-          type: string
-          example: 4 rue du dome, 67000, Strasbourg
-        amount:
-          type: number
-          exclusiveMinimum: 0
-          example: 9.99
-        proof:
-          type: string
-          example: https://pcomparator/files
-        currency:
-          type: string
-          enum:
-            - EUR
-            - USD
-            - GBP
-            - CHF
-            - AUD
-            - CAD
-            - CNY
-            - JPY
-            - AED
-          example: EUR
-      required:
-        - barcode
-        - storeName
-        - productName
-        - categoryName
-        - brandName
-        - location
-        - amount
-        - proof
-        - currency
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    example: 010f21e3-c5b9-4d91-a5b1-b713d2324b17
+                  barcode:
+                    type: string
+                    minLength: 1
+                    example: "8690804407383"
+                  name:
+                    type: string
+                    minLength: 1
+                    example: Nutella
+                  description:
+                    type:
+                      - string
+                      - "null"
+                    minLength: 1
+                    example: Nutella is a sweet hazelnut and cocoa spread made by Ferrero.
+                  categoryId:
+                    type:
+                      - string
+                      - "null"
+                    format: uuid
+                    example: 77230970-93e1-46ed-9797-85fc96d7eb0b
+                  brandId:
+                    type:
+                      - string
+                      - "null"
+                    format: uuid
+                    example: d0ecb566-74ee-4409-aeb3-31f30985a6f4
+                  nutritionScore:
+                    type: "null"
+                    example: ""
+                  createdAt:
+                    type: string
+                    example: 2024-11-02T18:10:02.833Z
+                  updatedAt:
+                    type: string
+                    example: 2024-11-02T18:10:02.833Z
+                required:
+                  - id
+                  - barcode
+                  - name
+                  - createdAt
+                  - updatedAt
+        "400":
+          description: The request is malformed or contains invalid parameters. Please
+            check the data provided.
+          content:
+            application/json:
+              schema: *a1
+        "404":
+          description: The requested resource could not be found.
+          content:
+            application/json:
+              schema: *a2
+        "409":
+          description: A similar entry already exists.
+          content:
+            application/json:
+              schema: *a3
+        "500":
+          description: Internal server error. Something went wrong on the server side.
+          content:
+            application/json:
+              schema: *a4
+  /v1/user/{id}/profile:
+    patch:
+      operationId: updateUserProfile
+      summary: Update User Profile
+      description: This operation updates the profile information of the user
+        identified by the specified user ID. Users can update their profile
+        details such as name, phone, and other relevant information.
+      requestBody:
+        description: The profile data to update. This should include the fields that
+          need to be modified.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phone:
+                  type: string
+                  default: "+33666666666"
+                  example: "+33666666666"
+                  description: Phone number of the user
+                name:
+                  type: string
+                storeName:
+                  type: string
+                  default: Clément Muth
+                  example: Clément Muth
+                  description: Name of the user
+            example:
+              phone: "+33666666666"
+              name: Clément Muth
+      responses:
+        "200":
+          description: Profile updated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    example: 010f21e3-c5b9-4d91-a5b1-b713d2324b17
+                  name:
+                    type: string
+                    minLength: 1
+                    maxLength: 25
+                    example: Clément Muth
+                  phone:
+                    type:
+                      - string
+                      - "null"
+                    example: "+33666666666"
+                  image:
+                    type: string
+                    example: https://pcomparator/images
+                required:
+                  - id
+                  - name
+                  - phone
+                  - image
+        "400":
+          description: The request is malformed or contains invalid parameters. Please
+            check the data provided.
+          content:
+            application/json:
+              schema: *a1
+        "404":
+          description: The requested resource could not be found.
+          content:
+            application/json:
+              schema: *a2
+        "409":
+          description: A similar entry already exists.
+          content:
+            application/json:
+              schema: *a3
+        "500":
+          description: Internal server error. Something went wrong on the server side.
+          content:
+            application/json:
+              schema: *a4
+  /v1/user/{id}/profile/avatar:
+    patch:
+      operationId: " updateUserAvatar"
+      summary: Update User Avatar
+      description: This operation updates the avatar of the user identified by the
+        specified user ID. Users can upload a new avatar image file to update
+        their profile picture.
+      requestBody:
+        description: The avatar image to upload. This should be a file object
+          representing the new avatar.
+        content:
+          multipart/form-data:
+            schema: {}
+      responses:
+        "200":
+          description: Avatar updated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  image:
+                    type: string
+                    format: uri
+                    example: https://pcomparator.vercel.app/avatars/new-avatar.png
+                required:
+                  - image
+        "400":
+          description: The request is malformed or contains invalid parameters. Please
+            check the data provided.
+          content:
+            application/json:
+              schema: *a1
+        "404":
+          description: The requested resource could not be found.
+          content:
+            application/json:
+              schema: *a2
+        "409":
+          description: A similar entry already exists.
+          content:
+            application/json:
+              schema: *a3
+        "500":
+          description: Internal server error. Something went wrong on the server side.
+          content:
+            application/json:
+              schema: *a4
 
