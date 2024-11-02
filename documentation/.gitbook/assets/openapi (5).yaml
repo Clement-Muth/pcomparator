@@ -1,0 +1,183 @@
+openapi: 3.1.0
+info:
+  title: Price Comparator API
+  description: An API for comparing prices of foods, cosmetics and more.
+  version: 1.0.0
+servers:
+  - url: https://pcomparator.vercel.app/api
+    description: The production server.
+paths:
+  /prices:
+    post:
+      operationId: createPrice
+      summary: Create a new price
+      description: Creates a new price in the database.
+      requestBody:
+        description: The price to create.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                barcode:
+                  type: string
+                  example: "8690804407383"
+                  description: Unique identifier for the product in barcode format
+                storeName:
+                  type: string
+                  example: Auchan
+                  description: Name of the store where the product is sold
+                productName:
+                  type: string
+                  example: Nutella
+                  description: Name of the product
+                categoryName:
+                  type: string
+                  example: Pate a tartiner
+                  description: Category of the product
+                brandName:
+                  type: string
+                  example: Ferrero
+                  description: Brand or manufacturer of the product
+                location:
+                  type: string
+                  example: 4 rue du dome, 67000, Strasbourg
+                  description: Address of the store where the product was found
+                amount:
+                  type: number
+                  exclusiveMinimum: 0
+                  example: 9.99
+                  description: Price of the product
+                proof:
+                  type: string
+                  example: https://pcomparator/files
+                  description: Link to an image or file providing proof of the price
+                currency:
+                  type: string
+                  enum:
+                    - EUR
+                    - USD
+                    - GBP
+                    - CHF
+                    - AUD
+                    - CAD
+                    - CNY
+                    - JPY
+                    - AED
+                  example: EUR
+                  description: Currency used for the product price
+              required:
+                - barcode
+                - storeName
+                - productName
+                - categoryName
+                - brandName
+                - location
+                - amount
+                - proof
+                - currency
+              description: Creates a new price entry for a product, allowing users to add
+                price information for a product found in a specific store. The
+                route accepts details such as the product's barcode, name,
+                brand, category, store location, price, and a link to a proof
+                image. This enables the application to update its database with
+                current prices from various stores, helping users compare prices
+                effectively.
+      responses:
+        "201":
+          description: The burger was created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    example: 010f21e3-c5b9-4d91-a5b1-b713d2324b17
+                  barcode:
+                    type: string
+                    minLength: 1
+                    example: "8690804407383"
+                  name:
+                    type: string
+                    minLength: 1
+                    example: Nutella
+                  description:
+                    type:
+                      - string
+                      - "null"
+                    minLength: 1
+                    example: Nutella is a sweet hazelnut and cocoa spread made by Ferrero.
+                  categoryId:
+                    type:
+                      - string
+                      - "null"
+                    format: uuid
+                    example: 77230970-93e1-46ed-9797-85fc96d7eb0b
+                  brandId:
+                    type:
+                      - string
+                      - "null"
+                    format: uuid
+                    example: d0ecb566-74ee-4409-aeb3-31f30985a6f4
+                  nutritionScore:
+                    type: "null"
+                    example: ""
+                  createdAt:
+                    type: string
+                    example: 2024-11-01T18:00:20.566Z
+                  updatedAt:
+                    type: string
+                    example: 2024-11-01T18:00:20.566Z
+                required:
+                  - id
+                  - barcode
+                  - name
+                  - createdAt
+                  - updatedAt
+components:
+  schemas:
+    components:
+      type: object
+      properties:
+        barcode:
+          type: string
+        storeName:
+          type: string
+        productName:
+          type: string
+        categoryName:
+          type: string
+        brandName:
+          type: string
+        location:
+          type: string
+        amount:
+          type: number
+          exclusiveMinimum: 0
+        proof:
+          type: string
+        currency:
+          type: string
+          enum:
+            - EUR
+            - USD
+            - GBP
+            - CHF
+            - AUD
+            - CAD
+            - CNY
+            - JPY
+            - AED
+      required:
+        - barcode
+        - storeName
+        - productName
+        - categoryName
+        - brandName
+        - location
+        - amount
+        - proof
+        - currency
+

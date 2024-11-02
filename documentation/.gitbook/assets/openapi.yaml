@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: Price Comparator API
+  description: An API for comparing prices of foods, cosmetics and more.
+  version: 1.0.0
+servers:
+  - url: https://pcomparator.vercel.app/api
+    description: The production server.
+paths:
+  /prices:
+    post:
+      operationId: createPrice
+      summary: Create a new price
+      description: Creates a new price in the database.
+      requestBody:
+        description: The price to create.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/components"
+      responses:
+        "201":
+          description: The burger was created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/components"
+components:
+  schemas:
+    components:
+      type: object
+      properties:
+        barcode:
+          type: string
+          example: "2929292929292"
+        storeName:
+          type: string
+          example: Auchan
+        productName:
+          type: string
+          example: Nutella
+        categoryName:
+          type: string
+          example: Pate a tartiner
+        brandName:
+          type: string
+          example: Ferrero
+        location:
+          type: string
+          example: 4 rue du dome, 67000, Strasbourg
+        amount:
+          type: number
+          exclusiveMinimum: 0
+          example: 9.99
+        proof:
+          type: string
+          example: https://pcomparator/files
+        currency:
+          type: string
+          enum:
+            - EUR
+            - USD
+            - GBP
+            - CHF
+            - AUD
+            - CAD
+            - CNY
+            - JPY
+            - AED
+          example: EUR
+      required:
+        - barcode
+        - storeName
+        - productName
+        - categoryName
+        - brandName
+        - location
+        - amount
+        - proof
+        - currency
+
