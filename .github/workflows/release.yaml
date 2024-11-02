@@ -27,7 +27,7 @@ jobs:
           node-version: "lts/*"
       - name: Install dependencies
         run: |
-          yarn init
+          yarn init -y
           yarn add @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/github @semantic-release/release-notes-generator
       - name: Release
         env:
