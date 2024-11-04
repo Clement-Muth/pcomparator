@@ -25,7 +25,7 @@ msgstr "<0>To verify, type</0> <1>delete my account</1><2> below:</2>"
 msgid "Account deleted"
 msgstr "Account deleted"
 
-#: src/app/[locale]/settings/page.tsx
+#: src/app/[locale]/dashboard/page.tsx
 msgid "Account Settings"
 msgstr "Account Settings"
 
@@ -54,6 +54,7 @@ msgid "Avatar updated"
 msgstr "Avatar updated"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Barcode"
 
@@ -68,6 +69,10 @@ msgstr "Custom location"
 #: src/components/ThemeSwitcher/ThemeSwitcher.tsx
 msgid "Dark"
 msgstr "Dark"
+
+#: src/applications/Authentication/Ui/Signin/SignButton/ProfileButton.tsx
+msgid "Dashboard"
+msgstr "Dashboard"
 
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "Delete Account"
@@ -135,7 +140,15 @@ msgstr "Light"
 msgid "Location"
 msgstr "Location"
 
+#: src/app/[locale]/dashboard/layout.tsx
+msgid "My Prices"
+msgstr "My Prices"
+
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
+#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Next"
 
@@ -172,10 +185,13 @@ msgstr "Please enter your full name, or a display name you are comfortable with.
 msgid "Please use 32 characters at maximum."
 msgstr "Please use 32 characters at maximum."
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
 msgid "Previous"
 msgstr "Previous"
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
 msgid "Price"
 msgstr "Price"
@@ -183,6 +199,10 @@ msgstr "Price"
 #: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Price for {productName} added!"
 msgstr "Price for {productName} added!"
+
+#: src/app/[locale]/dashboard/layout.tsx
+msgid "Return to the app"
+msgstr "Return to the app"
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 #: src/applications/Profile/Ui/Settings/PhoneNumber.tsx
