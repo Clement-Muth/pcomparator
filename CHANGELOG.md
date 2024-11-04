@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/Clement-Muth/pcomparator/compare/v4.1.0...v4.2.0) (2024-11-04)
+
+
+### Features
+
+* **pcomparator:** create dashboard layout ([#66](https://github.com/Clement-Muth/pcomparator/issues/66)) ([26346a5](https://github.com/Clement-Muth/pcomparator/commit/26346a52b0beb7f957221b52dd29eae3c1efd19d))
+
 # [4.1.0](https://github.com/Clement-Muth/pcomparator/compare/v4.0.0...v4.1.0) (2024-11-02)
 
 
