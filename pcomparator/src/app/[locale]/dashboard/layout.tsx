@@ -6,7 +6,7 @@ import { type NextPageProps, withLinguiLayout } from "~/core/withLinguiLayout";
 const DashboardLayout = ({ children }: NextPageProps) => {
   return (
     <div className="flex">
-      <aside className="sticky top-24 w-72 h-[calc(100dvh-96px)] p-6 mt-8 flex flex-col">
+      <aside className="sticky top-24 w-72 h-[calc(100dvh-96px)] p-6 mt-8 flex-col hidden md:flex">
         <nav className="h-auto flex-1">
           <ul>
             <li>

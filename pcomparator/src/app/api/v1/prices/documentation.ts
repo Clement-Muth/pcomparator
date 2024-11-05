@@ -57,7 +57,7 @@ const ExtendedProductSchema = ProductSchema.extend({
 });
 
 export const paths: ZodOpenApiPathsObject = {
-  "/prices": {
+  "/v1/prices": {
     post: {
       operationId: "createPrice",
       summary: "Create a new price",
