@@ -6,9 +6,12 @@ import { z } from "zod";
 import { HTTPError } from "~/types/error";
 
 export const errorHandler = (
-  callback: (request: NextAuthRequest, ctx: AppRouteHandlerFnContext) => Promise<NextResponse>
+  callback: (request: NextAuthRequest, ctx: AppRouteHandlerFnContext) => Promise<NextResponse | Response>
 ) => {
-  return async (request: NextAuthRequest, ctx: AppRouteHandlerFnContext): Promise<NextResponse> => {
+  return async (
+    request: NextAuthRequest,
+    ctx: AppRouteHandlerFnContext
+  ): Promise<NextResponse | Response> => {
     try {
       return await callback(request, ctx);
     } catch (error) {
