@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/Clement-Muth/pcomparator/compare/v4.2.0...v4.3.0) (2024-11-05)
+
+
+### Features
+
+* **pcomparator:** create my price page and delete price ([#67](https://github.com/Clement-Muth/pcomparator/issues/67)) ([f0200cb](https://github.com/Clement-Muth/pcomparator/commit/f0200cb07b4e7beb0ec4a7020cebb41d80d9992f))
+
 # [4.2.0](https://github.com/Clement-Muth/pcomparator/compare/v4.1.0...v4.2.0) (2024-11-04)
 
 
