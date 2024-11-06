@@ -14,6 +14,14 @@ paths:
       description: This operation permanently deletes the account associated with the
         specified user ID. This action is irreversible and removes all
         information linked to this account.
+      parameters:
+        - in: path
+          description: id of the user
+          name: id
+          required: true
+          example: 1bc0956b-c517-4b91-a3ca-1ebea5c60440
+          schema:
+            type: string
       requestBody:
         description: No request body is required for this operation.
         content: {}
@@ -82,7 +90,7 @@ paths:
                     example: Internal Server Error.
                 required:
                   - error
-  /prices:
+  /v1/prices:
     post:
       operationId: createPrice
       summary: Create a new price
@@ -199,10 +207,10 @@ paths:
                     example: ""
                   createdAt:
                     type: string
-                    example: 2024-11-02T18:10:02.833Z
+                    example: 2024-11-06T07:40:51.076Z
                   updatedAt:
                     type: string
-                    example: 2024-11-02T18:10:02.833Z
+                    example: 2024-11-06T07:40:51.076Z
                 required:
                   - id
                   - barcode
@@ -237,6 +245,14 @@ paths:
       description: This operation updates the profile information of the user
         identified by the specified user ID. Users can update their profile
         details such as name, phone, and other relevant information.
+      parameters:
+        - in: path
+          description: id of the user
+          name: id
+          required: true
+          example: 1bc0956b-c517-4b91-a3ca-1ebea5c60440
+          schema:
+            type: string
       requestBody:
         description: The profile data to update. This should include the fields that
           need to be modified.
@@ -318,6 +334,13 @@ paths:
       description: This operation updates the avatar of the user identified by the
         specified user ID. Users can upload a new avatar image file to update
         their profile picture.
+      parameters:
+        - in: path
+          description: id of the user
+          name: id
+          required: true
+          schema:
+            type: string
       requestBody:
         description: The avatar image to upload. This should be a file object
           representing the new avatar.
@@ -338,6 +361,221 @@ paths:
                     example: https://pcomparator.vercel.app/avatars/new-avatar.png
                 required:
                   - image
+        "400":
+          description: The request is malformed or contains invalid parameters. Please
+            check the data provided.
+          content:
+            application/json:
+              schema: *a1
+        "404":
+          description: The requested resource could not be found.
+          content:
+            application/json:
+              schema: *a2
+        "409":
+          description: A similar entry already exists.
+          content:
+            application/json:
+              schema: *a3
+        "500":
+          description: Internal server error. Something went wrong on the server side.
+          content:
+            application/json:
+              schema: *a4
+  /v1/user/{id}/prices:
+    get:
+      operationId: listPrices
+      summary: List user prices.
+      description: This operation retrieves a list of prices added by the specified
+        user. The list includes detailed information for each price entry, such
+        as the product name, price, location, and date added. This allows the
+        user to review all their contributed price information in one place.
+      parameters:
+        - in: path
+          description: id of the user
+          name: id
+          example: 1bc0956b-c517-4b91-a3ca-1ebea5c60440
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: No request body is required for this operation.
+        content: {}
+      responses:
+        "200":
+          description: Profile updated successfully.
+          content:
+            application/json:
+              schema:
+                type:
+                  - array
+                  - "null"
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      format: uuid
+                    productId:
+                      type: string
+                      format: uuid
+                    storeId:
+                      type: string
+                      format: uuid
+                    amount:
+                      type: number
+                      minimum: 0
+                    currency:
+                      type: string
+                      enum:
+                        - EUR
+                        - USD
+                        - GBP
+                        - CHF
+                        - AUD
+                        - CAD
+                        - CNY
+                        - JPY
+                        - AED
+                    priceProofImage:
+                      type:
+                        - string
+                        - "null"
+                      format: uri
+                    dateRecorded:
+                      type:
+                        - string
+                        - "null"
+                    storeName:
+                      type: number
+                      minimum: 0
+                      default: 2.99
+                      example: 2.99
+                      description: Amount of the price
+                    product:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                        barcode:
+                          type: string
+                          minLength: 1
+                        name:
+                          type: string
+                          minLength: 1
+                        description:
+                          type:
+                            - string
+                            - "null"
+                          minLength: 1
+                        categoryId:
+                          type:
+                            - string
+                            - "null"
+                          format: uuid
+                        brandId:
+                          type:
+                            - string
+                            - "null"
+                          format: uuid
+                        nutritionScore:
+                          type: "null"
+                        createdAt:
+                          type: string
+                        updatedAt:
+                          type: string
+                      required:
+                        - id
+                        - barcode
+                        - name
+                        - createdAt
+                        - updatedAt
+                    store:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                        name:
+                          type: string
+                          minLength: 1
+                        location:
+                          type: string
+                          minLength: 1
+                        websiteUrl:
+                          type:
+                            - string
+                            - "null"
+                          format: uri
+                      required:
+                        - id
+                        - name
+                        - location
+                  required:
+                    - id
+                    - productId
+                    - storeId
+                    - amount
+                    - currency
+                    - storeName
+                    - product
+                    - store
+        "204":
+          description: The account was deleted successfully.
+        "400":
+          description: The request is malformed or contains invalid parameters. Please
+            check the data provided.
+          content:
+            application/json:
+              schema: *a1
+        "404":
+          description: The requested resource could not be found.
+          content:
+            application/json:
+              schema: *a2
+        "409":
+          description: A similar entry already exists.
+          content:
+            application/json:
+              schema: *a3
+        "500":
+          description: Internal server error. Something went wrong on the server side.
+          content:
+            application/json:
+              schema: *a4
+  /v1/user/{id}/prices/{priceId}:
+    delete:
+      operationId: deleteUserPrice
+      summary: Delete a user price.
+      description: This operation allows the specified user to delete a specific price
+        entry they previously added. When executed, the request removes the
+        selected price entry from the database, ensuring it no longer appears in
+        search results or in the user's list of contributed prices. This action
+        is permanent and requires user authentication to confirm their identity.
+        The operation enhances data control by enabling users to manage and
+        curate their submitted pricing information.
+      parameters:
+        - in: path
+          description: id of the user
+          name: id
+          required: true
+          example: 1bc0956b-c517-4b91-a3ca-1ebea5c60440
+          schema:
+            type: string
+        - in: path
+          description: id of the price to delete
+          name: priceId
+          example: 390c21e2-5c18-4d85-8f40-9ea3486b2675
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: No request body is required for this operation.
+        content: {}
+      responses:
+        "204":
+          description: The price was deleted successfully.
         "400":
           description: The request is malformed or contains invalid parameters. Please
             check the data provided.
