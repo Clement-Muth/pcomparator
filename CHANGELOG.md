@@ -1,3 +1,17 @@
+# [4.4.0](https://github.com/Clement-Muth/deazl/compare/v4.3.0...v4.4.0) (2024-11-09)
+
+
+### Bug Fixes
+
+* middleware redirection error ([#70](https://github.com/Clement-Muth/deazl/issues/70)) ([6965403](https://github.com/Clement-Muth/deazl/commit/696540300e01e4bca10a0c72d5fbad53b8ac52d8))
+* **pcomparator:** translations errors ([#69](https://github.com/Clement-Muth/deazl/issues/69)) ([5dbd50b](https://github.com/Clement-Muth/deazl/commit/5dbd50bc111aed353c75c4bb3eb158831ba06102))
+* **release:** add repositoryUrl for new domaine ([#72](https://github.com/Clement-Muth/deazl/issues/72)) ([0c3dbaa](https://github.com/Clement-Muth/deazl/commit/0c3dbaa4961f60ce778ee478e6d3012d35a19c64))
+
+
+### Features
+
+* **pcomparator:** implement custom openapi fetch ([#68](https://github.com/Clement-Muth/deazl/issues/68)) ([aa2b651](https://github.com/Clement-Muth/deazl/commit/aa2b651a5703fdf38c0e234ec8eb9bb3b902204c))
+
 # [4.3.0](https://github.com/Clement-Muth/pcomparator/compare/v4.2.0...v4.3.0) (2024-11-05)
 
 
