@@ -1,7 +1,6 @@
 "use server";
 
 import { z } from "zod";
-import type { Product } from "~/applications/Prices/Domain/Entities/Product";
 import { Currency } from "~/applications/Prices/Domain/ValueObjects/Currency";
 import { OpenFoodFactPricesApiClient } from "~/clients/OpenFoodFactPricesApiClient";
 import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
@@ -15,12 +14,14 @@ const ParamsSchema = z.object({
   currency: z.nativeEnum(Currency)
 });
 
-const PayloadSchema = z.object({});
+const PayloadSchema = z.object({
+  name: z.string()
+});
 
 export type CreatePriceParams = z.infer<typeof ParamsSchema>;
 export type CreatePricePayload = z.infer<typeof PayloadSchema>;
 
-export const createPrice = async (params: z.infer<typeof ParamsSchema>): Promise<Product> => {
+export const createPrice = async (params: CreatePriceParams): Promise<CreatePricePayload> => {
   try {
     const paramsPayload = ParamsSchema.parse(params);
 
@@ -30,23 +31,25 @@ export const createPrice = async (params: z.infer<typeof ParamsSchema>): Promise
       image_url: string;
     }>();
 
-    const product = await pcomparatorAuthenticatedApiClient
-      .post("v1/prices", {
-        json: {
-          barcode: paramsPayload.barcode,
-          storeName: paramsPayload.storeName,
-          productName: offProduct.product_name,
-          categoryName: "N/A",
-          brandName: offProduct.brands,
-          location: paramsPayload.location,
-          amount: paramsPayload.amount,
-          proof: offProduct.image_url,
-          currency: paramsPayload.currency
-        }
-      })
-      .json<Product>();
+    const payload = PayloadSchema.parse(
+      (
+        await pcomparatorAuthenticatedApiClient.post("/v1/prices", {
+          body: {
+            barcode: paramsPayload.barcode,
+            storeName: paramsPayload.storeName,
+            productName: offProduct.product_name,
+            categoryName: "N/A",
+            brandName: offProduct.brands,
+            location: paramsPayload.location,
+            amount: paramsPayload.amount,
+            proof: offProduct.image_url,
+            currency: paramsPayload.currency
+          }
+        })
+      ).data
+    );
 
-    return product;
+    return payload;
   } catch (error) {
     throw new Error("Price not found", { cause: "FormError" });
     // if (error instanceof HTTPError) {

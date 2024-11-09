@@ -283,6 +283,10 @@ msgstr "Ceci est votre avatar."
 msgid "Type \"{priceId}\" to confirm"
 msgstr "Tapez \"{priceId}\" pour confirmer."
 
+#: src/applications/Prices/Ui/ListPrices/CardPrice/DeletePriceModal/DeletePriceModal.tsx
+msgid "Type \"delete {0}\" to confirm"
+msgstr "Saisissez \"supprimer {0}\" pour confirmer"
+
 #: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
 msgid "Type barcode"
 msgstr "Type de code-barre"

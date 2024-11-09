@@ -16355,6 +16355,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"openapi-fetch@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "openapi-fetch@npm:0.13.0"
+  dependencies:
+    openapi-typescript-helpers: ^0.0.15
+  checksum: ba426594143655ad57e2d3dcba8ef6537f6f0d48d506d327916f0a5f5743d70401cde3c37b9084017d44ed7ac22bb72973412973a55ffa9ab70c7c0e0daccbf5
+  languageName: node
+  linkType: hard
+
+"openapi-typescript-helpers@npm:^0.0.15":
+  version: 0.0.15
+  resolution: "openapi-typescript-helpers@npm:0.0.15"
+  checksum: feec0f25d708aaacc086dafd3e21001329b47984f30e24877b34d053fbccd52f3b3a19b1715fda2ed5afaca7056872576eed7de8f64855d2472507dc6df626ca
+  languageName: node
+  linkType: hard
+
 "openapi3-ts@npm:^4.1.2":
   version: 4.4.0
   resolution: "openapi3-ts@npm:4.4.0"
@@ -16932,6 +16948,7 @@ __metadata:
     next: 15.0.0
     next-auth: beta
     next-themes: ^0.3.0
+    openapi-fetch: ^0.13.0
     postcss: 8.4.25
     prisma: ^5.21.1
     react: ^18.3.1

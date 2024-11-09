@@ -6,6 +6,16 @@ extendZodWithOpenApi(z);
 export const paths: ZodOpenApiPathsObject = {
   "/v1/user/{id}/account": {
     delete: {
+      parameters: [
+        {
+          in: "path",
+          description: "id of the user",
+          name: "id",
+          required: true,
+          example: "1bc0956b-c517-4b91-a3ca-1ebea5c60440",
+          schema: { type: "string" }
+        }
+      ],
       operationId: "deleteAccount",
       summary: "Delete user account.",
       description:

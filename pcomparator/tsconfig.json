@@ -38,7 +38,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/libraries/openapi-fetch/index.d.ts",
+    "src/libraries/openapi-fetch/index.js"
   ],
   "exclude": [
     "node_modules",

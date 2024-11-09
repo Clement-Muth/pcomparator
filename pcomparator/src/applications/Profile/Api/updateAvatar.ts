@@ -34,11 +34,20 @@ export const updateAvatar = async (params: z.infer<typeof ParamsSchema>): Promis
   if (!session?.user?.id) throw new Error("User not authenticated");
 
   try {
-    const updatedUser = await pcomparatorAuthenticatedApiClient
-      .patch(`v1/user/${session.user.id}/profile/avatar?filename=${paramsPayload.image.name}`, {
-        body: paramsPayload.image
+    const updatedUser = (
+      await pcomparatorAuthenticatedApiClient.patch("/v1/user/{id}/profile/avatar", {
+        body: paramsPayload.image,
+        noSerializing: true,
+        params: {
+          query: {
+            filename: paramsPayload.image.name
+          },
+          path: {
+            id: session.user.id
+          }
+        }
       })
-      .json();
+    ).data;
 
     const updatedUserPayload = PayloadSchema.parse(updatedUser);
 

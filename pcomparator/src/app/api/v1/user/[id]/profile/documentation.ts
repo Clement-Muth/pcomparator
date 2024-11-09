@@ -30,6 +30,16 @@ export const paths: ZodOpenApiPathsObject = {
     patch: {
       operationId: "updateUserProfile",
       summary: "Update User Profile",
+      parameters: [
+        {
+          in: "path",
+          description: "id of the user",
+          name: "id",
+          required: true,
+          example: "1bc0956b-c517-4b91-a3ca-1ebea5c60440",
+          schema: { type: "string" }
+        }
+      ],
       description:
         "This operation updates the profile information of the user identified by the specified user ID. Users can update their profile details such as name, phone, and other relevant information.",
       requestBody: {
