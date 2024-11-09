@@ -75,6 +75,7 @@
     "@babel/core": "^7.24.4",
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.24.1",
+    "@ducanh2912/next-pwa": "^10.2.9",
     "@lingui/cli": "^4.11.0",
     "@lingui/loader": "^4.11.0",
     "@lingui/macro": "^4.11.0",
