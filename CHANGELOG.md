@@ -1,3 +1,86 @@
+# [4.3.0](https://github.com/Clement-Muth/pcomparator/compare/v4.2.0...v4.3.0) (2024-11-05)
+
+
+### Features
+
+* **pcomparator:** create my price page and delete price ([#67](https://github.com/Clement-Muth/pcomparator/issues/67)) ([f0200cb](https://github.com/Clement-Muth/pcomparator/commit/f0200cb07b4e7beb0ec4a7020cebb41d80d9992f))
+
+# [4.2.0](https://github.com/Clement-Muth/pcomparator/compare/v4.1.0...v4.2.0) (2024-11-04)
+
+
+### Features
+
+* **pcomparator:** create dashboard layout ([#66](https://github.com/Clement-Muth/pcomparator/issues/66)) ([26346a5](https://github.com/Clement-Muth/pcomparator/commit/26346a52b0beb7f957221b52dd29eae3c1efd19d))
+
+# [4.1.0](https://github.com/Clement-Muth/pcomparator/compare/v4.0.0...v4.1.0) (2024-11-02)
+
+
+### Features
+
+* **price:** handle store and location on create price ([#65](https://github.com/Clement-Muth/pcomparator/issues/65)) ([6cd5c12](https://github.com/Clement-Muth/pcomparator/commit/6cd5c1202f0e3f32e603632acf3ca94b65605052))
+
+# [4.0.0](https://github.com/Clement-Muth/pcomparator/compare/v3.4.0...v4.0.0) (2024-11-02)
+
+
+### Bug Fixes
+
+* **ci:** semantic-release module not found ([f9c5224](https://github.com/Clement-Muth/pcomparator/commit/f9c5224e6c5c5529020e8eb0dd178bccb1bfb712))
+* **ci:** use -y with yarn init ([49cc6fe](https://github.com/Clement-Muth/pcomparator/commit/49cc6fec36df5ba845f65f581b437b149ee76e4e))
+
+
+### Code Refactoring
+
+* documentation and pcomparator folder ([#59](https://github.com/Clement-Muth/pcomparator/issues/59)) ([ddd115c](https://github.com/Clement-Muth/pcomparator/commit/ddd115c1919fcdb565d53d4b7f6c1f92955f536f))
+
+
+### BREAKING CHANGES
+
+* restructure the app by adding new documentation and pcomparator repositories
+
+* add husky in pcomparator
+
+* fix relative paths
+
+* fix tsconfig
+
+* fix ci wrong wording
+
+* fix yarn nm install
+
+* replace yarn install ci
+
+* add validator to fix nextjs unvalid export route
+
+* revert tsconfig
+
+# [3.4.0](https://github.com/Clement-Muth/pcomparator/compare/v3.3.0...v3.4.0) (2024-10-31)
+
+
+### Features
+
+* **product:** create new product form ([#44](https://github.com/Clement-Muth/pcomparator/issues/44)) ([56dad32](https://github.com/Clement-Muth/pcomparator/commit/56dad32c49fde8fb92758d24230f828a60e2ef28))
+
+# [3.3.0](https://github.com/Clement-Muth/pcomparator/compare/v3.2.2...v3.3.0) (2024-10-28)
+
+
+### Features
+
+* create stepper component ([#57](https://github.com/Clement-Muth/pcomparator/issues/57)) ([10bac6a](https://github.com/Clement-Muth/pcomparator/commit/10bac6a552734626bb32ce6608591b94fbcc59d9)), closes [#53](https://github.com/Clement-Muth/pcomparator/issues/53) [#55](https://github.com/Clement-Muth/pcomparator/issues/55) [#56](https://github.com/Clement-Muth/pcomparator/issues/56)
+
+## [3.2.2](https://github.com/Clement-Muth/pcomparator/compare/v3.2.1...v3.2.2) (2024-10-27)
+
+
+### Bug Fixes
+
+* use authenticated client for delete account ([#50](https://github.com/Clement-Muth/pcomparator/issues/50)) ([655059d](https://github.com/Clement-Muth/pcomparator/commit/655059d42b187754ce06e3c5bc41d068643d875c))
+
+## [3.2.1](https://github.com/Clement-Muth/pcomparator/compare/v3.2.0...v3.2.1) (2024-10-25)
+
+
+### Bug Fixes
+
+* **locale:** locale not found ([#46](https://github.com/Clement-Muth/pcomparator/issues/46)) ([29df358](https://github.com/Clement-Muth/pcomparator/commit/29df35889337dfaa43b80963f43407450bea8379))
+
 # [3.2.0](https://github.com/Clement-Muth/pcomparator/compare/v3.1.0...v3.2.0) (2024-10-25)
 
 
