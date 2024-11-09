@@ -1,3 +1,10 @@
+## [4.4.1](https://github.com/Clement-Muth/deazl/compare/v4.4.0...v4.4.1) (2024-11-09)
+
+
+### Bug Fixes
+
+* remove authjs from middleware ([#73](https://github.com/Clement-Muth/deazl/issues/73)) ([b47c17c](https://github.com/Clement-Muth/deazl/commit/b47c17cbb90f4cfe3cf7050d06a2a5b789e657b9))
+
 # [4.4.0](https://github.com/Clement-Muth/deazl/compare/v4.3.0...v4.4.0) (2024-11-09)
 
 
