@@ -10,6 +10,22 @@ export const paths: ZodOpenApiPathsObject = {
       summary: "Update User Avatar",
       description:
         "This operation updates the avatar of the user identified by the specified user ID. Users can upload a new avatar image file to update their profile picture.",
+      parameters: [
+        {
+          in: "path",
+          description: "id of the user",
+          name: "id",
+          required: true,
+          schema: { type: "string" }
+        },
+        {
+          in: "query",
+          description: "",
+          name: "filename",
+          required: true,
+          schema: { type: "string" }
+        }
+      ],
       requestBody: {
         description: "The avatar image to upload. This should be a file object representing the new avatar.",
         content: {

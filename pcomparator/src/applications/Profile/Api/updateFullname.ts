@@ -2,7 +2,6 @@
 
 import { HTTPError } from "ky";
 import { z } from "zod";
-import type { Profile } from "~/applications/Profile/Domain/Entities/Profile";
 import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
 import { auth } from "~/libraries/nextauth/authConfig";
 
@@ -28,24 +27,23 @@ export type UpdateFullnamePayload = z.infer<typeof PayloadSchema>;
  * @throws {HTTPError} Re-throws any other HTTP errors encountered during the request.
  * @returns {Promise<UpdateFullnamePayload>} Resolves to an object containing the updated name upon successful update.
  */
-export const updateFullname = async (
-  params: z.infer<typeof ParamsSchema>
-): Promise<UpdateFullnamePayload> => {
+export const updateFullname = async (params: z.infer<typeof ParamsSchema>): Promise<void> => {
   const paramsPayload = ParamsSchema.parse(params);
   const session = await auth();
 
   if (!session?.user?.id) throw new Error("User not authenticated");
 
   try {
-    const userPayload = PayloadSchema.parse(
-      await pcomparatorAuthenticatedApiClient
-        .patch(`v1/user/${session.user.id}/profile`, {
-          json: { name: paramsPayload.name }
-        })
-        .json<Profile>()
-    );
-
-    return { name: userPayload.name };
+    await pcomparatorAuthenticatedApiClient.patch("/v1/user/{id}/profile", {
+      params: {
+        path: {
+          id: session.user.id
+        }
+      },
+      body: {
+        name: paramsPayload.name
+      }
+    });
   } catch (err) {
     if (err instanceof HTTPError) {
       switch (err.response.status) {

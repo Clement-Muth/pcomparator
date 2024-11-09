@@ -2,7 +2,6 @@
 
 import { HTTPError } from "ky";
 import { z } from "zod";
-import type { Profile } from "~/applications/Profile/Domain/Entities/Profile";
 import { pcomparatorAuthenticatedApiClient } from "~/clients/PcomparatorApiClient";
 import { auth } from "~/libraries/nextauth/authConfig";
 
@@ -10,12 +9,7 @@ const ParamsSchema = z.object({
   phone: z.string().optional()
 });
 
-const PayloadSchema = z.object({
-  phone: z.string()
-});
-
 export type UpdatePhoneParams = z.infer<typeof ParamsSchema>;
-export type UpdatePhonePayload = z.infer<typeof PayloadSchema>;
 
 /**
  * Updates the authenticated user's phone number.
@@ -28,24 +22,23 @@ export type UpdatePhonePayload = z.infer<typeof PayloadSchema>;
  * @throws {HTTPError} Re-throws any other HTTP errors encountered during the request.
  * @returns {Promise<UpdatePhonePayload>} Resolves to an object containing the updated phone number upon successful update.
  */
-export const updatePhoneNumber = async (params: UpdatePhoneParams): Promise<UpdatePhonePayload> => {
+export const updatePhoneNumber = async (params: UpdatePhoneParams): Promise<void> => {
   const paramsPayload = ParamsSchema.parse(params);
   const session = await auth();
 
   if (!session?.user?.id) throw new Error("User not authenticated");
 
   try {
-    const payload = PayloadSchema.parse(
-      await pcomparatorAuthenticatedApiClient
-        .patch(`v1/user/${session.user.id}/profile`, {
-          json: {
-            phone: paramsPayload.phone
-          }
-        })
-        .json<Profile>()
-    );
-
-    return { phone: payload.phone };
+    await pcomparatorAuthenticatedApiClient.patch("/v1/user/{id}/profile", {
+      params: {
+        path: {
+          id: session.user.id
+        }
+      },
+      body: {
+        phone: paramsPayload.phone
+      }
+    });
   } catch (err) {
     if (err instanceof HTTPError) {
       switch (err.response.status) {

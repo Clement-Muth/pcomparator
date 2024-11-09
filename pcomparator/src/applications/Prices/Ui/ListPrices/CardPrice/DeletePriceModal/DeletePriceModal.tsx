@@ -8,12 +8,19 @@ import { Input } from "~/components/Inputs/Input/Input";
 
 interface DeletePriceModalProps {
   priceId: string;
+  productName: string;
   isOpen: boolean;
   onOpenChange: () => void;
   onClose: () => void;
 }
 
-export const DeletePriceModal = ({ priceId, isOpen, onOpenChange, onClose }: DeletePriceModalProps) => {
+export const DeletePriceModal = ({
+  priceId,
+  productName,
+  isOpen,
+  onOpenChange,
+  onClose
+}: DeletePriceModalProps) => {
   const form = useForm<{ confirmation: string }>();
   const notify = () =>
     toast(<Trans>Price deleted</Trans>, {
@@ -38,7 +45,10 @@ export const DeletePriceModal = ({ priceId, isOpen, onOpenChange, onClose }: Del
             refresh();
           }}
           actions={{
-            nextProps: { color: "danger", isDisabled: !form.watch("confirmation")?.match(priceId) },
+            nextProps: {
+              color: "danger",
+              isDisabled: !form.watch("confirmation")?.match(`delete ${productName.toLowerCase()}`)
+            },
             prevProps: { title: <Trans>Cancel</Trans> },
             wrapper: ModalFooter
           }}
@@ -55,8 +65,8 @@ export const DeletePriceModal = ({ priceId, isOpen, onOpenChange, onClose }: Del
             <Input name="empty" hidden className="hidden" />
             <Input
               name="confirmation"
-              label={<Trans>Type "{priceId}" to confirm</Trans>}
-              placeholder={priceId}
+              label={<Trans>Type "delete {productName.toLowerCase()}" to confirm</Trans>}
+              placeholder={`delete ${productName.toLowerCase()}`}
             />
           </ModalBody>
         </form.Form>

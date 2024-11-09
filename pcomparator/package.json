@@ -15,10 +15,10 @@
     "storybook:build": "storybook build",
     "compile": "lingui compile --typescript",
     "test": "env-cmd -f ./.env.test jest --maxWorkers=100%",
-    "generate": "kysely-codegen --out-file ./src/types/db.d.ts",
     "prepare": "cd .. && husky ./pcomparator/.husky",
     "postinstall": "prisma generate",
-    "openapi:create": "npx tsx src/libraries/openAPI/index.ts --noEmit > openapi.yaml"
+    "openapi:create": "npx tsx src/libraries/openAPI/index.ts --noEmit > public/openapi.yaml",
+    "generate": "npx openapi-typescript ./public/openapi.yaml -o ./src/types/schema.d.ts"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^7.2.0",
@@ -52,6 +52,7 @@
     "next": "15.0.0",
     "next-auth": "beta",
     "next-themes": "^0.3.0",
+    "openapi-fetch": "^0.13.0",
     "postcss": "8.4.25",
     "react": "^18.3.1",
     "react-barcode-scanner": "^2.1.0",

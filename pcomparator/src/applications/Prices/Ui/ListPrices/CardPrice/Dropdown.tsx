@@ -74,6 +74,7 @@ export const CardPriceDropdown = ({ trigger, price }: CardPriceDropdownProps) =>
           onOpenChange={onOpenChangeDelete}
           onClose={onCloseDelete}
           priceId={price.priceId}
+          productName={price.name}
         />
       )}
     </>

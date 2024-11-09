@@ -17,9 +17,9 @@ export const deletePrice = async (params: z.infer<typeof ParamsPayload>): Promis
     const session = await auth();
     const paramsPayload = ParamsSchema.parse({ userId: session?.user.id, ...params });
 
-    await pcomparatorAuthenticatedApiClient
-      .delete(`v1/user/${paramsPayload.userId}/prices/${paramsPayload.priceId}`)
-      .json();
+    await pcomparatorAuthenticatedApiClient.delete("/v1/user/{id}/prices/{priceId}", {
+      params: { path: { id: paramsPayload.userId, priceId: paramsPayload.priceId } }
+    });
   } catch (error) {
     if (error instanceof HTTPError) {
       switch (error.status) {
