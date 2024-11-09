@@ -59,7 +59,6 @@ msgid "Avatar updated"
 msgstr "Avatar mis à jour"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
-#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Code-barre"
 
@@ -166,10 +165,6 @@ msgid "My Prices"
 msgstr "Mes prix"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
-#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Suivant"
 
@@ -212,7 +207,6 @@ msgstr "Veuillez utiliser 32 caractères maximum."
 msgid "Previous"
 msgstr "Précédent"
 
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
 msgid "Price"
 msgstr "Prix"
@@ -278,10 +272,6 @@ msgstr "Cette action <0>ne peut PAS être annulée</0>. Veuillez être sûr de v
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."
 msgstr "Ceci est votre avatar."
-
-#: src/applications/Prices/Ui/ListPrices/CardPrice/DeletePriceModal/DeletePriceModal.tsx
-msgid "Type \"{priceId}\" to confirm"
-msgstr "Tapez \"{priceId}\" pour confirmer."
 
 #: src/applications/Prices/Ui/ListPrices/CardPrice/DeletePriceModal/DeletePriceModal.tsx
 msgid "Type \"delete {0}\" to confirm"

@@ -15,7 +15,7 @@ interface NewProductModalProps {
   onSuccessfull: (productName: string) => void;
 }
 
-export const NewPriceModal = ({ isOpen, onOpenChange, onSuccessfull }: NewProductModalProps) => {
+export const NewPriceModal = ({ isOpen, onOpenChange, barcode, onSuccessfull }: NewProductModalProps) => {
   const { i18n } = useLingui();
   const [step, setStep] = useState<number>(1);
   const [productData, setProductData] = useState<{ price: number; barcode: string } | {}>({});
@@ -36,6 +36,7 @@ export const NewPriceModal = ({ isOpen, onOpenChange, onSuccessfull }: NewProduc
               setProductData((product) => ({ ...product, ...data }));
               setStep((currentStep) => currentStep + 1);
             }}
+            barcode={barcode}
             onLastStep={async (data) => {
               const finalProductData = { ...productData, ...data };
 

@@ -4,9 +4,8 @@ import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { Button, Input } from "@nextui-org/react";
 import { Send } from "lucide-react";
-import useForm from "~/components/Form/useForm";
-import "react-barcode-scanner/polyfill";
 import type { ReactNode } from "react";
+import useForm from "~/components/Form/useForm";
 
 interface SearchbarProps {
   startContent: ReactNode;
