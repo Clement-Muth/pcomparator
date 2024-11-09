@@ -59,7 +59,6 @@ msgid "Avatar updated"
 msgstr "Avatar updated"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
-#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Barcode"
 
@@ -166,10 +165,6 @@ msgid "My Prices"
 msgstr "My Prices"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
-#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Next"
 
@@ -212,7 +207,6 @@ msgstr "Please use 32 characters at maximum."
 msgid "Previous"
 msgstr "Previous"
 
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
 msgid "Price"
 msgstr "Price"
@@ -278,10 +272,6 @@ msgstr "This action <0>CANNOT be undone</0>. Please be certain about your decisi
 #: src/applications/Profile/Ui/Settings/Avatar.tsx
 msgid "This is your avatar."
 msgstr "This is your avatar."
-
-#: src/applications/Prices/Ui/ListPrices/CardPrice/DeletePriceModal/DeletePriceModal.tsx
-msgid "Type \"{priceId}\" to confirm"
-msgstr "Type \"{priceId}\" to confirm"
 
 #: src/applications/Prices/Ui/ListPrices/CardPrice/DeletePriceModal/DeletePriceModal.tsx
 msgid "Type \"delete {0}\" to confirm"
