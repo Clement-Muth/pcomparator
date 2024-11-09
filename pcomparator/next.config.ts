@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import withPWAInit from "@ducanh2912/next-pwa";
 
 const readEnvironmentVariable = (key: string, defaultValue: string | undefined = undefined): string => {
   const value = process.env[key];
@@ -10,8 +11,9 @@ const readEnvironmentVariable = (key: string, defaultValue: string | undefined =
   return value!;
 };
 
+const PCOMPARATOR_ENV = readEnvironmentVariable("PCOMPARATOR_ENV", "production");
+
 const nextConfig = (): NextConfig => {
-  const PCOMPARATOR_ENV = readEnvironmentVariable("PCOMPARATOR_ENV", "production");
 
   if (!["development", "test", "staging", "production"].includes(PCOMPARATOR_ENV)) {
     throw new Error(
@@ -28,6 +30,7 @@ const nextConfig = (): NextConfig => {
       ALGOLIA_APP_ID: readEnvironmentVariable("ALGOLIA_APP_ID")!,
       ALGOLIA_API_KEY: readEnvironmentVariable("ALGOLIA_API_KEY")!,
     },
+    trailingSlash: false,
     reactStrictMode: true,
     compress: true,
     images: {
@@ -49,12 +52,8 @@ const nextConfig = (): NextConfig => {
   };
 };
 
-const withPWA = require("@imbios/next-pwa")({
+const withPWA = withPWAInit({
   dest: "public",
-  disable: process.env.NODE_ENV === "development",
-  register: true,
-  scope: "/",
-  sw: "service-worker.js"
 });
 
-module.exports = withPWA(nextConfig());
+module.exports = nextConfig();
