@@ -1,3 +1,10 @@
+# [4.5.0](https://github.com/Clement-Muth/deazl/compare/v4.4.1...v4.5.0) (2024-11-10)
+
+
+### Features
+
+* **pcomparator:** implement searchbar for prices ([#75](https://github.com/Clement-Muth/deazl/issues/75)) ([3d35aa1](https://github.com/Clement-Muth/deazl/commit/3d35aa137366a1302c50398a916acbf5eabdb1b7))
+
 ## [4.4.1](https://github.com/Clement-Muth/deazl/compare/v4.4.0...v4.4.1) (2024-11-09)
 
 
