@@ -330,9 +330,9 @@ export interface operations {
                         brandId?: string | null;
                         /** @example  */
                         nutritionScore?: null;
-                        /** @example 2024-11-10T20:35:03.737Z */
+                        /** @example 2024-11-10T22:37:23.376Z */
                         createdAt: string;
-                        /** @example 2024-11-10T20:35:03.737Z */
+                        /** @example 2024-11-10T22:37:23.376Z */
                         updatedAt: string;
                     };
                 };
@@ -858,6 +858,28 @@ export interface operations {
                         /** Format: uri */
                         priceProofImage?: string | null;
                         dateRecorded?: string | null;
+                        product: {
+                            /** Format: uuid */
+                            id: string;
+                            barcode: string;
+                            name: string;
+                            description?: string | null;
+                            /** Format: uuid */
+                            categoryId?: string | null;
+                            /** Format: uuid */
+                            brandId?: string | null;
+                            nutritionScore?: null;
+                            createdAt: string;
+                            updatedAt: string;
+                        };
+                        store: {
+                            /** Format: uuid */
+                            id: string;
+                            name: string;
+                            location: string;
+                            /** Format: uri */
+                            websiteUrl?: string | null;
+                        };
                     }[];
                 };
             };

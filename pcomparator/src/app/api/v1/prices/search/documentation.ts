@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { type ZodOpenApiPathsObject, extendZodWithOpenApi } from "zod-openapi";
 import { PriceSchema } from "~/applications/Prices/Domain/Entities/Price";
+import { ProductSchema } from "~/applications/Prices/Domain/Entities/Product";
+import { StoreSchema } from "~/applications/Prices/Domain/Entities/Store";
 
 extendZodWithOpenApi(z);
 
@@ -33,7 +35,7 @@ export const paths: ZodOpenApiPathsObject = {
           description: "The burger was created successfully.",
           content: {
             "application/json": {
-              schema: PriceSchema.array()
+              schema: PriceSchema.extend({ product: ProductSchema, store: StoreSchema }).array()
             }
           }
         }

@@ -1,26 +1,14 @@
 "use client";
 
-import { Trans, t } from "@lingui/macro";
+import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import {
-  Button,
-  Card,
-  CardBody,
-  Image,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  useDisclosure
-} from "@nextui-org/react";
+import { useDisclosure } from "@nextui-org/react";
 import clsx from "clsx";
 import { Send } from "lucide-react";
 import { type ReactNode, useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
-import {} from "react-hook-form";
-import { getCurrencySymbol } from "~/applications/Prices/Domain/ValueObjects/Currency";
 import { search } from "~/applications/Searchbar/Api/search";
+import { SearchResultModal } from "~/applications/Searchbar/Ui/SearchResult/SearchResultModal";
 
 const SubmitButton = () => {
   const { pending } = useFormStatus();
@@ -74,38 +62,12 @@ export const Searchbar = ({ startContent }: SearchbarProps) => {
       </div>
 
       {state?.success && (
-        <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-          <ModalContent>
-            <ModalHeader>
-              <p>
-                <Trans>Prices for {state.search}</Trans>
-              </p>
-            </ModalHeader>
-            <ModalBody>
-              {state.prices?.map((price, i) => (
-                <Card key={price.product.name + i}>
-                  <CardBody className="flex !flex-row gap-4">
-                    <Image src={price.priceProofImage} width={100} height={100} className="object-cover" />
-                    <div className="flex flex-col justify-between">
-                      <div>
-                        <p className="font-bold text-lg">{price.product.name}</p>
-                        <p className="text-small">{price.store.name} – 6km</p>
-                      </div>
-                      <p>
-                        {getCurrencySymbol(price.currency)} {price.amount}
-                      </p>
-                    </div>
-                  </CardBody>
-                </Card>
-              ))}
-            </ModalBody>
-            <ModalFooter>
-              <Button size="sm">
-                <Trans>Close</Trans>
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
+        <SearchResultModal
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          prices={state.prices as any}
+          search={state.search}
+        />
       )}
     </form>
   );
