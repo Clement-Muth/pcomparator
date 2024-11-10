@@ -124,6 +124,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/prices/search": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Search for a price
+         * @description Creates a new price entry for a product, allowing users to add price information for a product found in a specific store. The route accepts details such as the product's barcode, name, brand, category, store location, price, and a link to a proof image. This enables the application to update its database with current prices from various stores, helping users compare prices effectively.
+         */
+        get: operations["searchPrices"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -310,9 +330,9 @@ export interface operations {
                         brandId?: string | null;
                         /** @example  */
                         nutritionScore?: null;
-                        /** @example 2024-11-07T18:41:41.406Z */
+                        /** @example 2024-11-10T20:35:03.737Z */
                         createdAt: string;
-                        /** @example 2024-11-07T18:41:41.406Z */
+                        /** @example 2024-11-10T20:35:03.737Z */
                         updatedAt: string;
                     };
                 };
@@ -742,6 +762,104 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+            /** @description The request is malformed or contains invalid parameters. Please check the data provided. */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @example The request is malformed or contains invalid parameters. Please check the data provided. */
+                        message: string;
+                        /** @example HTTPError */
+                        name: string;
+                        /** @example 400 */
+                        status: number;
+                        /** @example error cause */
+                        cause: string;
+                    };
+                };
+            };
+            /** @description The requested resource could not be found. */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @example The requested resource could not be found. */
+                        error: string;
+                    };
+                };
+            };
+            /** @description A similar entry already exists. */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @example A similar entry already exists. */
+                        error: string;
+                    };
+                };
+            };
+            /** @description Internal server error. Something went wrong on the server side. */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @example Internal Server Error. */
+                        error: string;
+                    };
+                };
+            };
+        };
+    };
+    searchPrices: {
+        parameters: {
+            query: {
+                /**
+                 * @description Defines the type of activity log entries to retrieve, such as "date" or "id"
+                 * @example date
+                 */
+                q: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description The price to create. */
+        requestBody?: {
+            content: {
+                "*/*"?: never;
+            };
+        };
+        responses: {
+            /** @description The burger was created successfully. */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** Format: uuid */
+                        id: string;
+                        /** Format: uuid */
+                        productId: string;
+                        /** Format: uuid */
+                        storeId: string;
+                        amount: number;
+                        /** @enum {string} */
+                        currency: "EUR" | "USD" | "GBP" | "CHF" | "AUD" | "CAD" | "CNY" | "JPY" | "AED";
+                        /** Format: uri */
+                        priceProofImage?: string | null;
+                        dateRecorded?: string | null;
+                    }[];
+                };
             };
             /** @description The request is malformed or contains invalid parameters. Please check the data provided. */
             400: {
