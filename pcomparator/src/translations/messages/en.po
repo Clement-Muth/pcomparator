@@ -59,6 +59,7 @@ msgid "Avatar updated"
 msgstr "Avatar updated"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Barcode"
 
@@ -120,10 +121,6 @@ msgstr "Drag and drop your file"
 msgid "Enter a phone number to receive important service updates by SMS."
 msgstr "Enter a phone number to receive important service updates by SMS."
 
-#: src/applications/Searchbar/Ui/Searchbar.tsx
-msgid "Enter your codebar"
-msgstr "Enter your codebar"
-
 #: src/components/Inputs/Phone/Phone.tsx
 msgid "Enter your phone number"
 msgstr "Enter your phone number"
@@ -173,6 +170,10 @@ msgid "My Prices"
 msgstr "My Prices"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
+#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Next"
 
@@ -215,6 +216,7 @@ msgstr "Please use 32 characters at maximum."
 msgid "Previous"
 msgstr "Previous"
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
 msgid "Price"
 msgstr "Price"
