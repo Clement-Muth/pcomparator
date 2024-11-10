@@ -1,3 +1,10 @@
+# [4.7.0](https://github.com/Clement-Muth/deazl/compare/v4.6.0...v4.7.0) (2024-11-10)
+
+
+### Features
+
+* **pcomparator:** add reverse search price ([#77](https://github.com/Clement-Muth/deazl/issues/77)) ([b7ad0ab](https://github.com/Clement-Muth/deazl/commit/b7ad0abf8602efe8628f52fcf073cca9127d9802))
+
 # [4.6.0](https://github.com/Clement-Muth/deazl/compare/v4.5.0...v4.6.0) (2024-11-10)
 
 
