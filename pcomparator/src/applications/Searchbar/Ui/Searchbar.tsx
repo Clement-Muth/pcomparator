@@ -36,7 +36,7 @@ interface SearchbarProps {
 export const Searchbar = ({ startContent }: SearchbarProps) => {
   const [state, formAction] = useActionState(search, null);
   const { i18n } = useLingui();
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
 
   useEffect(() => {
     if (state?.success) onOpen();
@@ -64,6 +64,7 @@ export const Searchbar = ({ startContent }: SearchbarProps) => {
       {state?.success && (
         <SearchResultModal
           isOpen={isOpen}
+          onClose={onClose}
           onOpenChange={onOpenChange}
           prices={state.prices as any}
           search={state.search}

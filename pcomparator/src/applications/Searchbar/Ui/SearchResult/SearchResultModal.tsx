@@ -18,12 +18,13 @@ import { getCurrencySymbol } from "~/applications/Prices/Domain/ValueObjects/Cur
 interface SearchResultProps {
   isOpen: boolean;
   onOpenChange: () => void;
+  onClose: () => void;
   search: string;
   prices: (Price & { product: Product; store: Store })[];
 }
 
-export const SearchResultModal = ({ isOpen, onOpenChange, prices, search }: SearchResultProps) => (
-  <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+export const SearchResultModal = ({ isOpen, onClose, onOpenChange, prices, search }: SearchResultProps) => (
+  <Modal isOpen={isOpen} onClose={onClose} onOpenChange={onOpenChange}>
     <ModalContent>
       <ModalHeader>
         <p>
@@ -49,7 +50,7 @@ export const SearchResultModal = ({ isOpen, onOpenChange, prices, search }: Sear
         ))}
       </ModalBody>
       <ModalFooter>
-        <Button size="sm">
+        <Button size="sm" onPress={onClose}>
           <Trans>Close</Trans>
         </Button>
       </ModalFooter>
