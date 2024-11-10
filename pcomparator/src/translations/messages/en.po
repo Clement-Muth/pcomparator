@@ -71,7 +71,7 @@ msgstr "Cancel"
 msgid "Click on the avatar to upload a custom one from your files."
 msgstr "Click on the avatar to upload a custom one from your files."
 
-#: src/applications/Searchbar/Ui/Searchbar.tsx
+#: src/applications/Searchbar/Ui/SearchResult/SearchResultModal.tsx
 msgid "Close"
 msgstr "Close"
 
@@ -232,6 +232,10 @@ msgstr "Price for {productName} added!"
 #: src/applications/Searchbar/Ui/Searchbar.tsx
 msgid "Prices for {0}"
 msgstr "Prices for {0}"
+
+#: src/applications/Searchbar/Ui/SearchResult/SearchResultModal.tsx
+msgid "Prices for {search}"
+msgstr "Prices for {search}"
 
 #: src/applications/Prices/Ui/ListPrices/CardPrice/SeeMoreModal.tsx
 msgid "Product"
