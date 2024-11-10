@@ -1,3 +1,10 @@
+# [4.6.0](https://github.com/Clement-Muth/deazl/compare/v4.5.0...v4.6.0) (2024-11-10)
+
+
+### Features
+
+* **pcomparator:** create tabbar ([#76](https://github.com/Clement-Muth/deazl/issues/76)) ([487a9fd](https://github.com/Clement-Muth/deazl/commit/487a9fd42a21cc6d232a501c5e34db2738214329))
+
 # [4.5.0](https://github.com/Clement-Muth/deazl/compare/v4.4.1...v4.5.0) (2024-11-10)
 
 
