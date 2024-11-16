@@ -7,12 +7,20 @@ import { HttpStatus } from "~/types/httpError";
 const SearchRepository = new PrismaSearchRepository();
 
 export const GET = withAuthentication(
-  errorHandler(async (request): Promise<NextResponse> => {
+  errorHandler(async (request) => {
     const { searchParams } = new URL(request.url);
     const search = searchParams.get("q") as string;
 
     const prices = await SearchRepository.search(search);
 
-    return NextResponse.json(prices, { status: HttpStatus.OK });
+    if (!prices) {
+      const isProductExists = await SearchRepository.findIfProductExists(search);
+
+      return isProductExists
+        ? NextResponse.json({ reason: "NO_PRICES" }, { status: HttpStatus.OK })
+        : new Response(null, { status: HttpStatus.NOT_FOUND });
+    }
+
+    return NextResponse.json({ prices: prices }, { status: HttpStatus.OK });
   })
 );

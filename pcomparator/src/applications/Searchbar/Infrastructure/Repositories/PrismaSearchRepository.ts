@@ -24,4 +24,12 @@ export class PrismaSearchRepository implements SearchRepository {
         }))
       : null;
   }
+
+  async findIfProductExists(query: string): Promise<boolean> {
+    const isProductExists = !!(await prisma.product.count({
+      where: { name: { contains: query, mode: "insensitive" } }
+    }));
+
+    return isProductExists;
+  }
 }
