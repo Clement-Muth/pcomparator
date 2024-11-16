@@ -1,3 +1,10 @@
+# [4.8.0](https://github.com/Clement-Muth/deazl/compare/v4.7.0...v4.8.0) (2024-11-16)
+
+
+### Features
+
+* **pcomparator:** handle new products on scan ([#78](https://github.com/Clement-Muth/deazl/issues/78)) ([f48b732](https://github.com/Clement-Muth/deazl/commit/f48b732c3de6498e2ed9ae7da2d858b60fae2b82))
+
 # [4.7.0](https://github.com/Clement-Muth/deazl/compare/v4.6.0...v4.7.0) (2024-11-10)
 
 
