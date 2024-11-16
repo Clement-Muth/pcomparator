@@ -1,35 +1,33 @@
-"use client";
-
 import { Button, useDisclosure } from "@nextui-org/react";
 import { ScanBarcode } from "lucide-react";
-import { useState, useTransition } from "react";
-import { search } from "~/applications/Searchbar/Api/search";
-import { searchByBarcode } from "~/applications/Searchbar/Api/searchByBarcode";
+import { useState } from "react";
 import { BarcodeScannerModal } from "~/applications/Searchbar/Ui/SearchBarcode/BarcodeScannerModal";
 import { SearchResultModal } from "~/applications/Searchbar/Ui/SearchResult/SearchResultModal";
 
-export const SearchBarcode = () => {
-  const [pending, startTransition] = useTransition();
+interface SearchBarcodeProps {
+  onNewProduct: (barcode: string, resultBarcode: object) => void;
+  onNoPrices: (barcode: string) => void;
+}
+
+export const SearchBarcode = ({ onNewProduct, onNoPrices }: SearchBarcodeProps) => {
   const { onOpen, onClose, isOpen, onOpenChange } = useDisclosure();
-  const [searchResult, setSearchResult] = useState<Awaited<ReturnType<typeof search>> | null>(null);
+  const [step, setStep] = useState(1);
+  const [search, setSearch] = useState<string | null>(null);
 
   return (
     <>
-      {!searchResult ? (
+      {step === 1 ? (
         <BarcodeScannerModal
           isOpen={isOpen}
           onOpenChange={onOpenChange}
           onBarcodeDetected={(barcode) => {
-            !pending &&
-              startTransition(async () => {
-                const { name } = await searchByBarcode({ barcode: barcode.barcode });
-                const formData = new FormData();
-
-                formData.append("search", name);
-                setSearchResult(await search(null, formData));
-              });
+            setSearch(barcode.barcode);
+            setStep(2);
+            onClose();
           }}
         />
+      ) : search ? (
+        <SearchResultModal search={search} onNewProduct={onNewProduct} onNoPrices={onNoPrices} />
       ) : null}
       <Button
         startContent={<ScanBarcode />}
@@ -39,18 +37,6 @@ export const SearchBarcode = () => {
         className="p-7 w-18 h-18 -mt-8 border-none shadow-medium"
         isIconOnly
       />
-      {searchResult && (
-        <SearchResultModal
-          isOpen={isOpen}
-          onClose={() => {
-            onClose();
-            setSearchResult(null);
-          }}
-          onOpenChange={onOpenChange}
-          prices={searchResult?.prices as any}
-          search={searchResult?.search}
-        />
-      )}
     </>
   );
 };

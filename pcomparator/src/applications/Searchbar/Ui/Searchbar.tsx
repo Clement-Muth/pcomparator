@@ -5,7 +5,7 @@ import { useLingui } from "@lingui/react";
 import { useDisclosure } from "@nextui-org/react";
 import clsx from "clsx";
 import { Send } from "lucide-react";
-import { type ReactNode, useActionState, useEffect } from "react";
+import { type ReactNode, useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { search } from "~/applications/Searchbar/Api/search";
 import { SearchResultModal } from "~/applications/Searchbar/Ui/SearchResult/SearchResultModal";
@@ -36,14 +36,16 @@ interface SearchbarProps {
 export const Searchbar = ({ startContent }: SearchbarProps) => {
   const [state, formAction] = useActionState(search, null);
   const { i18n } = useLingui();
-  const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
-
-  useEffect(() => {
-    if (state?.success) onOpen();
-  }, [state]);
+  const { onOpen } = useDisclosure();
 
   return (
-    <form action={formAction} className="w-full">
+    <form
+      action={async (formData) => {
+        formAction(formData);
+        onOpen();
+      }}
+      className="w-full"
+    >
       <div className="relative w-full">
         <label>
           <input
@@ -61,15 +63,7 @@ export const Searchbar = ({ startContent }: SearchbarProps) => {
         <SubmitButton />
       </div>
 
-      {state?.success && (
-        <SearchResultModal
-          isOpen={isOpen}
-          onClose={onClose}
-          onOpenChange={onOpenChange}
-          prices={state.prices as any}
-          search={state.search}
-        />
-      )}
+      {state?.success && <SearchResultModal search={state.search} />}
     </form>
   );
 };

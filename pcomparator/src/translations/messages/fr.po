@@ -38,6 +38,10 @@ msgstr "Ajouter un nouveau prix en scannant le code-barre"
 msgid "Add new price by typing barcode"
 msgstr "Ajouter un nouveau prix en saisissant le code-barre"
 
+#: src/applications/Products/Ui/NewProduct/NewProduct.tsx
+msgid "Add this product"
+msgstr "Ajouter ce produit"
+
 #: src/components/Inputs/Input/Barcode.tsx
 msgid "All barcode types are accepted."
 msgstr "Tous les types de code-barres sont acceptés."
@@ -75,7 +79,7 @@ msgstr "Cliquer sur avatar pour ajouter un depuis vos fichier."
 msgid "Close"
 msgstr "Fermer"
 
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Custom location"
 msgstr "Localisation personsalisée"
 
@@ -165,15 +169,15 @@ msgstr "Clair"
 msgid "Location"
 msgstr "Localisation"
 
+#: src/applications/Products/Ui/NewProduct/NewProduct.tsx
+msgid "Maybe later"
+msgstr "Peut-être plus tard"
+
 #: src/app/[locale]/dashboard/layout.tsx
 msgid "My Prices"
 msgstr "Mes prix"
 
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
-#: src/components/Form/FormActions.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Next"
 msgstr "Suivant"
 
@@ -210,16 +214,17 @@ msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vou
 msgid "Please use 32 characters at maximum."
 msgstr "Veuillez utiliser 32 caractères maximum."
 
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Previous"
 msgstr "Précédent"
 
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Price.tsx
 msgid "Price"
 msgstr "Prix"
+
+#: src/core/Tabbar.tsx
+msgid "Price added"
+msgstr "Prix ajouté"
 
 #: src/applications/Prices/Ui/ListPrices/CardPrice/DeletePriceModal/DeletePriceModal.tsx
 msgid "Price deleted"
@@ -229,10 +234,6 @@ msgstr "Prix supprimé"
 msgid "Price for {productName} added!"
 msgstr "Prix pour {productName} ajouté !"
 
-#: src/applications/Searchbar/Ui/Searchbar.tsx
-msgid "Prices for {0}"
-msgstr "Prix pour {0}"
-
 #: src/applications/Searchbar/Ui/SearchResult/SearchResultModal.tsx
 msgid "Prices for {search}"
 msgstr "Prix pour {search}"
@@ -240,6 +241,18 @@ msgstr "Prix pour {search}"
 #: src/applications/Prices/Ui/ListPrices/CardPrice/SeeMoreModal.tsx
 msgid "Product"
 msgstr "Produit"
+
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Price.tsx
+msgid "Product \"{productName}\" was not found but added to your account."
+msgstr "Produit \"{productName}\" n'a pas été trouvé mais à été ajouté  votre compte."
+
+#: src/applications/Products/Ui/NewProduct/NewProduct.tsx
+msgid "Product added"
+msgstr "Produit ajouté"
+
+#: src/applications/Products/Ui/NewProduct/NewProduct.tsx
+msgid "Product Not Found"
+msgstr "Produit non trouvé"
 
 #: src/app/[locale]/dashboard/layout.tsx
 msgid "Return to the app"
@@ -254,7 +267,7 @@ msgstr "Sauvegarder"
 msgid "Scan barcode"
 msgstr "Scanner code-barre"
 
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Search"
 msgstr "Recherche"
 

@@ -35,7 +35,12 @@ export const paths: ZodOpenApiPathsObject = {
           description: "The burger was created successfully.",
           content: {
             "application/json": {
-              schema: PriceSchema.extend({ product: ProductSchema, store: StoreSchema }).array()
+              schema: z.object({
+                prices: PriceSchema.extend({ product: ProductSchema.nullable(), store: StoreSchema })
+                  .array()
+                  .nullable(),
+                reason: z.literal("NO_PRICES").nullable().optional()
+              })
             }
           }
         }
