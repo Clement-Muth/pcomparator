@@ -79,6 +79,7 @@ msgstr "Cliquer sur avatar pour ajouter un depuis vos fichier."
 msgid "Close"
 msgstr "Fermer"
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
 #: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Custom location"
 msgstr "Localisation personsalisée"
@@ -141,6 +142,11 @@ msgstr "Environnement"
 msgid "Fullname updated"
 msgstr "Nom complet mis à jour."
 
+#: src/core/pwa/Install.tsx
+#: src/core/pwa/Install.tsx
+msgid "Get faster access, work offline, and enjoy a smoother experience."
+msgstr "Accédez plus rapidement, travaillez hors ligne et profitez d'une expérience plus fluide."
+
 #: src/applications/Prices/Ui/ListPrices/CardPrice/SeeMoreModal.tsx
 msgid "Health"
 msgstr "Santé"
@@ -152,6 +158,11 @@ msgstr "Bonjour {0}"
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "I understand, delete my account"
 msgstr "Je comprends, supprimez mon compte."
+
+#: src/core/pwa/Install.tsx
+#: src/core/pwa/Install.tsx
+msgid "Install Our App for a Better Experience!"
+msgstr "Installez notre application pour une meilleure expérience !"
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 msgid "Invalid display name."
@@ -169,7 +180,8 @@ msgstr "Clair"
 msgid "Location"
 msgstr "Localisation"
 
-#: src/applications/Products/Ui/NewProduct/NewProduct.tsx
+#: src/core/pwa/Install.tsx
+#: src/core/pwa/Install.tsx
 msgid "Maybe later"
 msgstr "Peut-être plus tard"
 
@@ -177,7 +189,12 @@ msgstr "Peut-être plus tard"
 msgid "My Prices"
 msgstr "Mes prix"
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
 #: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
+#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Suivant"
 
@@ -214,10 +231,15 @@ msgstr "Veuillez entrer votre nom complet, ou un nom d'affichage avec lequel vou
 msgid "Please use 32 characters at maximum."
 msgstr "Veuillez utiliser 32 caractères maximum."
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
 #: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Previous"
 msgstr "Précédent"
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
 #: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Price.tsx
 msgid "Price"
 msgstr "Prix"
@@ -267,6 +289,7 @@ msgstr "Sauvegarder"
 msgid "Scan barcode"
 msgstr "Scanner code-barre"
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
 #: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Search"
 msgstr "Recherche"

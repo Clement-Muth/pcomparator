@@ -88,7 +88,7 @@ const InstallPrompt = () => {
                   onClose();
                 }}
               >
-                <Trans>Maybe Later</Trans>
+                <Trans>Maybe later</Trans>
               </Button>
               <Button
                 onPress={() => {
@@ -140,7 +140,7 @@ const InstallPrompt = () => {
                   onClose();
                 }}
               >
-                <Trans>Maybe Later</Trans>
+                <Trans>Maybe later</Trans>
               </Button>
               <Button
                 onPress={() => {
