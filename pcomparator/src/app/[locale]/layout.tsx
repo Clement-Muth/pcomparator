@@ -7,6 +7,8 @@ import { pcomparatorMetadata } from "~/core/metadata";
 import { type NextPageProps, withLinguiLayout } from "~/core/withLinguiLayout";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
+import Head from "next/head";
+import { Meta } from "~/app/[locale]/meta";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +19,9 @@ export const generateStaticParams = () => locales.map((locale) => ({ lang: local
 const RootLayout = ({ children, locale }: NextPageProps) => {
   return (
     <html lang={locale} suppressHydrationWarning>
+      <Head>
+        <Meta />
+      </Head>
       <body className={inter.className}>
         <ApplicationKernel locale={locale}>
           <ApplicationLayout>{children}</ApplicationLayout>

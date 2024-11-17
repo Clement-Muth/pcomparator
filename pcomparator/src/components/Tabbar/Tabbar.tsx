@@ -10,7 +10,7 @@ export interface TabbarProps {
 }
 
 export const Tabbar = ({ mainButton }: TabbarProps) => (
-  <div className="flex justify-evenly py-4 border-t rounded-t-3xl border-t-transparent shadow-medium bg-white">
+  <div className="flex justify-evenly py-4 border-t rounded-t-3xl border-t-transparent shadow-medium bg-white dark:bg-black">
     <Button as={Link} href="" startContent={<User />} variant="light" radius="full" isIconOnly />
     <Button as={Link} href="" startContent={<Utensils />} variant="light" radius="full" isIconOnly />
     {mainButton}
