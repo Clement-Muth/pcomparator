@@ -1,6 +1,6 @@
 {
   "name": "pcomparator",
-  "version": "1.0.0",
+  "version": "4.8.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
@@ -23,6 +23,7 @@
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^7.2.0",
     "@auth/prisma-adapter": "^2.7.2",
+    "@dotmind/react-use-pwa": "^1.0.4",
     "@imbios/next-pwa": "^1.1.1",
     "@lingui/core": "^4.11.0",
     "@lingui/react": "^4.11.0",
