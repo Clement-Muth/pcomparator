@@ -1,3 +1,38 @@
+# [4.8.0](https://github.com/Clement-Muth/deazl/compare/v4.7.0...v4.8.0) (2024-11-16)
+
+
+### Features
+
+* **pcomparator:** handle new products on scan ([#78](https://github.com/Clement-Muth/deazl/issues/78)) ([f48b732](https://github.com/Clement-Muth/deazl/commit/f48b732c3de6498e2ed9ae7da2d858b60fae2b82))
+
+# [4.7.0](https://github.com/Clement-Muth/deazl/compare/v4.6.0...v4.7.0) (2024-11-10)
+
+
+### Features
+
+* **pcomparator:** add reverse search price ([#77](https://github.com/Clement-Muth/deazl/issues/77)) ([b7ad0ab](https://github.com/Clement-Muth/deazl/commit/b7ad0abf8602efe8628f52fcf073cca9127d9802))
+
+# [4.6.0](https://github.com/Clement-Muth/deazl/compare/v4.5.0...v4.6.0) (2024-11-10)
+
+
+### Features
+
+* **pcomparator:** create tabbar ([#76](https://github.com/Clement-Muth/deazl/issues/76)) ([487a9fd](https://github.com/Clement-Muth/deazl/commit/487a9fd42a21cc6d232a501c5e34db2738214329))
+
+# [4.5.0](https://github.com/Clement-Muth/deazl/compare/v4.4.1...v4.5.0) (2024-11-10)
+
+
+### Features
+
+* **pcomparator:** implement searchbar for prices ([#75](https://github.com/Clement-Muth/deazl/issues/75)) ([3d35aa1](https://github.com/Clement-Muth/deazl/commit/3d35aa137366a1302c50398a916acbf5eabdb1b7))
+
+## [4.4.1](https://github.com/Clement-Muth/deazl/compare/v4.4.0...v4.4.1) (2024-11-09)
+
+
+### Bug Fixes
+
+* remove authjs from middleware ([#73](https://github.com/Clement-Muth/deazl/issues/73)) ([b47c17c](https://github.com/Clement-Muth/deazl/commit/b47c17cbb90f4cfe3cf7050d06a2a5b789e657b9))
+
 # [4.4.0](https://github.com/Clement-Muth/deazl/compare/v4.3.0...v4.4.0) (2024-11-09)
 
 

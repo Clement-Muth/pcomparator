@@ -1669,6 +1669,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dotmind/react-use-pwa@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@dotmind/react-use-pwa@npm:1.0.4"
+  checksum: e040cd4ed3d50f05d8c416234f21ea208480c1ee3cdff2e1a4edde6d42a2dc3e87d250bea1628d3a50ed787d7669f61c663526b9e0111fb7641d6368978395de
+  languageName: node
+  linkType: hard
+
 "@ducanh2912/next-pwa@npm:^10.2.9":
   version: 10.2.9
   resolution: "@ducanh2912/next-pwa@npm:10.2.9"
@@ -15710,6 +15717,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"moment@npm:^2.30.1":
+  version: 2.30.1
+  resolution: "moment@npm:2.30.1"
+  checksum: 859236bab1e88c3e5802afcf797fc801acdbd0ee509d34ea3df6eea21eb6bcc2abd4ae4e4e64aa7c986aa6cba563c6e62806218e6412a765010712e5fa121ba6
+  languageName: node
+  linkType: hard
+
 "moo-color@npm:^1.0.2":
   version: 1.0.3
   resolution: "moo-color@npm:1.0.3"
@@ -16971,6 +16985,7 @@ __metadata:
     "@babel/core": ^7.24.4
     "@babel/preset-react": ^7.24.1
     "@babel/preset-typescript": ^7.24.1
+    "@dotmind/react-use-pwa": ^1.0.4
     "@ducanh2912/next-pwa": ^10.2.9
     "@imbios/next-pwa": ^1.1.1
     "@lingui/cli": ^4.11.0
@@ -17027,6 +17042,7 @@ __metadata:
     lint-staged: ^15.2.10
     lodash: ^4.17.21
     lucide-react: ^0.453.0
+    moment: ^2.30.1
     next: 15.0.0
     next-auth: beta
     next-themes: ^0.3.0

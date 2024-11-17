@@ -207,10 +207,10 @@ paths:
                     example: ""
                   createdAt:
                     type: string
-                    example: 2024-11-07T18:41:41.406Z
+                    example: 2024-11-16T23:04:56.060Z
                   updatedAt:
                     type: string
-                    example: 2024-11-07T18:41:41.406Z
+                    example: 2024-11-16T23:04:56.060Z
                 required:
                   - id
                   - barcode
@@ -582,6 +582,343 @@ paths:
       responses:
         "204":
           description: The price was deleted successfully.
+        "400":
+          description: The request is malformed or contains invalid parameters. Please
+            check the data provided.
+          content:
+            application/json:
+              schema: *a1
+        "404":
+          description: The requested resource could not be found.
+          content:
+            application/json:
+              schema: *a2
+        "409":
+          description: A similar entry already exists.
+          content:
+            application/json:
+              schema: *a3
+        "500":
+          description: Internal server error. Something went wrong on the server side.
+          content:
+            application/json:
+              schema: *a4
+  /v1/prices/search:
+    get:
+      operationId: searchPrices
+      summary: Search for a price
+      description: Creates a new price entry for a product, allowing users to add
+        price information for a product found in a specific store. The route
+        accepts details such as the product's barcode, name, brand, category,
+        store location, price, and a link to a proof image. This enables the
+        application to update its database with current prices from various
+        stores, helping users compare prices effectively.
+      parameters:
+        - in: query
+          name: q
+          description: Defines the type of activity log entries to retrieve, such as
+            "date" or "id"
+          example: date
+          schema:
+            type: string
+            example: id
+          required: true
+      requestBody:
+        description: The price to create.
+        content: {}
+      responses:
+        "200":
+          description: The burger was created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  prices:
+                    type:
+                      - array
+                      - "null"
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                        productId:
+                          type: string
+                          format: uuid
+                        storeId:
+                          type: string
+                          format: uuid
+                        amount:
+                          type: number
+                          minimum: 0
+                        currency:
+                          type: string
+                          enum:
+                            - EUR
+                            - USD
+                            - GBP
+                            - CHF
+                            - AUD
+                            - CAD
+                            - CNY
+                            - JPY
+                            - AED
+                        priceProofImage:
+                          type:
+                            - string
+                            - "null"
+                          format: uri
+                        dateRecorded:
+                          type:
+                            - string
+                            - "null"
+                        product:
+                          type:
+                            - object
+                            - "null"
+                          properties:
+                            id:
+                              type: string
+                              format: uuid
+                            barcode:
+                              type: string
+                              minLength: 1
+                            name:
+                              type: string
+                              minLength: 1
+                            description:
+                              type:
+                                - string
+                                - "null"
+                              minLength: 1
+                            categoryId:
+                              type:
+                                - string
+                                - "null"
+                              format: uuid
+                            brandId:
+                              type:
+                                - string
+                                - "null"
+                              format: uuid
+                            nutritionScore:
+                              type: "null"
+                            createdAt:
+                              type: string
+                            updatedAt:
+                              type: string
+                          required:
+                            - id
+                            - barcode
+                            - name
+                            - createdAt
+                            - updatedAt
+                        store:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              format: uuid
+                            name:
+                              type: string
+                              minLength: 1
+                            location:
+                              type: string
+                              minLength: 1
+                            websiteUrl:
+                              type:
+                                - string
+                                - "null"
+                              format: uri
+                          required:
+                            - id
+                            - name
+                            - location
+                      required:
+                        - id
+                        - productId
+                        - storeId
+                        - amount
+                        - currency
+                        - product
+                        - store
+                  reason:
+                    type:
+                      - string
+                      - "null"
+                    const: NO_PRICES
+                required:
+                  - prices
+        "400":
+          description: The request is malformed or contains invalid parameters. Please
+            check the data provided.
+          content:
+            application/json:
+              schema: *a1
+        "404":
+          description: The requested resource could not be found.
+          content:
+            application/json:
+              schema: *a2
+        "409":
+          description: A similar entry already exists.
+          content:
+            application/json:
+              schema: *a3
+        "500":
+          description: Internal server error. Something went wrong on the server side.
+          content:
+            application/json:
+              schema: *a4
+  /v1/products/{barcode}:
+    post:
+      operationId: createProduct
+      summary: Create a product
+      description: Creates a new product entry, allowing users to add price
+        information for a product found in a specific store. The route accepts
+        details such as the product's barcode, name, brand, category, store
+        location, price, and a link to a proof image. This enables the
+        application to update its database with current prices from various
+        stores, helping users compare prices effectively.
+      parameters:
+        - in: path
+          name: barcode
+          description: barcode of the new product
+          example: "876456789"
+          schema:
+            type: string
+            example: "876456789"
+          required: true
+      requestBody:
+        description: The product to create.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productName:
+                  type: string
+                categoryName:
+                  type: string
+                brandName:
+                  type: string
+              required:
+                - productName
+                - categoryName
+                - brandName
+      responses:
+        "200":
+          description: The burger was created successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      format: uuid
+                    productId:
+                      type: string
+                      format: uuid
+                    storeId:
+                      type: string
+                      format: uuid
+                    amount:
+                      type: number
+                      minimum: 0
+                    currency:
+                      type: string
+                      enum:
+                        - EUR
+                        - USD
+                        - GBP
+                        - CHF
+                        - AUD
+                        - CAD
+                        - CNY
+                        - JPY
+                        - AED
+                    priceProofImage:
+                      type:
+                        - string
+                        - "null"
+                      format: uri
+                    dateRecorded:
+                      type:
+                        - string
+                        - "null"
+                    product:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                        barcode:
+                          type: string
+                          minLength: 1
+                        name:
+                          type: string
+                          minLength: 1
+                        description:
+                          type:
+                            - string
+                            - "null"
+                          minLength: 1
+                        categoryId:
+                          type:
+                            - string
+                            - "null"
+                          format: uuid
+                        brandId:
+                          type:
+                            - string
+                            - "null"
+                          format: uuid
+                        nutritionScore:
+                          type: "null"
+                        createdAt:
+                          type: string
+                        updatedAt:
+                          type: string
+                      required:
+                        - id
+                        - barcode
+                        - name
+                        - createdAt
+                        - updatedAt
+                    store:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                        name:
+                          type: string
+                          minLength: 1
+                        location:
+                          type: string
+                          minLength: 1
+                        websiteUrl:
+                          type:
+                            - string
+                            - "null"
+                          format: uri
+                      required:
+                        - id
+                        - name
+                        - location
+                  required:
+                    - id
+                    - productId
+                    - storeId
+                    - amount
+                    - currency
+                    - product
+                    - store
         "400":
           description: The request is malformed or contains invalid parameters. Please
             check the data provided.

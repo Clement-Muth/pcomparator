@@ -38,6 +38,10 @@ msgstr "Ajouter un nouveau prix en scannant le code-barre"
 msgid "Add new price by typing barcode"
 msgstr "Ajouter un nouveau prix en saisissant le code-barre"
 
+#: src/applications/Products/Ui/NewProduct/NewProduct.tsx
+msgid "Add this product"
+msgstr "Ajouter ce produit"
+
 #: src/components/Inputs/Input/Barcode.tsx
 msgid "All barcode types are accepted."
 msgstr "Tous les types de code-barres sont acceptés."
@@ -59,6 +63,7 @@ msgid "Avatar updated"
 msgstr "Avatar mis à jour"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Code-barre"
 
@@ -70,7 +75,12 @@ msgstr "Annuler"
 msgid "Click on the avatar to upload a custom one from your files."
 msgstr "Cliquer sur avatar pour ajouter un depuis vos fichier."
 
+#: src/applications/Searchbar/Ui/SearchResult/SearchResultModal.tsx
+msgid "Close"
+msgstr "Fermer"
+
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Custom location"
 msgstr "Localisation personsalisée"
 
@@ -116,13 +126,13 @@ msgstr "Drag and drop votre fichier"
 msgid "Enter a phone number to receive important service updates by SMS."
 msgstr "Entrez un numéro de téléphone pour recevoir des mises à jour importantes du service par SMS."
 
-#: src/applications/Searchbar/Ui/Searchbar.tsx
-msgid "Enter your codebar"
-msgstr "Entrez votre code-barres"
-
 #: src/components/Inputs/Phone/Phone.tsx
 msgid "Enter your phone number"
 msgstr "Entrez votre numéro de téléphone"
+
+#: src/applications/Searchbar/Ui/Searchbar.tsx
+msgid "Enter your product name"
+msgstr "Saisissez le nom du produit"
 
 #: src/applications/Prices/Ui/ListPrices/CardPrice/SeeMoreModal.tsx
 msgid "Environment"
@@ -131,6 +141,11 @@ msgstr "Environnement"
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 msgid "Fullname updated"
 msgstr "Nom complet mis à jour."
+
+#: src/core/pwa/Install.tsx
+#: src/core/pwa/Install.tsx
+msgid "Get faster access, work offline, and enjoy a smoother experience."
+msgstr "Accédez plus rapidement, travaillez hors ligne et profitez d'une expérience plus fluide."
 
 #: src/applications/Prices/Ui/ListPrices/CardPrice/SeeMoreModal.tsx
 msgid "Health"
@@ -143,6 +158,11 @@ msgstr "Bonjour {0}"
 #: src/applications/Profile/Ui/Settings/DeleteAccount.tsx
 msgid "I understand, delete my account"
 msgstr "Je comprends, supprimez mon compte."
+
+#: src/core/pwa/Install.tsx
+#: src/core/pwa/Install.tsx
+msgid "Install Our App for a Better Experience!"
+msgstr "Installez notre application pour une meilleure expérience !"
 
 #: src/applications/Profile/Ui/Settings/DisplayName.tsx
 msgid "Invalid display name."
@@ -160,11 +180,21 @@ msgstr "Clair"
 msgid "Location"
 msgstr "Localisation"
 
+#: src/core/pwa/Install.tsx
+#: src/core/pwa/Install.tsx
+msgid "Maybe later"
+msgstr "Peut-être plus tard"
+
 #: src/app/[locale]/dashboard/layout.tsx
 msgid "My Prices"
 msgstr "Mes prix"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
+#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Suivant"
 
@@ -204,12 +234,19 @@ msgstr "Veuillez utiliser 32 caractères maximum."
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Previous"
 msgstr "Précédent"
 
+#: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Price.tsx
 msgid "Price"
 msgstr "Prix"
+
+#: src/core/Tabbar.tsx
+msgid "Price added"
+msgstr "Prix ajouté"
 
 #: src/applications/Prices/Ui/ListPrices/CardPrice/DeletePriceModal/DeletePriceModal.tsx
 msgid "Price deleted"
@@ -219,9 +256,25 @@ msgstr "Prix supprimé"
 msgid "Price for {productName} added!"
 msgstr "Prix pour {productName} ajouté !"
 
+#: src/applications/Searchbar/Ui/SearchResult/SearchResultModal.tsx
+msgid "Prices for {search}"
+msgstr "Prix pour {search}"
+
 #: src/applications/Prices/Ui/ListPrices/CardPrice/SeeMoreModal.tsx
 msgid "Product"
 msgstr "Produit"
+
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Price.tsx
+msgid "Product \"{productName}\" was not found but added to your account."
+msgstr "Produit \"{productName}\" n'a pas été trouvé mais à été ajouté  votre compte."
+
+#: src/applications/Products/Ui/NewProduct/NewProduct.tsx
+msgid "Product added"
+msgstr "Produit ajouté"
+
+#: src/applications/Products/Ui/NewProduct/NewProduct.tsx
+msgid "Product Not Found"
+msgstr "Produit non trouvé"
 
 #: src/app/[locale]/dashboard/layout.tsx
 msgid "Return to the app"
@@ -238,6 +291,7 @@ msgid "Scan barcode"
 msgstr "Scanner code-barre"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
+#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Search"
 msgstr "Recherche"
 
