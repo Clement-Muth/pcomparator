@@ -34,7 +34,7 @@ export const SearchBarcode = ({ onNewProduct, onNoPrices }: SearchBarcodeProps) 
         onPress={onOpen}
         radius="full"
         variant="faded"
-        className="p-7 w-18 h-18 -mt-8 border-none shadow-medium"
+        className="p-7 w-18 h-18 -mt-8 border-none shadow-[0_5px_10px_1px_rgba(0,0,0,.2)]"
         isIconOnly
       />
     </>
