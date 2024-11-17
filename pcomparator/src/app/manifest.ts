@@ -9,7 +9,7 @@ export default (): MetadataRoute.Manifest => {
     start_url: "/",
     display: "standalone",
     background_color: "#eef2ff",
-    theme_color: "rgba(0, 0, 0, 0)",
+    theme_color: "#eef2ff",
     orientation: "portrait",
     dir: "ltr",
     lang: "en",
