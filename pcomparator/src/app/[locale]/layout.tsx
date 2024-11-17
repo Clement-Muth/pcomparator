@@ -7,7 +7,7 @@ import { pcomparatorMetadata } from "~/core/metadata";
 import { type NextPageProps, withLinguiLayout } from "~/core/withLinguiLayout";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
-import { InstallPWA } from "~/app/[locale]/Install";
+import { InstallPWA } from "~/core/pwa/Install";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +20,10 @@ const RootLayout = ({ children, locale }: NextPageProps) => {
     <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <ApplicationKernel locale={locale}>
-          <InstallPWA />
-          <ApplicationLayout>{children}</ApplicationLayout>
+          <ApplicationLayout>
+            <InstallPWA />
+            {children}
+          </ApplicationLayout>
         </ApplicationKernel>
       </body>
     </html>
