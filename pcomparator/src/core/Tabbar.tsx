@@ -68,6 +68,7 @@ export const Tabbar = () => {
         isOpen={isNewPriceOpen}
         barcode={{ barcode: barcode!, format: "" }}
         onOpenChange={onOpenChangeNewPrice}
+        onClose={onClose}
         onSuccessfull={() => {
           notify();
           onNewPriceClose();

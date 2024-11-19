@@ -12,13 +12,8 @@ import { NewPriceButtonMobile } from "~/applications/Prices/Ui/NewPrice/NewPrice
 import useDevice from "~/hooks/useDevice";
 
 export const NewPriceButton = () => {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const {
-    isOpen: isOpenForm,
-    onOpen: onOpenForm,
-    onOpenChange: onOpenChangeForm,
-    onClose: onCloseForm
-  } = useDisclosure();
+  const [isOpenMobile, setIsOpenMobile] = useState(false);
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
   const [modal, setModal] = useState<"with" | "without" | undefined>(undefined);
   const [barcode, setBarcode] = useState<Barcode | undefined>(undefined);
   const notify = (productName: string) =>
@@ -31,8 +26,9 @@ export const NewPriceButton = () => {
     <>
       {modal === "with" ? (
         <BarcodeScannerModal
-          isOpen={isOpenForm}
-          onOpenChange={onOpenChangeForm}
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          onClose={onClose}
           onBarcodeDetected={(detectedBarcode) => {
             if (!barcode) {
               setBarcode(detectedBarcode);
@@ -43,23 +39,24 @@ export const NewPriceButton = () => {
       ) : null}
       {modal === "without" ? (
         <NewPriceModal
-          isOpen={isOpenForm}
-          onOpenChange={onOpenChangeForm}
+          isOpen={isOpen}
+          onClose={onClose}
+          onOpenChange={onOpenChange}
           onSuccessfull={(productName) => {
             notify(productName);
-            onCloseForm();
+            onClose();
           }}
           barcode={barcode}
         />
       ) : null}
       {device === "desktop" ? (
-        <NewPriceButtonDesktop onOpen={onOpen} onOpenForm={onOpenForm} onOpenModal={setModal} />
+        <NewPriceButtonDesktop onOpenForm={onOpen} onOpenModal={setModal} />
       ) : (
         <NewPriceButtonMobile
-          isOpen={isOpen}
-          onOpen={onOpen}
-          onOpenChange={onOpenChange}
-          onOpenForm={onOpenForm}
+          isOpen={isOpenMobile}
+          onOpen={() => setIsOpenMobile(true)}
+          onClose={() => setIsOpenMobile(false)}
+          onOpenForm={onOpen}
           onOpenModal={setModal}
         />
       )}

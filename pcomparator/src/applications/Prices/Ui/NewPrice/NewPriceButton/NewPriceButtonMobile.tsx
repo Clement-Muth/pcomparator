@@ -1,11 +1,12 @@
 import { Trans } from "@lingui/macro";
-import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { Plus, ScanBarcode, Type } from "lucide-react";
+import { Modal } from "~/components/Modal/Modal";
 
 interface NewPriceButtonMobileProps {
   isOpen: boolean;
   onOpen: () => void;
-  onOpenChange: () => void;
+  onClose: () => void;
   onOpenForm: () => void;
   onOpenModal: (type: "with" | "without") => void;
 }
@@ -13,23 +14,26 @@ interface NewPriceButtonMobileProps {
 export const NewPriceButtonMobile = ({
   isOpen,
   onOpen,
-  onOpenChange,
+  onClose,
   onOpenForm,
   onOpenModal
 }: NewPriceButtonMobileProps) => (
   <>
     <Button startContent={<Plus />} variant="light" radius="full" onPress={onOpen} isIconOnly />
-    <Modal placement="bottom" isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent>
-        <ModalHeader />
-        <ModalBody aria-label="Profile Actions">
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      body={
+        <div className="p-4 flex flex-col gap-y-2 w-full">
           <Button
             key="scan-barcode"
             data-testid="scan-barcode"
             startContent={<ScanBarcode />}
             size="lg"
+            fullWidth
             onPress={() => {
               onOpenModal("with");
+              onClose();
               onOpenForm();
             }}
           >
@@ -40,16 +44,17 @@ export const NewPriceButtonMobile = ({
             data-testid="type-barcode"
             startContent={<Type />}
             size="lg"
+            fullWidth
             onPress={() => {
               onOpenModal("without");
+              onClose();
               onOpenForm();
             }}
           >
             <Trans>Type barcode</Trans>
           </Button>
-        </ModalBody>
-        <ModalFooter />
-      </ModalContent>
-    </Modal>
+        </div>
+      }
+    />
   </>
 );

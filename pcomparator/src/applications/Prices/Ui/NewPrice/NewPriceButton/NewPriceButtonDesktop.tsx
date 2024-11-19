@@ -4,15 +4,14 @@ import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@
 import { Plus, ScanBarcode, Type } from "lucide-react";
 
 interface NewPriceButtonDekstopProps {
-  onOpen: () => void;
   onOpenForm: () => void;
   onOpenModal: (type: "with" | "without") => void;
 }
 
-export const NewPriceButtonDesktop = ({ onOpen, onOpenForm, onOpenModal }: NewPriceButtonDekstopProps) => (
+export const NewPriceButtonDesktop = ({ onOpenForm, onOpenModal }: NewPriceButtonDekstopProps) => (
   <Dropdown placement="bottom">
     <DropdownTrigger>
-      <Button startContent={<Plus />} variant="light" radius="full" onPress={onOpen} isIconOnly />
+      <Button startContent={<Plus />} variant="light" radius="full" isIconOnly />
     </DropdownTrigger>
     <DropdownMenu aria-label="Profile Actions" variant="flat">
       <DropdownItem

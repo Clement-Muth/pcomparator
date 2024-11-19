@@ -10,7 +10,7 @@ interface SearchBarcodeProps {
 }
 
 export const SearchBarcode = ({ onNewProduct, onNoPrices }: SearchBarcodeProps) => {
-  const { onOpen, onClose, isOpen, onOpenChange } = useDisclosure();
+  const { isOpen, onClose, onOpen } = useDisclosure();
   const [step, setStep] = useState(1);
   const [search, setSearch] = useState<string | null>(null);
 
@@ -19,7 +19,7 @@ export const SearchBarcode = ({ onNewProduct, onNoPrices }: SearchBarcodeProps) 
       {step === 1 ? (
         <BarcodeScannerModal
           isOpen={isOpen}
-          onOpenChange={onOpenChange}
+          onClose={onClose}
           onBarcodeDetected={(barcode) => {
             setSearch(barcode.barcode);
             setStep(2);

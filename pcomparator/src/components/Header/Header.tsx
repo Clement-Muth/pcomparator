@@ -3,6 +3,7 @@
 import { Image, Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import type { ReactNode } from "react";
 import Link from "~/components/Link/Link";
+import useDevice from "~/hooks/useDevice";
 import useScroll from "~/hooks/useScroll";
 import Logo from "../../../public/static/logo.png";
 
@@ -12,6 +13,7 @@ interface HeaderProps {
 
 export const Header = ({ rightArea }: HeaderProps) => {
   const hasScrolled = useScroll(50);
+  const device = useDevice();
 
   return (
     <Navbar position="sticky" classNames={{ base: "bg-transparent" }} isBlurred={hasScrolled}>
@@ -26,7 +28,7 @@ export const Header = ({ rightArea }: HeaderProps) => {
         {/* <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem> */}
-        {rightArea}
+        {device === "desktop" ? rightArea : null}
       </NavbarContent>
     </Navbar>
   );

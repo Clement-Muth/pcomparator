@@ -1,28 +1,30 @@
-import { Modal, ModalContent, ModalHeader } from "@nextui-org/react";
 import { useState } from "react";
 import { Location } from "~/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location";
 import { Price } from "~/applications/Prices/Ui/NewQuickPrice/FormSteps/Price";
+import { Modal } from "~/components/Modal/Modal";
 import { Stepper } from "~/components/Stepper/Stepper";
 
 interface NewQuickPriceProps {
   isOpen: boolean;
   onOpenChange: () => void;
+  onClose: () => void;
   productName: string;
 }
 
-export const NewQuickPrice = ({ isOpen, onOpenChange, productName }: NewQuickPriceProps) => {
+export const NewQuickPrice = ({ isOpen, onClose, onOpenChange, productName }: NewQuickPriceProps) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<{ price: number; location: string; storeName: string } | null>(
     null
   );
 
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent>
-        <ModalHeader className="mt-4">
-          <Stepper steps={[{ label: "Price" }, { label: "Location" }]} currentStep={step} />
-        </ModalHeader>
-        {step === 1 ? (
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      onOpenChange={onOpenChange}
+      header={<Stepper steps={[{ label: "Price" }, { label: "Location" }]} currentStep={step} />}
+      body={
+        step === 1 ? (
           <Price
             onNextStep={(price) => {
               setFormData((formData) => ({ ...(formData as any), ...price }));
@@ -37,8 +39,9 @@ export const NewQuickPrice = ({ isOpen, onOpenChange, productName }: NewQuickPri
               const finalData = { ...formData, ...data };
             }}
           />
-        )}
-      </ModalContent>
-    </Modal>
+        )
+      }
+      isForm
+    />
   );
 };

@@ -23,7 +23,7 @@ export const Stepper = ({ currentStep, steps, size = "md" }: StepperProps) => {
   const offset = circumference - (progress / 100) * circumference;
 
   return (
-    <div className="flex items-center gap-x-4 w-full justify-between">
+    <div className="flex items-center gap-x-4 w-full justify-between mt-4">
       <div className="relative">
         <svg width={svgSize} height={svgSize} data-testid="stepper-svg" viewBox={`0 0 ${svgSize} ${svgSize}`}>
           <title>Step</title>

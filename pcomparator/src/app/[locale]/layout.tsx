@@ -6,6 +6,7 @@ import { locales } from "~/core/locale";
 import { pcomparatorMetadata } from "~/core/metadata";
 import { type NextPageProps, withLinguiLayout } from "~/core/withLinguiLayout";
 import "react-toastify/dist/ReactToastify.css";
+import "react-spring-bottom-sheet/dist/style.css";
 import "./globals.css";
 import { InstallPWA } from "~/core/pwa/Install";
 

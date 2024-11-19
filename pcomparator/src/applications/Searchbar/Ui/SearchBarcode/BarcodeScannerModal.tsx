@@ -1,30 +1,23 @@
-import { Modal, ModalContent } from "@nextui-org/react";
 import { useState } from "react";
 import { BarcodeScanner } from "react-barcode-scanner";
 import type { Barcode } from "~/applications/Prices/Domain/ValueObjects/Barcode";
+import { Modal } from "~/components/Modal/Modal";
 
 interface BarcodeScannerModalProps {
   isOpen: boolean;
-  onOpenChange: (isOpen: boolean) => void;
+  onClose: () => void;
   onBarcodeDetected: (barcode: Barcode) => void;
 }
 
-export const BarcodeScannerModal = ({
-  isOpen,
-  onOpenChange,
-  onBarcodeDetected
-}: BarcodeScannerModalProps) => {
+export const BarcodeScannerModal = ({ isOpen, onClose, onBarcodeDetected }: BarcodeScannerModalProps) => {
   const [hasBeenCaptured, setHasBeenCaptured] = useState(false);
 
   return (
     <Modal
       isOpen={isOpen}
-      onOpenChange={onOpenChange}
-      size="4xl"
+      onClose={onClose}
       data-testid="modal-barcode-scanner"
-      className="h-[80dvh]"
-    >
-      <ModalContent>
+      body={
         <BarcodeScanner
           onCapture={(barcode) => {
             if (!hasBeenCaptured) {
@@ -32,6 +25,7 @@ export const BarcodeScannerModal = ({
               setHasBeenCaptured(true);
             }
           }}
+          className="!h-[80dvh]"
           options={{
             formats: [
               "codabar",
@@ -49,7 +43,7 @@ export const BarcodeScannerModal = ({
             ]
           }}
         />
-      </ModalContent>
-    </Modal>
+      }
+    />
   );
 };
