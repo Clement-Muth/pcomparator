@@ -102,3 +102,11 @@ div[data-overlay-container="true"] {
 :root {
   --toastify-color-success: #17c964 !important;
 }
+
+reach-portal {
+  @apply !z-[9999] relative;
+}
+
+main {
+  @apply flex flex-1;
+}

@@ -30,11 +30,11 @@ msgstr "Account deleted"
 msgid "Account Settings"
 msgstr "Account Settings"
 
-#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton/NewPriceButtonDesktop.tsx
 msgid "Add new price by scanning barcode"
 msgstr "Add new price by scanning barcode"
 
-#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton/NewPriceButtonDesktop.tsx
 msgid "Add new price by typing barcode"
 msgstr "Add new price by typing barcode"
 
@@ -63,7 +63,6 @@ msgid "Avatar updated"
 msgstr "Avatar updated"
 
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
-#: src/components/Inputs/Input/Barcode.tsx
 msgid "Barcode"
 msgstr "Barcode"
 
@@ -80,7 +79,6 @@ msgid "Close"
 msgstr "Close"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
-#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Custom location"
 msgstr "Custom location"
 
@@ -180,6 +178,7 @@ msgstr "Light"
 msgid "Location"
 msgstr "Location"
 
+#: src/applications/Products/Ui/NewProduct/NewProduct.tsx
 #: src/core/pwa/Install.tsx
 #: src/core/pwa/Install.tsx
 msgid "Maybe later"
@@ -191,10 +190,7 @@ msgstr "My Prices"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step1/TypeBarcode.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
-#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
-#: src/components/Form/FormActions.tsx
 msgid "Next"
 msgstr "Next"
 
@@ -232,15 +228,12 @@ msgid "Please use 32 characters at maximum."
 msgstr "Please use 32 characters at maximum."
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
-#: src/applications/Prices/Ui/NewPrice/FormSteps/Step3/Proof.tsx
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
-#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Previous"
 msgstr "Previous"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step2/Price.tsx
 #: src/applications/Prices/Ui/NewPrice/NewPiceModal.tsx
-#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Price.tsx
 msgid "Price"
 msgstr "Price"
 
@@ -252,7 +245,7 @@ msgstr "Price added"
 msgid "Price deleted"
 msgstr "Price deleted"
 
-#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton/index.tsx
 msgid "Price for {productName} added!"
 msgstr "Price for {productName} added!"
 
@@ -285,12 +278,12 @@ msgstr "Return to the app"
 msgid "Save"
 msgstr "Save"
 
-#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton/NewPriceButtonDesktop.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton/NewPriceButtonMobile.tsx
 msgid "Scan barcode"
 msgstr "Scan barcode"
 
 #: src/applications/Prices/Ui/NewPrice/FormSteps/Step4/Location.tsx
-#: src/applications/Prices/Ui/NewQuickPrice/FormSteps/Location.tsx
 msgid "Search"
 msgstr "Search"
 
@@ -331,7 +324,8 @@ msgstr "This is your avatar."
 msgid "Type \"delete {0}\" to confirm"
 msgstr "Type \"delete {0}\" to confirm"
 
-#: src/applications/Prices/Ui/NewPrice/NewPriceButton.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton/NewPriceButtonDesktop.tsx
+#: src/applications/Prices/Ui/NewPrice/NewPriceButton/NewPriceButtonMobile.tsx
 msgid "Type barcode"
 msgstr "Type barcode"
 
